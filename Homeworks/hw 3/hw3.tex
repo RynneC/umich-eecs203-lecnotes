@@ -1,0 +1,530 @@
+\documentclass[12pt]{exam}
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+% \usepackage{todonotes}
+% \newcommand{\gbnote}[1]{\todo[color=blue!20]{Greg's Note: #1}}
+% \newcommand{\gbnoteinline}[1]{\todo[inline, size=\normalsize, color=blue!20]
+% sometimes needed packages
+% \usepackage{hyperref} % hyperlinks
+% \hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+% \usepackage{tikz} % drawing graphs
+% \usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\divides}{\,|\,}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+\printanswers
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+Fall 2023\\
+Homework 3}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+\huge Due \textbf{Thursday, Sept. 21}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $6+2$
+\hspace{3cm}
+Total Points: $100+30$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+\item \textbf{Match your pages!} Your submission time is when you upload the
+file, so the time you take to match pages doesn't count against you.
+\item Submit this assignment (and any regrade requests later) on Gradescope.
+\item Justify your answers and show your work (unless a question says
+otherwise).
+\item By submitting this homework, you agree that you are in compliance with
+the Engineering Honor Code and the Course Policies for 203, and that you are
+submitting your own work.
+\item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\section*{Individual Portion}
+\subsection*{\probnum Division Tradition [18 points]}
+Let the domain of discourse be positive integers. The notation $a\divides b$ means
+``$a$ divides $b,$'' or more formally: ``there exists an integer $q$ such that $b =
+a\cdot q.$"
+Prove the following statements:
+\begin{qparts}
+\item For all $k, n$, if $k\divides n$, then $k^2\divides n^2$.
+\item For all $k, n_1, n_2$, if $k\divides n_1$ and $k\divides n_2$, then $k\
+divides (n_1+n_2)$.
+\item For all $a, b, c$, if $a\divides b$ and $b\divides c,$ then $a\divides
+c$.
+\end{qparts}
+\begin{solution}
+
+\begin{qparts}
+\item 
+Let $k$ be an arbitrary integer. \\
+Since $k \divides n$, let $n = p \cdot k$, $p$ is an integer.
+then $n^2 = p^2 \cdot k^2$. \\
+Since $p$ is an integer, $p^2$ is also an integer.
+\\ Therefore we have proved that $k^2 \divides n^2$.
+
+\item 
+Let $k$ be an arbitrary integer. \\
+Since $k \divides n_1$, let $n_1 = p \cdot k$, $p$ is an integer. \\
+Since $k \divides n_2$, let $n_2 = q \cdot k$, $q$ is an integer. \\
+then $(n_1 + n_2) = (p + q)  \cdot k$. \\
+Since $p,q$ are integers, $(p+q)$ is an integer.\\
+Therefore we have proved that $k \divides (n_1 + n_2)$.
+
+\item 
+Let $a$ be an arbitrary integer. \\
+Since $a \divides b$, let $b = p \cdot a$, $p$ is an integer. \\
+Since $b \divides c$, let $c = q \cdot b$, $q$ is an integer. \\
+then $c = (p \cdot q) \cdot a$. \\
+Since $p,q$ are integers, $(p \cdot q)$ is an integer.\\
+Therefore we have proved that $a \divides c$.
+\end{qparts}
+
+\end{solution}
+\subsection*{\probnum Even Stevens Rerun [15 points]}
+Let $n$ be an integer. Using only the definitions of even and odd, prove that these
+statements are equivalent:
+\begin{stmts}
+\item $n+1$ is odd
+\item $5n-7$ is odd
+\item $n^2$ is even
+\end{stmts}
+\textbf{Hint:} You can prove that these three statements are equivalent in a
+circular way by showing $(\text i) \rightarrow (\text{ii}), (\text{ii}) \rightarrow
+(\text{iii}),$ and $(\text{iii}) \rightarrow (\text i)$.
+\begin{solution}
+\begin{qparts}
+    \item $(\text i) \rightarrow (\text{ii})$\\
+Let $(n+1)$ be an arbitrary odd integer. There exist integer $k$ such that $(n+1) = 2k+1$. \\
+Then $5n-7 = 5(n+1) - 12 = 10k-7 = 2(5k -4)+1$. \\
+Since $k$ is an integer, $5k-4$ is an integer, $5n-7 = 2(5k-4)+1$ is an odd integer.\\
+Therefore we have proved that $(\text i) \rightarrow (\text{ii})$.
+
+    \item $(\text{ii}) \rightarrow (\text{iii})$\\
+    Let $(5n-7)$ be an arbitrary odd integer. There exist integer $k$ such that $(5n-7) = 2k+1$.
+    \\
+Then 
+\begin{align*}
+(5n-7)^2 & = 25n^2 -70n + 49 = 4k^2 + 4k + 1 \\
+25n^2 & = 4k^2 + 4k + 70n -48
+ \end{align*}
+Since $k$ is an integer, $(2k^2 + 2k + 35 -24)$  is an integer, and since $(4k^2 + 4k + 70n -48) = 2(2k^2+2k+35n-24)$,  $25n^2$ is even.\\
+    And since $n^2$ is an integer, for the odd integer 25, $n^2$ must be an even integer to make their product $25n^2$ an even integer. \\
+    Therefore we have proved that $(\text{ii}) \rightarrow (\text{iii})$.
+    
+    \item $(\text{iii}) \rightarrow (\text{i})$\\
+To prove “If $n^2$ is even, then $n+1$ is odd", we can prove its contrapositive, that is, “If $n+1$ is even, then $n^2$ is odd."\\
+let $n+1$ be an arbitrary even integer, then there exist integer $k$ such that $n + 1 = 2k$.\\
+Then $n^2 = (2k-1)^2 = 4k^2 - 4k + 1$.\\
+Since $k$ is an integer, $4k^2 - 4k = 2(2k^2-2k) $ is an even integer, and therefore $n^2 = 4k^2 - 4k + 1 = 2(2k^2 -2k)+1$ is an odd integer.\\
+Then we have proved $(\text{iii}) \rightarrow (\text{i})$ by proving its contrapositive.\\
+    \item 
+Therefore, $(\text i) \rightarrow (\text{ii}) \rightarrow (\text{iii}) \rightarrow (\text{i})$...... We can deduce that $(\text{i}) \longleftrightarrow (\text{ii}) \longleftrightarrow (\text{iii})$
+
+\end{qparts} 
+
+\end{solution}
+\subsection*{\probnum Even the Odds [15 points]}
+\textbf{Prove or disprove:} there exists an integer $n$ where $n$ is even and $n^2
++ 4$ is odd.
+\begin{solution}
+We can disprove it by proving its negation: ``There does not exists an integer $n$ where $n$ is even and $n^2+ 4$ is odd.'' \\
+Let $n$ be an arbitrary odd integer. Then there exist an integer $k$ such that $n = 2k$.\\
+Then $n^2 + 4 = (2k)^2 + 4 = 4k^2 + 4 = 2(2k^2+2)$.\\
+since $k$ is an integer, $(2k^2+ 2)$ is an integer, therefore $2(2k^2+2)$ must be an odd integer. So when $n$ is even, $n^2 + 4$ can not be odd.
+
+\end{solution}
+\subsection*{\probnum To Prove or Not to Prove [18 points]}
+\textbf{Prove or disprove} the following statements where the domain of discourse
+is all integers:
+\begin{qparts}
+\item For all $x$ there exists a $y$ such that $x^2+y = 2.$
+\item For all $y$ there exists an $x$ such that $2x-y=8.$
+\item There exists an $x$ such that for all $y,$ $\frac{y}{x} = y.$
+\item There exists a $y$ such that for all $x,$ $x^2+y = 2.$
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+\item 
+Prove it.\\
+Let $x$ be an arbitrary integer. \\
+Since every integer has its square that is an integer, $x^2 $ is an integer. \\
+Let $y = 2 - x^2$. Then $y$ is an integer \\
+Then we have $y$ such that $x^2 + y = 2$.
+
+\item Disprove it.\\
+We will prove its negation: "Therefore there exists an $y$ that in the domain of all integers, for all $x$, $2x-y \neq 8$."
+For all $y$ there exists an $x$ such that $2x-y=8.$
+Consider $y = 1$.\\
+If there exists an $x$ such that $2x - y = 8$, then $x = \frac{8+y}{2} = 4.5$, which is not an integer.\\
+Therefore there exists an $y$ that in the domain of all integers, for all $x$, $2x-y \neq 8$.
+\item 
+Prove it.\\
+Consider $x = 1$. Let $y$ be an arbitrary integer. \\
+Then $\frac{y}{x} = y$. \\
+Therefore when $x=1$, for all $y$, $\displaystyle \frac{y}{x} = y$.
+\item 
+Disprove it. \\
+We will prove its negation:  "There does not exist a $y$ such that all $x,$ $x^2+y = 2.$"\\
+Seeking a contradiction, assume that for integer $y$,  $x^2+y = 2$ for all $x$.\\
+Then when $x = 1$, y should be $2-x^2 = 1$.\\
+When $x = 2$, $y$ should be $2-x^2= -2$. \\
+This completes the contradiction since $y$ can not be $1$ and $-2$ at the same time.\\
+Therefore we have proved that there do not exist a $y$ such that all $x,$ $x^2+y = 2.$
+\end{qparts}
+
+\end{solution}
+\subsection*{\probnum What's Your Rationale? [20 points]}
+Prove that for any rational number and any irrational number, there exists an
+irrational number between them.
+You may assume the following without proof:
+\begin{itemize}
+\item The sum of a rational and irrational is irrational.
+\item The product of a nonzero rational and irrational is irrational.
+\end{itemize}
+\begin{solution}
+Let $x$ be an arbitrary rational number, and $y$ be an arbitrary irrational number.\\
+Without Loss of Generality (due to symmetry), assume $x<y$.\\
+We always have $\frac{x+y}{2}$:\\
+$\frac{x+y}{2} = \frac{x}{2} + \frac{y}{2} < \frac{y}{2} + \frac{y}{2} = y$. \\
+$\frac{x+y}{2} = \frac{x}{2} + \frac{y}{2} > \frac{x}{2} + \frac{x}{2} = x$. \\
+Then we know that $x < \frac{x+y}{2} < y$.\\
+Since $x$ is rational, $y$ is irrational, and the sum of a rational and irrational is irrational, $\frac{x+y}{2}$ is irrational.\\
+Therefore we have proved that for any rational number $x$ and any irrational number $y$, there exists an irrational number between them.
+
+\end{solution}
+\subsection*{\probnum $\text{Contra}>0$ [14 points]}
+Let $x$ be an integer. Prove that if $6x + 2$ is negative, then $x$ is negative
+using
+\begin{qparts}
+\item a proof by contrapositive.
+\item a direct proof.
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+\item 
+We will prove it by proving its contrapositive: "Let $x$ be an integer. If $x$ is not negative, then $6x+2$ is not negative".\\
+Let $x$ be an arbitrary integer in the domain that $x\ge$ 0.\\
+Then $6x + 2 \ge 2 > 0$, is not negative.\\
+Therefore we have proved the original proposition by proving its contrapositive.\\
+\item 
+Let $6x + 2$ be an arbitrary integer in the domain that $6x+2 < 0$.\\
+Then $6x < -2$, $x < -\frac{1}{3} < 0$.\\
+Therefore we have proved that if $6x + 2$ is negative, then $x$ is negative.
+\end{qparts}
+\end{solution}
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+\subsection*{\probnum Grade Groupwork 2}
+Using the solutions and Grading Guidelines, grade your Groupwork 2:
+\begin{itemize}
+\item Mark up your past groupwork and submit it with this one.
+\item Write whether your submission achieved each rubric item. If it didn't
+achieve one, say why not.
+\item Use the table below to calculate scores.
+\item For extra credit, write positive comment(s) about your work.
+\item You don't have to redo problems correctly, but it is recommended!
+\item What if my group changed? \begin{itemize}
+\item If your current group submitted the same groupwork last time, grade
+it together.
+\item If not, grade your version, which means submitting this groupwork
+assignment separately. You may discuss grading together.
+\end{itemize}
+\end{itemize}
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{| c | c | c | c | c | c | c | c | c | c |
+c | c | c |}
+\hline
+& (i) & (ii) & (iii) & (iv) & (v) & (vi) & (vii) & (viii) & (ix) & (x) & (xi) &
+Total:\\
+\hline
+Problem 1 & & & & & & & & &\filcl & \filcl& \filcl& \hspace{1cm}/13\\
+\hline
+Problem 2 & & & & & & & &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/12\\
+\Xhline{1.25pt}
+Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \
+filcl& \filcl&\hspace{1cm}/25\\
+\hline
+\end{tabular}}
+\end{center}
+\subsection*{Previous Group Homework 2(1): Implication Inception [13 points]}
+Consider two propositions, $A$ and $B$.
+
+\begin{qparts}
+    \item Prove via a truth table that $A \equiv \left[ (A \to B) \to A  \right]$.
+    \item Consider the compound proposition $$\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$$ which has $203$ total letters in it, alternating between $A$ and $B$. Fill in the rest of the following truth table. You don't need to manually make all $203$ columns of the truth table to solve this, so try to find a pattern and think of a shortcut.
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $A$ & $B$ & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & \\
+            $T$ & $F$ & \\
+            $F$ & $T$ & \\
+            $F$ & $F$ & \\
+            \end{tabular}
+    \end{center}
+    \item Consider the following truth table. This is similar to the truth table in part (b), but it contains each iteration of the compound proposition from $1$ to $203$ letters.
+    \begin{center}
+            \begin{tabular}{c c | c | c | c | c | c}
+            $A$ & $B$ & $\underbrace{A}_{1 \text{ letter}}$ & $\underbrace{A\to B}_{2 \text{ letters}}$ & $\underbrace{(A\to B) \to A}_{3 \text{ letters}}$ & ... & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ & & & \\
+            $T$ & $F$ & $T$ & & & \\
+            $F$ & $T$ & $F$ & & & \\
+            $F$ & $F$ & $F$ & & & \\
+            \end{tabular}
+    \end{center}
+    What is the total number of cells that will be $T$ among all $4$ rows and $203$ columns? (Note that the two initial $A$ and $B$ columns do \emph{not} count as columns that should be counted. However, the $\underbrace{A}_{1 \text{ letter}}$ column and all following columns do count.)
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+     \item 
+     Truth Table:
+     \begin{center}
+            \begin{tabular}{c c | c | c}
+            $A$ & $B$ & $A \rightarrow B$ & $(A \rightarrow B) \rightarrow A$ \\
+            $T$ & $T$ & $T$ &  $T$\\
+            $T$ & $F$ & $F$ & $T$\\
+            $F$ & $T$ & $T$ &  $F$\\
+            $F$ & $F$ & $T$ &  $F$\\
+            \end{tabular}
+    \end{center}
+    and so we have proved that $((A \rightarrow B) \rightarrow A) \equiv A$
+    \item
+    We have proved that $((A \rightarrow B) \rightarrow A) \equiv A$ \\
+    Therefore $(((A \rightarrow B) \rightarrow A) \rightarrow B) \equiv (A \rightarrow B) $\\ 
+    and $((((A \rightarrow B) \rightarrow A) \rightarrow B) \rightarrow A) \equiv ((A \rightarrow B) \rightarrow A)  \equiv A $. \\We can see that it returns to the original proposition and thus forms a cycle because the next letter is always $A$ and then $B$, continuing. \\
+    If we replace components from the inside out to be its logical equivalence and recursively perform this operation, we can find replace all the propositions by either $A$ or $(A \rightarrow B)$. And by doing this, we can derive that propositions ended with $A$ is equivalent to $A$, and those ended with $B$ is equivalent to $(A \rightarrow B)$. \\
+    And since propositions ended with $A$ have odd letters, and propositions ended with $B$ have even letters (vice versa), the 203-letter-proposition is ended with A and has the same truth value with the $A$ column. \\
+    $\therefore$
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $A$ & $B$ & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ \\
+            $T$ & $F$ & $T$\\
+            $F$ & $T$ & $F$\\
+            $F$ & $F$ & $F$\\
+            \end{tabular}
+    \end{center}
+
+    \item In question(b) we have justified that propositions ended with $A$ are logically equivalent to $A$ and have odd letters, while propositions ended with $B$ are logically equivalent to $A \rightarrow B$ and have even letters (vice versa), the 203-letter-proposition is ended with A and has the same truth value with the $A$ column. 
+    \\$\therefore$ In the Table, odd number columns have the truth value of $TTFF$, the same as that of $A$; even number columns have the truth value of $TFTT$, the same as $(A \rightarrow B)$.
+    \\ $\therefore$ There are 102 $TTFF$s and 101 $TFTT$s in the 203 columns.
+    \\$\therefore$ $102\times 2 + 101 \times 3 = 505$ $T$s.
+
+    \begin{center}
+            \begin{tabular}{c c | c | c | c | c | c}
+            $A$ & $B$ & $\underbrace{A}_{1 \text{ letter}}$ & $\underbrace{A\to B}_{2 \text{ letters}}$ & $\underbrace{(A\to B) \to A}_{3 \text{ letters}}$ & ... & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ & $T$ & $T$& & $T$\\
+            $T$ & $F$ & $T$ & $F$ & $T$ & & $T$\\
+            $F$ & $T$ & $F$ & $T$ & $F$ & & $F$\\
+            $F$ & $F$ & $F$ & $T$ & $F$ & & $F$\\
+            \end{tabular}
+    \end{center}    
+\end{qparts}
+\end{solution}
+\subsection*{Previous Group Homework 2(2): Functionally Complete [12 points]}
+A logical operator (or a set of logical operators) is considered to be \textit{functionally complete} if it can be used to make any truth table.
+\begin{qparts}
+    \item One set of functionally complete logical operators is $\{ \lor, \neg \}$. In other words, we can use the $\lor$ and $\neg$ operators to make any truth table. Let's test this out with an example! Consider two propositions $p$ and $q$. Write a compound proposition that is logically equivalent to $p \land q$ by only using $p$, $q$, $\lor$, $\neg$, and parentheses.
+    \item Now, let's consider a new logical operator: NAND. The symbol for NAND is $\barwedge$. Below is the truth table for NAND. \emph{(If you take EECS 370, you will get to use NAND even more!)}
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $p$ & $q$ & $p \barwedge q$ \\
+            \hline
+            $T$ & $T$ & $F$\\
+            $T$ & $F$ & $T$\\
+            $F$ & $T$ & $T$\\
+            $F$ & $F$ & $T$\\
+            \end{tabular}
+        \end{center}
+        Let's start trying to figure out whether $\barwedge$ is functionally complete. Is it possible to write a proposition that is logically equivalent to $\neg p$ by only using $p$ and $\barwedge$? If so, write the proposition. If not, explain why it is impossible to do so.
+    \item Is it possible to write a compound proposition that is logically equivalent to $p \lor q$ by only using $p$, $q$, $\barwedge$, and parentheses? If so, write the compound proposition. If not, explain why it is impossible to do so.
+    \item Based on parts (a), (b), and (c), is $\barwedge$ functionally complete? Why or why not?
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item 
+    $\lnot (\lnot p \lor \lnot q) \equiv (p \land q)$
+    \begin{center}
+        \begin{tabular}{c c | c | c |c|c| c}
+        $p$ & $q$ & $p \land q$ & $\lnot p$ & $\lnot q$ & $\lnot p \lor \lnot q$ & $\lnot (\lnot p \lor \lnot q)$\\
+        \hline
+        $T$ & $T$ & $T$ & $F$ & $F$ & $F$ & $T$\\
+        $T$ & $F$ & $F$ & $F$ & $T$ & $T$& $F$\\
+        $F$ & $T$ & $F$ & $T$ & $F$ & $T$& $F$\\
+        $F$ & $F$ & $F$ & $T$ & $T$ & $T$& $F$\\
+        \end{tabular}
+    \end{center}
+
+    \item 
+    $(p \barwedge p) \equiv \lnot p$
+    \begin{center}
+        \begin{tabular}{c | c | c }
+        $p$ & $\lnot q$ & $p \barwedge p$ \\
+        \hline
+        $T$ & $F$ & $F$\\
+        $F$ & $T$ & $T$\\
+        \end{tabular}
+    \end{center}
+
+    \item 
+    $(p \lor q) \equiv [(p \barwedge p) \barwedge (q \barwedge q)]$
+    \begin{center}
+        \begin{tabular}{c c| c | c | c | c}
+        $p$ & $q$ & $p \lor q$ & $p \barwedge p$ & $q \barwedge q$ & $(p \barwedge p) \barwedge (q \barwedge q) $\\
+        \hline
+        $T$ & $T$ & $T$ & $F$ & $F$ & $T$\\
+        $T$ & $F$ & $T$ & $F$ & $T$ & $T$\\
+        $F$ & $T$ & $T$ & $T$ & $F$ & $T$\\
+        $F$ & $F$ & $F$ & $T$ & $T$ & $F$\\
+        \end{tabular}
+    \end{center}
+
+    \item Yes. We are given that \{$\lor ,\lnot$\} is functionally complete, and through (b) and (c) we have found equivalences of the two operators by using $\barwedge$. Therefore by substitution, we can say that $\barwedge$ is functionally complete.
+    \end{qparts}
+
+    \end{solution}
+\end{solution}
+
+\subsection*{\probnum Bézout's Identity [10 points]}
+In number theory, there's a simple yet powerful theorem called Bézout's identity,
+which states that for any two integers $a$ and $b$ (with $a$ and $b$ not both zero)
+there exist two integers $r$ and $s$ such that $ar+bs=\gcd(a,b).$ Use Bézout's
+identity to prove the following statements (you may assume all variables are
+integers):
+\begin{qparts}
+    \item If $d \divides a$ and $d\divides b$, then $d \divides \gcd(a,b)$.
+    \item If $a \divides bc$ and $\gcd(a,b) = 1$, then $a \divides c$.
+\end{qparts}
+
+\noindent
+\textbf{Note:} $\gcd$ is short for ``greatest common divisor," so the value of $\
+gcd(a,b)$ is the largest integer that evenly divides $a$ and $b.$ You won't need to
+apply this definition, just know that $\gcd(a,b)$ is an integer.
+\begin{solution}
+
+\begin{qparts}
+\item
+Assume $d \divides a$ and $d \divides b$.\\
+So there exists an int $x$ such that $a=dx$, and there exist an int $y$ such that $b = dy$.\\
+Through Bézout's identity we can state that there exists two integers $r,s$ such that $ar + bs = \gcd(a,b)$.\\
+Substitute $a$ and $b$:\\
+\begin{align*}
+    (dx)r + (dy) s = \gcd(a,b) \\
+    dxr + dys = \gcd(a,b)\\
+    d(xr+ys) = \gcd(a,b)
+\end{align*}
+Since $x,r,y,s$ are all integers, $xr+ys$ is an integer.\\
+Therefore we have proved that $d \divides \gcd(a,b)$.
+\item
+Assume $a \divides bc$ and $\gcd(a,b) = 1$.\\
+So there exists an int $x$ such that $bc = ax$.\\
+Through Bézout's identity, we can state that there exists an integer $r$ and an integer $s$ such that $ar+bs = \gcd(a,b)$.\\
+So:
+\begin{align*}
+    ar+bs = 1 \\
+    car + cbs = c \\
+    car + axs = c \\
+    a (cr + xs) = c
+\end{align*}
+Since $c,r,x,s$ are integers, $cr+xs$ is an integer.\\
+Therefore we proved that $a \divides c$.
+\end{qparts}
+
+\end{solution}
+
+
+
+
+\subsection*{\probnum High Five! [20 points]}
+Prove the following fun numerical facts:
+\begin{qparts}
+\item If a 5-digit integer is divisible by 4, its last two digits are also
+divisible by 4. For example, 40156 is divisible by 4, and so is 56.
+\item If a 5-digit integer is divisible by 3, the sum of the digits of that
+integer is also divisible by 3. For example, 33762 is divisible by 3, and so is
+$3+3+7+6+2=21.$
+\end{qparts}
+\textbf{Hint:} Think about how you can represent the digits of an integer. For
+instance, if $a$ is a 2 digit number, then $a = a_1a_2 = a_1\cdot 10 +a_2\cdot 1$ (fill in the blanks).
+\begin{solution}
+
+\begin{qparts}
+\item 
+Let $x$ be an arbitrary 5-digit integer which can be divided by 4. \\
+Since $x$ is a 5-digit integer, let $n_1,n_2,n_3,n_4,n_5$ be the  5 digits of $x$,  which means $x = 10^4 \cdot n_1 + 10 ^3 \cdot n_2 + 10^2 \cdot n_3 + 10 \cdot n_4 + n_5$ $ (n_1 \in [1,9]\; ; n_2, n_3,n_4,n_5\in [0,9]$, and all of them are integers) \\
+and $10 \cdot n_4 + n_5$ is the last two digits of $x$.\\
+Also, since $4 | x$, let $x = 4n$, $n$ is an integer whose value depends on $x$\\
+Then we have: 
+\begin{align*}
+4n & = 10^4 \cdot n1 + 10 ^3 \cdot n_2 + 10^2 \cdot n_3 + 10 \cdot n_4 + n_5  \\
+4n  & = 4 \cdot  2500 \cdot n_1 + 4 \cdot 250 \cdot n_2 + 4 \cdot 25 \cdot n_3 + 10 \cdot n_4 + n_5 \\
+10 \cdot n_4 + n_5  &= 4 (n -  2500 \cdot n_1 + 250 \cdot n_2 + 25 \cdot n_3)
+\end{align*}
+Since $n1,n2,n3,n$ are integers, $(n -  2500 \cdot n_1 + 250 \cdot n_2 + 25 \cdot n_3)$ is an integer.
+Therefore we prove that $4 \divides (10 \cdot n_4 + n_5)$.
+  
+\item 
+Let $x$ be an arbitrary 5-digit integer which can be divided by 3.\\
+Since $x$ is a 5-digit integer, let $n_1,n_2,n_3,n_4,n_5$ be the  5 digits of $x$,  which means $x = 10^4 \cdot n_1 + 10 ^3 \cdot n_2 + 10^2 \cdot n_3 + 10 \cdot n_4 + n_5$ $ (n_1 \in [1,9]\; ; n_2, n_3,n_4,n_5\in [0,9]$, and all of them are integers) \\
+And $n_1 + n_2 + n_3 + n_4 + n_5$ is the sum of the 5 digits.\\
+Also, since $3 |x$, let $x = 3n$, $n$ is an integer whose value depends on $x$. \\
+Then we have:
+\begin{align*}
+3n & = 10^4 \cdot n1 + 10 ^3 \cdot n_2 + 10^2 \cdot n_3 + 10 \cdot n_4 + n_5  \\
+3n  & = 9999 \cdot n_1 + 999 \cdot n_2 + 99 \cdot n_3 + 9 \cdot n_4 + n_1 + n_2 + n_3 + n_4 + n_5 \\
+n_1 + n_2 + n_3 + n_4 + n_5 &= 
+3 \cdot (3333 \cdot n_1 + 333 \cdot n_2 + 33 \cdot n_3 + 3\cdot n_4)
+\end{align*}
+Since $n_1,n_2,n_3,n_4$ are all integers, $(3333 \cdot n_1 + 333 \cdot n_2 + 33 \cdot n_3 + 3\cdot n_4)$ is an integer.
+Therefore we prove that $3 \divides (n_1 + n_2 + n_3 + n_4 + n_5 )$.
+
+\end{qparts}
+
+\end{solution}
+\end{document}

@@ -1,0 +1,499 @@
+\documentclass[12pt]{exam}
+
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{listings}
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+
+\printanswers
+
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+  Fall 2023\\
+  Homework 2}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+  \huge Due \textbf{Thursday, Sept. 14}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $6+2$
+\hspace{3cm}
+Total Points: $100+25$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+    \item \textbf{Match your pages!} Your submission time is when you upload the file, so the time you take to match pages doesn't count against you.
+    \item Submit this assignment (and any regrade requests later) on Gradescope. 
+    \item Justify your answers and show your work (unless a question says otherwise).
+    \item By submitting this homework, you agree that you are in compliance with the Engineering Honor Code and the Course Policies for 203, and that you are submitting your own work.
+    \item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%% 
+
+\section*{Individual Portion}
+
+\subsection*{\probnum{N$\exists$gations and Qu$\forall$ntifiers} [18 points]}
+Negate the following statements.
+Simplify your answers so that all negation symbols immediately precede predicates. Make sure to show all intermediate steps.
+\begin{qparts}
+    \item $(x \lor y) \land ((a \land b) \lor z)$
+    \item $\left[ \forall x P(x) \right] \lor \left[ \exists y Q(y)\right]$
+    \item $\forall x \exists y \forall z[ L(x,y) \rightarrow [R(y, z) \rightarrow T(z, x)]]$
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item $\lnot [(x \lor y) \land [(a \land b) \lor z]]$ \\
+      $\equiv \lnot (x \lor y) \lor \lnot [(a \land b ) \lor z]$\\
+      $\equiv (\lnot x \land \lnot y)\lor [\lnot (a \land b) \land \lnot z]$ \\
+      $\equiv (\lnot x \land \lnot y) \lor [(\lnot a \lor \lnot b) \land \lnot z]$ \\
+$\equiv (\lnot x \land \lnot y) \lor (\lnot a \land \lnot z) \lor (\lnot b \land \lnot z)$
+     
+    \item $\lnot [\left[ \forall x P(x) \right] \lor \left[ \exists y Q(y)\right]]$ \\
+     $\equiv [\lnot \forall x P(x)] \land [\lnot \exists y Q(y)]$ \\
+     $\equiv [\exists x \lnot P(x)] \land [\forall y \lnot Q(y)]$
+    
+    \item $\lnot[\forall x \exists y \forall z[ L(x,y) \rightarrow [R(y, z) \rightarrow T(z, x)]]]$ \\ $\equiv \exists x \lnot[\exists y \forall z[ L(x,y) \rightarrow [R(y, z) \rightarrow T(z, x)]]]$ \\
+    $\equiv \exists x \forall y \lnot[\forall z[ L(x,y) \rightarrow [R(y, z) \rightarrow T(z, x)]]]$ \\
+$\equiv \exists x \forall y \exists z \lnot[ L(x,y) \rightarrow [R(y, z) \rightarrow T(z, x)]]$ \\
+    $\equiv \exists x \forall y \exists z \lnot[ \lnot L(x,y) \lor [R(y, z) \rightarrow T(z, x)]]$ \\
+    $\equiv \exists x \forall y \exists z [ L(x,y) \land \lnot [R(y, z) \rightarrow T(z, x)]]$ \\
+    $\equiv \exists x \forall y \exists z [ L(x,y) \land \lnot [ \lnot R(y, z) \lor T(z, x)]]$ \\
+    $\equiv \exists x \forall y \exists z [ L(x,y) \land  R(y, z) \land \lnot T(z, x)]$
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum{To Tell the Truth [18 points]}}
+Prove or disprove whether each of the following compound propositions is a tautology. \textbf{Justify your answers.}
+\begin{qparts}
+    \item $(p \land q) \rightarrow (p \lor q)$
+    \item $((p \land q) \lor s ) \rightarrow (s \rightarrow (p \lor q))$
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item $(p \land q) \rightarrow (p \lor q)$
+    \\$\equiv \lnot (p \land q) \lor (p \lor q)$
+    \\$\equiv (\lnot p \lor \lnot q) \lor (p \lor q)$
+    \\ $\equiv (\lnot p \lor p) \lor (\lnot q \lor q)$
+    \\ $\equiv T \lor T$
+    \\ $\equiv T$
+    \\ $\therefore$ tautology.
+    \item $ ((p \land q) \lor s ) \rightarrow (s \rightarrow (p \lor q))$
+    \\ mark $p \land q$ as $m$, $p \lor q$ as $n$. (That is, $(p \land q) \equiv m$, $(p \lor q) \equiv n$.)
+    \\ then the proposition is: $[(m \lor s ) \rightarrow (s \rightarrow n)] \equiv [(m \lor s) \rightarrow (\lnot s \lor n)]$.
+\\ Since for "if-then" proposition, there is only one circumstance where its truth value is $F$, suppose $(m \lor s) \rightarrow (\lnot s \lor n) \equiv F$, then  $(m \lor s) \equiv T$  and $ (\lnot s \lor n) \equiv F$
+\\ Since for $ (\lnot s \lor n)$ to be false, $\lnot s$ and $n$ should all be false, and if $\lnot s \equiv F$, then $s \equiv T$, so $(m \lor s) \equiv T$. \\
+$\therefore$ if whatever the truth value of $m$, as long as there is a case where $n \equiv F$, then $(m \lor s) \rightarrow (\lnot s \lor n) \equiv F$.
+\\ $\therefore$ Consider $p \equiv F$, $q \equiv F$, $s \equiv T$, the proposition's truth value is $F$.
+\\ $\therefore$ not a tautology.
+
+
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Not it! [12 points]}
+Find the negations of the following statements. You must simplify your answers using De Morgan's Laws or other logical equivalences for full credit
+\begin{qparts}
+    \item I like to add both ham and pineapple to my pizza.
+
+    \item If Bob studies computer science at the University of Michigan, they will take EECS 203.
+
+    \item Every student has at least one friend who lives in Baits.
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item 
+ $p(x)$: "I like to add ham to my pizza"; \\$q(x)$: "I like to add pineapple to my pizza."\\
+    then the original proposition is $p(x) \land q(x)$, and the negation is $\lnot [p(x) \land q(x)] \equiv [\lnot p(x) \lor \lnot q(x)]$. \\
+    $\therefore$ the negation is: I like to add no ham or no pineapple or neither to my pizza.
+
+    \item
+    $p(x)$: $x$ studies computer science at the Univerisity of Michigan;\\
+    $q(y)$: $y$ will take EECS 203. \\
+    The domain of all variables are all students. \\
+    then the original proposition is: $p(Bob) \rightarrow q(Bob)$, and the negation is $\lnot [p(Bob) \rightarrow q(Bob)], \equiv [p(Bob) \land \lnot q(Bob)]$
+\\$\therefore$ the negation is: Bob studies computer science at the University of Michigan, and they will not take EECS 203.
+    
+
+    \item $p(x,y)$: "$x$ has a friend $y$."\\
+   $q(x)$: "$x$ lives in Baits." .\\
+   The domains of all variables are all students.\\
+   Then the proposition becomes: 
+   $\forall x \exists y [p(x,y) \land q(y)]$, and the negation is $\lnot \forall x \exists y [p(x,y) \land q(y)]$ \\
+   $\equiv \exists x \lnot \exists y [p(x,y) \land q(y)]$ \\
+   $\equiv \exists x \forall y \lnot [p(x,y) \land q(y)$ \\
+   $\equiv \exists x \forall  y [\lnot p(x,y) \lor \lnot q(y) ]$ 
+   \\$\therefore$ the negation is: There exists a student who has no friend that lives in Baits. \\
+   (Any other student either is not that one's friend or does not live in Baits.)
+   
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Quantifier Quandary [18 points]}
+Determine the truth value of each of these statements, where the domain of each quantified variable is all real numbers. \textbf{Briefly justify your answers.}
+\begin{qparts}
+    \item $\exists x(x^3 = -1)$
+    \item $\exists x(x^2 = -1)$
+    \item $\exists x (x^4 < x^2)$
+    \item $\forall x(2x > x)$
+    \item $\forall x \exists y (x^2 = y)$
+    \item $\forall x \exists y (y^2 = x)$
+
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item $\exists x(x^3 = -1) \equiv T$. \\Consider when $x =  -1$, $ x^3 = -1$.
+    \item $\exists x(x^2 = -1) \equiv F$. 
+    \\If and only if $x = \pm i $, $x^2 = -1$, but $\pm i$ is not in the domain (all real numbers.) \\Therefore F.
+    \item $\exists x (x^4 < x^2) \equiv T$.
+    \\Consider $x = 0.5$, $x^4 = 0.0625$, $x^2 = 0.25$, $x^4 < x^2, $
+    
+    \item $\forall x(2x > x) \equiv F$.
+    \\Consider $x = -1$, then $2x = -2 < x$
+    \\Therefore $F$.
+    \item $\forall x \exists y (x^2 = y)\equiv T$
+    \\Let $x$ be an arbitrary real number
+    since real number has a square, there exists a $y = x^2$ that is the square of $x$.
+    \item $\forall x \exists y (y^2 = x)\equiv F$
+    \\Consider $x = -1$, since in the domain of all real numbers there is no $y$ that can have a square which is less than 0, no $y$ can match it.
+
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Internet Connections [16 points]}
+A strange Internet outage has struck campus. Some people have internet, but others don't.
+
+\begin{itemize}
+    \item Let $I(x)$ mean ``$x$ has internet access"
+    \item Let $F(x,y)$ mean ``$x$ is friends with $y$"
+\end{itemize}
+
+Using the given predicates, logical operators ($\land$, $\lor$, $\neg$, $\to$), and quantifiers ($\forall$, $\exists$), express the following statements. The domain of every quantifier you use must be ``students on campus." For purposes of this question, we'll say that $F(x,y)$ always has the same truth value as $F(y,x)$, and so these may be used interchangeably.
+
+\begin{qparts}
+    \item Someone does not have internet access.
+    \item Nobody is friends with everybody.
+    \item Everyone with internet access has a friend without internet access.
+    \item Everyone with internet access has \textit{exactly one} friend without internet access.
+
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item 
+    $\exists x \lnot I(x)$
+    \item $\lnot \exists x \forall y F(x,y)$
+    \\$(\equiv \forall x \exists y \lnot F(x,y))$
+    \item $ \forall x [ I(x) \rightarrow \exists y [\lnot I(y) \land F(x,y)]] $
+    \\Logic: For all $x$, if $I(x)$, then there exists an y, such that $\lnot I(y)$ and $F(x,y)$.
+    \item $\forall x [ I(x) \rightarrow \exists y [\lnot I(y) \land F(x,y) \land \forall z [ [ \lnot I(z) \land F(x,z)] \rightarrow (z = y)]]]$
+\\ Logic: For all $x$, if $I(x)$, then there exists an y, such that $\lnot I(y)$ and $F(x,y)$ and searching the whole domain of $x$, the $y$ must be unique. That means inside the "there exists $y$" which is inside "for all $x$", we need to ensure the only result is that $y$. Therefore we can use a different variable $z$ to search the domain of $x$ to assure the uniqueness of $y$ and put it in the restrictions of "there exists a $y$".
+
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Flip the Switch [18 points]}
+Determine whether or not each of the following implications is true, regardless of the definition of the predicate $P(x,y).$ Give a brief explanation for your answer. 
+\begin{qparts}
+    \item $\forall x \exists y P(x,y) \rightarrow   \exists y \forall xP(x,y)$
+    \item $\exists y \forall xP(x,y) \rightarrow   \forall x \exists y P(x,y)$
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item The truth value of $[\forall x \exists y P(x,y) \rightarrow   \exists y \forall xP(x,y)]$ depends on truth value of $P(x,y)$. \\\\
+    Proof:\\
+Consider this example: Suppose for $P(x,y)$, when $x <0$, $y = a$; and when $x \geq 0$,  $y = a +1$. Then $\forall x \exists y P(x,y) \equiv T$.\\And in this example, for $y = a$, when $x \geq 0$, $\lnot P(x,y)$; for $y = a + 1$, when $x < 0$, $\lnot P(x,y)$; for other values of $y$, $\lnot P(x,y)$. Therefore $\exists y \forall xP(x,y) \equiv F$.  \\$\therefore$ In this circumstance $[\forall x \exists y P(x,y) \rightarrow   \exists y \forall xP(x,y)] \equiv F$
+    \\ $\therefore$ the truth value of $[\forall x \exists y P(x,y) \rightarrow   \exists y \forall xP(x,y)]$ depends on truth value of $P(x,y)$.
+
+    
+    \item $[\exists y \forall xP(x,y) \rightarrow   \forall x \exists y P(x,y)] \equiv T$ regardless of the definition of the predicate $P(x,y)$.\\\\
+    Proof: \\
+      The only circumstance that $[\exists y \forall xP(x,y) \rightarrow   \forall x \exists y P(x,y)] \equiv F$ is that $\exists y \forall xP(x,y) \equiv T$ and $\forall x \exists y P(x,y) \equiv F$.
+So let's suppose $\exists y \forall xP(x,y) \equiv T$.
+\\Without Loss Of Generality, assume when $y=a$, $\forall xP(x,y) \equiv T$;
+\\Then $\forall x$, at least when $y = a$, $P(x,y) \equiv T$. 
+\\$\therefore$ regardless of $P(x,y)$, $\exists y \forall xP(x,y) \equiv T$.
+\end{qparts}
+\end{solution}
+
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+\subsection*{\probnum Grade Groupwork 1}
+Using the solutions and Grading Guidelines, grade your Groupwork 1:
+\begin{itemize}
+    \item Mark up your past groupwork and submit it with this one.
+    \item Write whether your submission achieved each rubric item. If it didn't achieve one, say why not.
+    \item Use the table below to calculate scores.
+    \item For extra credit, write positive comment(s) about your work.
+    \item You don't have to redo problems correctly, but it is recommended!
+    \item What if my group changed? \begin{itemize}
+        \item If your current group submitted the same groupwork last time, grade it together.
+        \item  If not, grade your version, which means submitting this groupwork assignment separately. You may discuss grading together.
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+ & (i) & (ii) & (iii) & (iv) & (v) & (vi) & (vii) & (viii) & (ix) & (x) & (xi) & Total:\\
+\hline
+Problem 1 & +4& +4& +2& +2& +2&\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/14\\
+\hline 
+Problem 2 & +5 & +5&\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/10\\
+\Xhline{1.25pt}
+Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \filcl&\hspace{1cm}24/24\\
+\hline
+\end{tabular}}
+\end{center}
+
+\begin{solution}
+\subsection* {1. The Metaverse [14 points]}
+Suppose there is an island where there are exactly two types of people: truth-tellers and liars. A truth-teller always tells the truth, and a liar always lies.
+
+Suppose a logician came across two inhabitants of this island, A and B. She asked A: ``are you both truth-tellers?" A answered either yes or no. She stopped to think for a minute but could not determine what A and B were (truth-tellers or liars). She then asked ``are you both of the same type?" (Same type means that they are either both truth-tellers or both liars.) A answered either yes or no, and then she knew what A and B were.
+
+What are A and B?
+
+\begin{solution}
+ \begin{tabular}{c|c|c|c}
+    A & B & Q1 & Q2 \\
+    \hline
+    TT & TT & Yes & Yes\\
+    TT & L & No & No\\
+    L & TT & Yes & Yes\\
+    L & L & Yes & No\\
+\end{tabular} \\
+From the table we draw we can see that, for the logician to be uncertain after Q1, A must have answered yes. Else, the logician would have deduced what A and B were if A answered no.For Q2, there are 3 possible options: 2 where A answers yes and 1 where A answers no. Since the logician knew what A and B after this question, A must have answered no. That makes A and B both liars.
+\end{solution}
+
+\subsection*{2. Majority Rules [10 points]}
+Consider the ternary logical connective $\#$ where $\#PQR$ takes on the value that the majority of $P, Q$ and $R$ take on. That is $\#PQR$ is true if at least two of $P,Q$ or $R$ is true and is false otherwise. Express $\#PQR$ using \textbf{only} the symbols: $P, Q, R, \land, \lor$ and parenthesis.
+
+\begin{solution} 
+$(( P \lor Q) \land (P \lor R) \land (Q \lor R))$ \\
+At least 2 of P, Q, R need to be T if and only if \#PQR is T. Therefore we can take all the 2-combinations out of 3, and as long as one of them is T, the \#PQR is T. This can be proven true by true value table below. And to express it in symbols, it is $( P \lor Q) \land (P \lor R) \land (Q \lor R)$. \\
+
+\begin{tabular}{c|c|c|c|c|c|c|c}
+    $P$ & $Q$ & $R$ &$P \lor Q$ & $P \lor R$ & $Q \lor R$ & $(P \lor Q) \land (P \lor R)$ &$( P \lor Q) \land (P \lor R) \land (Q \lor R)$\\
+    \hline
+    T & T & T & T & T & T & T & T \\
+    T & T & F & T & T & T & T & T \\
+    T & F & T & T & T & T & T & T \\
+    T & F & F & T & T & F & T & F\\
+    F & T & T & T & T & T & T & T\\
+    F & T & F & T & F & T & F & F \\
+    F & F & T & F & T & T & F & F\\
+    F & F & F & F & F & F & F & F\\
+\end{tabular} \\
+\end{solution}
+
+\begin{solution}
+\begin{tabular}{c|c|c|c}
+    $P$ & $Q$ & $R$ & $\#PQR$\\
+    \hline
+    T & T & T & T \\
+    T & T & F & T\\
+    T & F & T & T \\
+    T & F & F & F \\
+    F & T & T & T \\
+    F & T & F & F \\
+    F & F & T & F \\
+    F & F & F & F \\
+\end{tabular} \\
+\end{solution}
+
+\end{solution}
+
+\subsection*{\probnum Implication Inception [13 points]}
+Consider two propositions, $A$ and $B$.
+
+\begin{qparts}
+    \item Prove via a truth table that $A \equiv \left[ (A \to B) \to A  \right]$.
+    \item Consider the compound proposition $$\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$$ which has $203$ total letters in it, alternating between $A$ and $B$. Fill in the rest of the following truth table. You don't need to manually make all $203$ columns of the truth table to solve this, so try to find a pattern and think of a shortcut.
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $A$ & $B$ & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & \\
+            $T$ & $F$ & \\
+            $F$ & $T$ & \\
+            $F$ & $F$ & \\
+            \end{tabular}
+    \end{center}
+    \item Consider the following truth table. This is similar to the truth table in part (b), but it contains each iteration of the compound proposition from $1$ to $203$ letters.
+    \begin{center}
+            \begin{tabular}{c c | c | c | c | c | c}
+            $A$ & $B$ & $\underbrace{A}_{1 \text{ letter}}$ & $\underbrace{A\to B}_{2 \text{ letters}}$ & $\underbrace{(A\to B) \to A}_{3 \text{ letters}}$ & ... & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ & & & \\
+            $T$ & $F$ & $T$ & & & \\
+            $F$ & $T$ & $F$ & & & \\
+            $F$ & $F$ & $F$ & & & \\
+            \end{tabular}
+    \end{center}
+    What is the total number of cells that will be $T$ among all $4$ rows and $203$ columns? (Note that the two initial $A$ and $B$ columns do \emph{not} count as columns that should be counted. However, the $\underbrace{A}_{1 \text{ letter}}$ column and all following columns do count.)
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+     \item 
+     Truth Table:
+     \begin{center}
+            \begin{tabular}{c c | c | c}
+            $A$ & $B$ & $A \rightarrow B$ & $(A \rightarrow B) \rightarrow A$ \\
+            $T$ & $T$ & $T$ &  $T$\\
+            $T$ & $F$ & $F$ & $T$\\
+            $F$ & $T$ & $T$ &  $F$\\
+            $F$ & $F$ & $T$ &  $F$\\
+            \end{tabular}
+    \end{center}
+    and so we have proved that $((A \rightarrow B) \rightarrow A) \equiv A$
+    \item
+    We have proved that $((A \rightarrow B) \rightarrow A) \equiv A$ \\
+    Therefore $(((A \rightarrow B) \rightarrow A) \rightarrow B) \equiv (A \rightarrow B) $\\ 
+    and $((((A \rightarrow B) \rightarrow A) \rightarrow B) \rightarrow A) \equiv ((A \rightarrow B) \rightarrow A)  \equiv A $. \\We can see that it returns to the original proposition and thus forms a cycle because the next letter is always $A$ and then $B$, continuing. \\
+    If we replace components from the inside out to be its logical equivalence and recursively perform this operation, we can find replace all the propositions by either $A$ or $(A \rightarrow B)$. And by doing this, we can derive that propositions ended with $A$ is equivalent to $A$, and those ended with $B$ is equivalent to $(A \rightarrow B)$. \\
+    And since propositions ended with $A$ have odd letters, and propositions ended with $B$ have even letters (vice versa), the 203-letter-proposition is ended with A and has the same truth value with the $A$ column. \\
+    $\therefore$
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $A$ & $B$ & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ \\
+            $T$ & $F$ & $T$\\
+            $F$ & $T$ & $F$\\
+            $F$ & $F$ & $F$\\
+            \end{tabular}
+    \end{center}
+
+    \item In question(b) we have justified that propositions ended with $A$ are logically equivalent to $A$ and have odd letters, while propositions ended with $B$ are logically equivalent to $A \rightarrow B$ and have even letters (vice versa), the 203-letter-proposition is ended with A and has the same truth value with the $A$ column. 
+    \\$\therefore$ In the Table, odd number columns have the truth value of $TTFF$, the same as that of $A$; even number columns have the truth value of $TFTT$, the same as $(A \rightarrow B)$.
+    \\ $\therefore$ There are 102 $TTFF$s and 101 $TFTT$s in the 203 columns.
+    \\$\therefore$ $102\times 2 + 101 \times 3 = 505$ $T$s.
+
+    \begin{center}
+            \begin{tabular}{c c | c | c | c | c | c}
+            $A$ & $B$ & $\underbrace{A}_{1 \text{ letter}}$ & $\underbrace{A\to B}_{2 \text{ letters}}$ & $\underbrace{(A\to B) \to A}_{3 \text{ letters}}$ & ... & $\underbrace{((A\to B) \to A) \to B \dots}_{203 \text{ letters}}$ \\
+            \hline
+            $T$ & $T$ & $T$ & $T$ & $T$& & $T$\\
+            $T$ & $F$ & $T$ & $F$ & $T$ & & $T$\\
+            $F$ & $T$ & $F$ & $T$ & $F$ & & $F$\\
+            $F$ & $F$ & $F$ & $T$ & $F$ & & $F$\\
+            \end{tabular}
+    \end{center}
+    
+     
+    
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Functionally Complete [12 points]}
+
+A logical operator (or a set of logical operators) is considered to be \textit{functionally complete} if it can be used to make any truth table.
+\begin{qparts}
+    \item One set of functionally complete logical operators is $\{ \lor, \neg \}$. In other words, we can use the $\lor$ and $\neg$ operators to make any truth table. Let's test this out with an example! Consider two propositions $p$ and $q$. Write a compound proposition that is logically equivalent to $p \land q$ by only using $p$, $q$, $\lor$, $\neg$, and parentheses.
+    \item Now, let's consider a new logical operator: NAND. The symbol for NAND is $\barwedge$. Below is the truth table for NAND. \emph{(If you take EECS 370, you will get to use NAND even more!)}
+    \begin{center}
+            \begin{tabular}{c c | c}
+            $p$ & $q$ & $p \barwedge q$ \\
+            \hline
+            $T$ & $T$ & $F$\\
+            $T$ & $F$ & $T$\\
+            $F$ & $T$ & $T$\\
+            $F$ & $F$ & $T$\\
+            \end{tabular}
+        \end{center}
+        Let's start trying to figure out whether $\barwedge$ is functionally complete. Is it possible to write a proposition that is logically equivalent to $\neg p$ by only using $p$ and $\barwedge$? If so, write the proposition. If not, explain why it is impossible to do so.
+    \item Is it possible to write a compound proposition that is logically equivalent to $p \lor q$ by only using $p$, $q$, $\barwedge$, and parentheses? If so, write the compound proposition. If not, explain why it is impossible to do so.
+    \item Based on parts (a), (b), and (c), is $\barwedge$ functionally complete? Why or why not?
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item 
+    $\lnot (\lnot p \lor \lnot q) \equiv (p \land q)$
+    \begin{center}
+        \begin{tabular}{c c | c | c |c|c| c}
+        $p$ & $q$ & $p \land q$ & $\lnot p$ & $\lnot q$ & $\lnot p \lor \lnot q$ & $\lnot (\lnot p \lor \lnot q)$\\
+        \hline
+        $T$ & $T$ & $T$ & $F$ & $F$ & $F$ & $T$\\
+        $T$ & $F$ & $F$ & $F$ & $T$ & $T$& $F$\\
+        $F$ & $T$ & $F$ & $T$ & $F$ & $T$& $F$\\
+        $F$ & $F$ & $F$ & $T$ & $T$ & $T$& $F$\\
+        \end{tabular}
+    \end{center}
+
+    \item 
+    $(p \barwedge p) \equiv \lnot p$
+    \begin{center}
+        \begin{tabular}{c | c | c }
+        $p$ & $\lnot q$ & $p \barwedge p$ \\
+        \hline
+        $T$ & $F$ & $F$\\
+        $F$ & $T$ & $T$\\
+        \end{tabular}
+    \end{center}
+
+    \item 
+    $(p \lor q) \equiv [(p \barwedge p) \barwedge (q \barwedge q)]$
+    \begin{center}
+        \begin{tabular}{c c| c | c | c | c}
+        $p$ & $q$ & $p \lor q$ & $p \barwedge p$ & $q \barwedge q$ & $(p \barwedge p) \barwedge (q \barwedge q) $\\
+        \hline
+        $T$ & $T$ & $T$ & $F$ & $F$ & $T$\\
+        $T$ & $F$ & $T$ & $F$ & $T$ & $T$\\
+        $F$ & $T$ & $T$ & $T$ & $F$ & $T$\\
+        $F$ & $F$ & $F$ & $T$ & $T$ & $F$\\
+        \end{tabular}
+    \end{center}
+
+    \item Yes. We are given that \{$\lor ,\lnot$\} is functionally complete, and through (b) and (c) we have found equivalences of the two operators by using $\barwedge$. Therefore by substitution, we can say that $\barwedge$ is functionally complete.
+\end{qparts}
+\end{solution}
+\end{document}

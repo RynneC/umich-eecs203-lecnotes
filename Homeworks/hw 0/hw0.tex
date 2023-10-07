@@ -1,0 +1,271 @@
+\documentclass[12pt]{exam}
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+% sometimes needed packages
+\usepackage{wasysym} % Just used for \smiley{}
+\usepackage{hyperref} % hyperlinks
+\usepackage{logicproof}
+\hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+% \usepackage{tikz} % drawing graphs
+% \usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+\printanswers
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+Fall 2023\\
+Assignment 0: \\
+Course Policies \& Page-Matching}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+\huge Due \textbf{TUESDAY, Sept. 5}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: 9
+\hspace{3cm}
+Total Points: 100
+\end{center}
+\vspace{25pt}
+Like all future homeworks, this assignment should be submitted as a PDF through
+Gradescope (see instructions on course site for more details). We strongly prefer
+students to compose homework solutions using a word processor (Google Docs or MS
+Word), or ideally using \LaTeX, but we will accept handwritten homework submissions
+scanned/photographed and converted to PDF. Note that submitted files must be less
+than 50 mb in size, but they really should be much smaller than this. No email or
+Piazza regrade requests will be accepted. For more detail on regrade requests,
+please refer to course policies.
+\begin{itemize}
+\item We will not grade homework problems that were not properly matched on
+Gradescope. Please submit early and often and double-check that you matched each
+question to the page(s) where your solution appears.
+\item Explanation or justification for yes/no, true/false, multiple choice
+questions, and the like: You must provide some sort of explanation or justification
+for these types of questions (so we know you didn’t just guess), unless explicitly
+specified in the problem statement. For example, simply answering “true” for a T/F
+question without providing an explanation will receive little or no credit.
+\item All problems require work to be shown. Questions that require a numerical
+answer will not be given credit if no work/explanation is shown.
+\item Honor Code: By submitting this homework, you agree that you are in
+compliance with the Engineering Honor Code and the Course Policies for 203, and
+that you are submitting your own work.
+\item Hyperlinks on Submitting Homework to Gradescope:
+\href{https://www.gradescope.com/help#help-center-item-student-submitting}{\
+textcolor{blue}{Instructions}} or
+\href{https://youtu.be/KMPoby5g_nE}{\textcolor{blue}{Youtube Video}}
+\end{itemize}
+\newpage
+% \end{foo}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\subsection*{\probnum Did You Read The First Page? [6 points]}
+Did you read the first page? We get it, it's a lot of words. Please give it a read!
+It's important information that you'll want to know as you complete homework
+assignments throughout the semester to \textbf{avoid losing points from logistical
+mistakes} \smiley{}. After you've given the first page a careful read over, write
+your favorite song in 2023 so far as your ``answer" to this question.
+\begin{solution}
+My favorite song in 2023 is \emph{Bad Habit} by \emph{Ed Sheeran}. 
+\end{solution}
+
+\subsection*{\probnum A Thing About Page Matching [6 points]}
+You must match your pages to the problems on Gradescope in order to receive credit.
+Please note as soon as you press submit, you’ve successfully submitted by the
+deadline. You can still match the pages with no rush, that doesn’t add to your
+submission time. Write down your favorite class so far to affirm you've read and
+understand this.
+\begin{solution}
+So far, my favorite class is EECS 203 (in the first semester as a new transfer student). The course really includes many nice things including using \LaTeX.
+\end{solution}
+
+%%% Syllabus questions %%%%
+\subsection*{\probnum Resource Location [12 points]}
+Where can you find each of the following resources? No justification necessary.
+\begin{qparts}
+\item Lecture slides, lecture recordings, course announcements
+\item Scheduled office hours
+\item Questions and answers about course content and logistics (online forum)
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+\item 'Files' and 'Lecture Recordings' in Canvas.
+\item 'Office Hour Calendar'. The concrete route: Canvas/Syllabus/Office Hour Calendar
+\item Piazza
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Exam dates [12 points]}
+What are the dates and times of the three course exams? No justification necessary.
+\begin{solution}
+Exams:
+\begin{enumerate}
+    \item Exam 1, Wednesday, October. 4, 7:00 - 9:00 pm
+    \item Exam 2, Wednesday, November. 8, 7:00 - 9:00 pm
+    \item Exam 3, Thursday, December. 14, 7:00 - 9:00 pm
+\end{enumerate}
+\end{solution}
+
+\subsection*{\probnum Regrade Requests [16 points]}
+\begin{qparts}
+\item Where do you submit a regrade request?
+\item What is the deadline for submitting regrade requests? Select \textbf{one}
+of the following:
+\begin{qsubparts}
+\item by the last day of classes
+\item by the next exam
+\item 24 hours after the assignment's grades have been released
+\item 1 week after the assignment's grades have been released
+\end{qsubparts}
+\item When should you submit a regrade request? Select \textbf{any number} of
+the following:
+\begin{qsubparts}
+\item I feel like I deserve more points
+\item My solution was incorrectly graded according to the posted rubric
+\item I have an alternate solution I think is right
+\item I have an alternate solution I think is right, and I checked it with
+an instructor in office hours or on Piazza
+\end{qsubparts}
+\item What 3 things should you make sure to (re)read before submitting a
+regrade request?
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+\item 'Regrade Requests' in Gradescope.
+\item (iv)
+\item (ii) (iv)
+\item The posted solution, my answer, and the rubric items.
+\end{qparts}
+
+\end{solution}
+
+\subsection*{\probnum Admin Form [8 points]}
+What is the best way to contact course staff about individual administrative
+concerns, and where can you find the link?
+\begin{solution}
+The Admin Form. We can find the link by this route: Canvas/Syllabus/Course Information/Admin Form.
+\end{solution}
+
+\subsection*{\probnum Reflection [8 points]}
+What strengths, strategies, and resources do you have to help you succeed in each
+of following?
+\begin{qparts}
+\item Weekly assignments
+\item Exams
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+\item For weekly assignments:
+\begin{qsubparts}
+\item Strength: I have some experience in algorithms which might be one of my strength.
+\item Strategy: I do corresponding exercise on the textbook besides my homework to help me strengthen my understanding, and I would get inspirations from the teaching stuff and in-class studying group upon very difficult problems.
+\item Resources: Piazza, ECoach, Study Groups and Office Hours.
+\end{qsubparts}
+\item For exams:
+\begin{qsubparts}
+    \item  Strength: I have positive mindset that helps me avoid being anxious.
+    \item Strategy: I practice daily to train and memorize instead of merely reviewing what I learned intensively before exams.
+    \item Resources: Problem Roulette for practicing; Lecture Recordings and Slides for reviewing.
+\end{qsubparts}
+\end{qparts}
+
+\end{solution}
+
+\subsection*{\probnum Exponents [16 points]}
+Compute the value of each of the following. We encourage you to keep it in
+exponential form as long as you can, for practice. \textbf{Remember to show your work.}
+\begin{qparts}
+\item $5^3$
+\item $2^3\cdot 2^2$
+\item $\frac{3^6}{3^3}$
+\item $5^0$
+\item $(2^4)^2$
+\item $2^{(4^2)}$ (use a calculator for this one if you need to!)
+\item $16^{\frac 12}$
+\item $16^{-2}$
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+\item $5^3 = 125$
+\item $2^3\cdot 2^2 = 2^{3+2} = 2^5 = 32$
+\item $\displaystyle \frac{3^6}{3^3} = 3^{6-3} = 3^3 = 27$
+\item $5^0 = 1$
+\item $(2^4)^2 = 2^8 =256 $
+\item $2^{(4^2)} = 2^{16} = 2^8 \times 2^8 = 256 \times 256 = 65536$
+\item $16^{\frac 12} = (4^2)^{1\over2} = 4$
+\item $\displaystyle 16^{-2} = {1\over{(2^4)^2}} = {1\over{2^8}} = {1\over 256}$
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Logarithms [16 points]}
+Compute the value of each of the following. If the answer does not come out
+cleanly and results in an infinite decimal expansion, write ``\textit{too hard to
+compute}." If the result is not defined, write ``\textit{undefined}." For any
+question referencing $x$ or $y,$ let $\log_5(x)=2.6$ and $\log_5(y)=5.2.$ \
+\textbf{Remember to show your work.}
+\begin{qparts}
+\item $\log_2{64}$
+\item $\log_7{7}$
+\item $\log_7{1}$
+\item $\log_7{0}$
+\item $\log_5(x+y)$
+\item $\log_5(xy)$
+\item $\log_2(x)$
+\item $\log_5(x^{25})$
+\end{qparts}
+
+\begin{solution}
+
+\begin{qparts}
+\item$ \log_2{64} = \log_2{8 \times 8} = \log_2{2^3 \times 2^3} =  6$
+\item $\log_7{7} = \log_7{7^1} = 1$ 
+\item $\log_7{1} = \log_7{7^0} = 0$
+\item $\log_7{0} = $ \emph{undefined} 
+\item $\log_5(x+y) = \log_5{(5^{2.6} + 5^{5.2})} = \log_5{(5^{2.6}(1+5^{2.6}))} = 2.6 + \log_5{(1+5^{2.6})} $, can not be further computed without a calculator. Therefore the answer is too hard to compute.
+\item $\log_5(xy) = \log_5{x} + \log_5{y} = 7.8$
+\item $\log_2(x) = \displaystyle{{\log_5{x}}\over{\log_5{2}}} ={{2.6}\over{\log_5{2}}}$, can not be further computed without a calculator. Therefore the answer is too hard to compute.
+\item $\log_5(x^{25}) = 25\log_5{x} = 25 \times 2.6 =65$
+\end{qparts}
+
+\end{solution}
+\end{document}

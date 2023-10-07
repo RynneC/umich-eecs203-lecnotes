@@ -1,0 +1,352 @@
+\documentclass[12pt]{exam}
+
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+
+% sometimes needed packages
+% \usepackage{hyperref} % hyperlinks
+% \hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+% \usepackage{tikz} % drawing graphs
+% \usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+
+\printanswers
+
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+  Winter 2023\\
+  Homework 1}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+  \huge Due \textbf{Thursday, Sept. 7}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $8+2$
+\hspace{3cm}
+Total Points: $100+24$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+    \item \textbf{Match your pages!} Your submission time is when you upload the file, so the time you take to match pages doesn't count against you.
+    \item Submit this assignment (and any regrade requests later) on Gradescope. 
+    \item Justify your answers and show your work (unless a question says otherwise).
+    \item By submitting this homework, you agree that you are in compliance with the Engineering Honor Code and the Course Policies for 203, and that you are submitting your own work.
+    \item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%% 
+
+\section*{Individual Portion}
+
+\subsection*{\probnum Collaboration and Support [1.5 points]}
+\begin{qparts}
+    \item Give the names and uniqnames of 2 of your EECS 203 classmates (these could be members of your homework group or other classmates). 
+    \item When you have questions about the course content, where can you ask them? Where are \textit{you} most likely to ask questions?
+    \item Name one self-care action you plan to do this semester to maintain your overall well-being. 
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+\item Name: Howard Chen, Uniqname: howarch; \\ Name: Aya Fadlelzebair, Uniqname: afadlelz
+\item I can ask them questions on Piazza, social medias like Facebook and Discard, and also on campus, etc.. But for me, I am most likely to ask them in Gmail Chat group. Our study group mainly communicate  in this way.
+\item I plan to play basketball with friends on a regular basis to relieve myself from study pressure and stay fit physically.
+\end{qparts}
+
+\end{solution}
+
+\subsection*{\probnum Propositions? [12 points]}
+Which of the following are propositions? For those that are propositions, determine their truth value.
+\begin{qparts}
+    \item Do not worry.
+    \item Water cannot boil.
+    \item $e^x = -1$ has a solution, where the domain of $x$ is all \textbf{real} numbers.
+    \item Excuse me!
+    \item $9 - 4 = 5$.
+    \item There is an \textbf{integer} $k$ such that $4k + 3 = 10.$
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+\item This is not a proposition. Because it is not a declaration about the world.
+\item This is a proposition. Truth value: F. Water can boil.
+\item This is a proposition. Truth value: F. Because $e^x = -1$ only has solutions in the set of complex numbers.
+\item This is not a proposition. Because it is not a declaration about the world.
+\item This is a proposition. Truth value: T.
+\item This is a proposition. Truth value: F. Because when $k=1$, $4k+3=7<10$; when $k=2$, $4k+3=11>10$, and $f(k)=4k+3$ is an increasing function of $k$.
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum To Tell the Truth [16 points]}
+Construct a truth table for each of these compound propositions. Include a column for each proposition you evaluate along the way in order to reach the final column (these columns are worth points!).
+
+\begin{qparts}
+    \item $(p \lor q) \land \neg r$
+    \item $((p \rightarrow q) \rightarrow p) \rightarrow r$
+\end{qparts}
+\begin{solution}
+(a)
+\begin{tabular}{c|c|c|c|c|c}
+    $p$ & $q$ & $r$ &$p \lor q$ & $\lnot r$ & $(p \lor q) \land \lnot r$\\
+    \hline
+    T & T & T & T & F & F\\
+    T & T & F & T & T & T\\
+    T & F & T & T & F & F\\
+    T & F & F & T & T & T\\
+    F & T & T & T & F & F\\
+    F & T & F & T & T & T\\
+    F & F & T & T & F & F\\
+    F & F & F & F & T & F\\
+\end{tabular} \\
+\\
+\\
+(b)
+\begin{tabular}{c|c|c|c|c|c}
+    $p$ & $q$ & $r$ &$p \rightarrow q$ & $(p \rightarrow q) \rightarrow p)$ & $((p \rightarrow q) \rightarrow p)) \rightarrow r$\\
+    \hline
+    T & T & T & T & T & T\\
+    T & T & F & T & T & F\\
+    T & F & T & F & T & T\\
+    T & F & F & F & T & F\\
+    F & T & T & T & F & T\\
+    F & T & F & T & F & T\\
+    F & F & T & T & F & T\\
+    F & F & F & T & F & T\\
+\end{tabular} \\
+\end{solution}
+
+\subsection*{\probnum Take Flight [12 points]}
+Let $t$, $l$, and $d$ be the propositions:
+\begin{itemize}
+    \item $t$: You get stuck in traffic.
+    \item $l$: You are late for your flight.
+    \item $d$: Your flight is delayed.
+\end{itemize}
+Write these propositions using $t$, $l$, and $d$ and logical connectives (including negations, if necessary).
+\begin{qparts}
+    \item You are late for your flight whenever you get stuck in traffic.
+    \item You get stuck in traffic, but your flight is delayed, and you are not late for your flight.
+    \item You will be late for your flight if and only if you get stuck in traffic or your flight is not delayed.
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item $t \rightarrow l$ \\
+    Reason: whenever-$\rightarrow$
+    \item $t \land d \land \lnot l$  \\
+    Reason: but-$\land$, and-$\land$, not-$\lnot$
+    \item $(t \lor \lnot d) \longleftrightarrow l$  \\
+    Reason: or-$\lor$, not-$\lnot$, if and only if-$\longleftrightarrow$
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Negate and Celebrate! [16 points]} 
+Write the negation of the following statements in plain English. \textbf{None of your answers should use the word ``not."} The domain is all things.
+
+\textbf{Hint:} Instead of saying ``not in excellent condition," you can say ``in poor condition."
+
+\begin{qparts}
+    \item Something is in the incorrect place.
+    \item My computer is both in the correct place and in excellent condition.
+    \item Nothing is both in the correct place and in excellent condition.
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item Everything is in the correct place.
+    \item My computer is in the incorrect place, or in poor condition, or both in the incorrect place and in poor condition.
+    \item There is at least one thing that is both in the correct place and in excellent condition.
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Implication Station [12 points]}
+Rewrite each of these statements in the form ``if $p$, then $q$'' in English.
+
+\textbf{Example:} ``You will enjoy visiting the Willis Tower if you're not afraid of heights." becomes ``If you're not afraid of heights, then you will enjoy visiting the Willis Tower."
+\begin{qparts}
+    \item It is necessary to wash the boss's car to get promoted.
+    \item Willy gets caught whenever he cheats.
+    \item You can access the website only if you pay a subscription fee.
+    \item A sufficient condition for the warranty to be good is that you bought the computer less than a year ago.
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item If you get promoted, then you washed the boss's car.
+    \item If Willy cheats, then he gets caught.
+    \item If you can access the website, then you must have paid a subscription fee.
+    \item If the warranty is good, then you bought the computer less than a year ago.
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum Who's Who? [16 points]}
+In this problem, there are exactly two types of people: truth-tellers and liars. A truth-teller always tells the truth, and a liar always lies.
+\begin{qparts}
+    \item There are two people, A and B, each of whom is either a truth-teller or liar. A makes the following statement: ``at least one of us is a liar." What are A and B?
+
+    \item There are three people, A, B, and C, each of whom, again, is either a truth-teller or liar. A and B make the following statements:
+    \begin{itemize}
+        \item A: ``All of us are liars."
+        \item B: ``Exactly one of us is a truth-teller."
+    \end{itemize}
+    What are A, B, and C?
+\end{qparts}
+
+\begin{solution}
+\begin{qparts}
+    \item 
+A is a truth teller and B is a liar.\\
+Proof: \\
+Proposition p: "A is a liar."
+Proposition q: "At least one of us is a liar."
+Assume $p \equiv T$, since that a liar always lies, then $q \equiv F, \lnot q \equiv T$, that is, neither A nor B is a liar, which conflicts with the assumption, therefore $p \equiv F$, therefore $q\equiv T$, therefore B must be the liar.
+    \item 
+A is a liar, B is a truth-teller, and C is a liar.\\
+Proof:\\
+    Proposition $p$: "A is a truth-teller." \\
+    Proposition $q$: "All of us are liars."\\
+And we can see that $(q \rightarrow \lnot p) \equiv T$.(As A is included in "us"). \\
+Assume $p \equiv T$, since that a truth-teller always tells the truth, then $q \equiv T,$  then $(q \rightarrow \lnot p)\equiv (T \rightarrow F) \equiv F$, which conflicts with the known condition. Therefore the assumption cannot be true, therefore A is a liar. \\
+Since A is a liar, then $q \equiv F$, so there must be at least one person in B and C that is a truth-teller.
+
+Proposition $n$: "B is a liar." \\
+Proposition $m$: "Exactly one of us is a truth-teller".\\
+Assume $n\equiv T$, since a liar always lies, then $m \equiv F$, which means that either there is no truth-teller among A, B, C, either more than one of A, B, C are truth-tellers.
+"There is no truth-teller in A, B, C" conflicts with the true proposition "There must be at least one person in B and C that is a truth-teller", and A is already proved to be a liar, so in this case, B and C must both be truth-tellers. And this conflicts with the assumption $n\equiv T$, therefore $n \equiv F, \lnot n \equiv T$, that is, B is a truth-teller. \\
+
+Therefore $m \equiv T$, 
+And since there must be exactly one person who is a truth teller, while A is a liar and B is a truth-teller, then C must be a liar.
+\end{qparts}
+\end{solution}
+
+\subsection*{\probnum The Discrete Life of Pets [14.5 points]}
+Harry, Emily, Grace, and Rohit each have a pet, and have picked a unique number from 1 to 4. Using the following clues, match each person with their pet and number.
+\begin{itemize}
+    \item Emily owns the cat or the dog.
+    \item Grace owns the Lizard.
+    \item The bird owner picked the number 2 more than Rohit's number.
+    \item The dog owner picked the number 3.
+\end{itemize}
+
+\begin{solution}
+1. Because the minimum number is 1, and the bird owner picked the number 2 more than Rohit's number, so that number must be greater than or equal to 3; Since 3 has been picked by the dog's owner, than it can only be greater than 3. And because the largest number is 4, so the number can only be 4. Then Rohit's number is 2.\\
+2. Bird matches number 2, dog matches number 3, Rohit's pet matches number 4. Therefore Rohit can only own the Lizard or the cat. Since the Lizard is owned by Grace, Rohit owns the cat. \\
+3. Emily owns the cat or the dog, and Lizard owns the cat, so Emily owns the dog.\\
+4. All the other 3 pets' owners are determined, then the bird is owned by Harry. \\
+5. All the other numbers are determined, so the Lizard matches number 1. \\
+\begin{tabular}{c|c|c}
+    Owner & Pet & Number  \\
+    \hline
+    Harry & bird & 4\\
+    Emily & dog & 3\\
+    Grace & Lizard & 1\\
+    Rohit & cat & 2\\
+    
+\end{tabular} 
+\end{solution}
+
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+
+\subsection*{\probnum The Metaverse [14 points]}
+
+Suppose there is an island where there are exactly two types of people: truth-tellers and liars. A truth-teller always tells the truth, and a liar always lies.
+
+Suppose a logician came across two inhabitants of this island, A and B. She asked A: ``are you both truth-tellers?" A answered either yes or no. She stopped to think for a minute but could not determine what A and B were (truth-tellers or liars). She then asked ``are you both of the same type?" (Same type means that they are either both truth-tellers or both liars.) A answered either yes or no, and then she knew what A and B were.
+
+What are A and B?
+
+\begin{solution}
+ \begin{tabular}{c|c|c|c}
+    A & B & Q1 & Q2 \\
+    \hline
+    TT & TT & Yes & Yes\\
+    TT & L & No & No\\
+    L & TT & Yes & Yes\\
+    L & L & Yes & No\\
+\end{tabular} \\
+From the table we draw we can see that, for the logician to be uncertain after Q1, A must have answered yes. Else, the logician would have deduced what A and B were if A answered no.For Q2, there are 3 possible options: 2 where A answers yes and 1 where A answers no. Since the logician knew what A and B after this question, A must have answered no. That makes A and B both liars.
+\end{solution}
+
+\subsection*{\probnum Majority Rules [10 points]}
+Consider the ternary logical connective $\#$ where $\#PQR$ takes on the value that the majority of $P, Q$ and $R$ take on. That is $\#PQR$ is true if at least two of $P,Q$ or $R$ is true and is false otherwise. Express $\#PQR$ using \textbf{only} the symbols: $P, Q, R, \land, \lor$ and parenthesis.
+
+\begin{solution} 
+$(( P \lor Q) \land (P \lor R) \land (Q \lor R))$ \\
+At least 2 of P, Q, R need to be T if and only if \#PQR is T. Therefore we can take all the 2-combinations out of 3, and as long as one of them is T, the \#PQR is T. This can be proven true by true value table below. And to express it in symbols, it is $( P \lor Q) \land (P \lor R) \land (Q \lor R)$. \\
+
+\begin{tabular}{c|c|c|c|c|c|c|c}
+    $P$ & $Q$ & $R$ &$P \lor Q$ & $P \lor R$ & $Q \lor R$ & $(P \lor Q) \land (P \lor R)$ &$( P \lor Q) \land (P \lor R) \land (Q \lor R)$\\
+    \hline
+    T & T & T & T & T & T & T & T \\
+    T & T & F & T & T & T & T & T \\
+    T & F & T & T & T & T & T & T \\
+    T & F & F & T & T & F & T & F\\
+    F & T & T & T & T & T & T & T\\
+    F & T & F & T & F & T & F & F \\
+    F & F & T & F & T & T & F & F\\
+    F & F & F & F & F & F & F & F\\
+\end{tabular} \\
+
+\begin{tabular}{c|c|c|c}
+    $P$ & $Q$ & $R$ & $\#PQR$\\
+    \hline
+    T & T & T & T \\
+    T & T & F & T\\
+    T & F & T & T \\
+    T & F & F & F \\
+    F & T & T & T \\
+    F & T & F & F \\
+    F & F & T & F \\
+    F & F & F & F \\
+\end{tabular} \\
+\end{solution}
+
+\end{document}
