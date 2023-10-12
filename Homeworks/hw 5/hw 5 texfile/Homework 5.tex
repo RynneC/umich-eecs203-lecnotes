@@ -301,11 +301,11 @@ Let $a_n$ denote the number of distinct ways the baker decorates pastries in exa
 \begin{solution}
     \begin{qparts}
         \item 
-        Case 1: The last pastry the baker decoratess in $n$ minutes is cookie.\\
+        Case 1: The last pastry the baker decoratess is cookie.\\
             Then before that, there are $a_{n-2}$ ways.\\
-        Case 2: The last pastry the baker decorates in $n$ minutes is cupcake.\\
+        Case 2: The last pastry the baker decorates is cupcake.\\
             Then before that, there are $a_{n-3}$ ways.\\
-        Case 3: The last pastry the baker decorates in $n$ minutes is pie.\\
+        Case 3: The last pastry the baker decorates is pie.\\
             Then before that, there are $a_{n-3}$ ways.\\
         $\therefore$ $a_n = a_{n-2} + 2 a_{n-3}$. ($n \geq 3$)
         \item 
@@ -336,6 +336,33 @@ Let $a_n$ represent the number of ways Raven can buy items across the $n$ weeks 
 \textit{Note 2:} on week $n$, Raven will not buy a Figure (because she knows she will miss buying a T-shirt) or a Stand (what a sad way to end the collection).  This information is not needed for the simplest solutions, but some alternate solutions may need to know this.
 
 \begin{solution}
+    \begin{qparts}
+        \item 
+        The recurrence relation is:\\
+        $$
+        a_n = 2a_{n-1} + a_{n-2} + 2a_{n-3} + a_{n-4}
+        $$
+        \begin{center}
+            \includegraphics[scale = 0.3]{461697142928_.pic.jpg}\\
+            \includegraphics[scale = 0.3]{471697142928_.pic.jpg}\\
+        \end{center}
+        The logic is shown in the picture.\\
+        We use T,W,D,F to indicate the four items.\\
+        There are two cases for item in week $n$: T and W.\\
+        For the case W in week $n$, there are three possible choices in week $n-1$: D, W, T.
+        Number of ways ended with W and T are exactly $a_{n-1}$. And for the way ended with $DW$, the previous
+        item can only be D, and therefore get TDDW and WDDW. The number of them are exactly $a_{n-3}$. \\
+        \\
+        For the case T in week $n$, there are four possible choices in week $n-1$: D, W, T, F. Number of ways ended with WT and TT 
+        is exactly $a_{n-1}$, and for FT, the possible choices in week $n-2$ is D,W,T. Number of ways 
+        ended with WFT and TFT are exactly $a_{n-2}$.\\
+        And for the remaining circumstances DT and DFT beginning with D, 
+        we can apply the same logic in the DW case, and get $a_{n-3}$ and $a_{n-4}$ respectively.
+        \item 
+        since for $a_n$, $n \geq 0 $, and there is $a_{n-4}$ in our recurrence relation, 
+        $n - 4 \geq 0$. So the weeks where $n < 4$ should be set as initial conditions.\\
+        Therefore $a_1, \, a_2, \, a_3, \, a_4$ would need to be defined with initial conditions.
+    \end{qparts}
 
 \end{solution}
 

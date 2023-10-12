@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697132707 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" "Homework 5.pdf" "Homework 5" 1697132708 0
-  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" 1697132706 19640 2fd24e1b9b18c0a2ed3a33c956fa1df7 ""
+["pdflatex"] 1697147636 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" "Homework 5.pdf" "Homework 5" 1697147637 0
+  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" 1697147636 21174 5b769348701fa4731f249cf51512c182 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -165,9 +165,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1681796794 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1681796730 7883452 ed8cd01c45ba00cf2ba1972848f51ade ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Homework 5.aux" 1697132708 854 4a82d9c6844737f6d98ee0c7b5dcebd0 "pdflatex"
-  "Homework 5.out" 1697132707 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Homework 5.tex" 1697132706 19640 2fd24e1b9b18c0a2ed3a33c956fa1df7 ""
+  "461697142928_.pic.jpg" 1697146439 92967 cf2adc344dcf1e040e3ae5a9168c5844 ""
+  "471697142928_.pic.jpg" 1697146445 56986 ff8a598cff9919a77e1f77f67440f523 ""
+  "Homework 5.aux" 1697147637 854 c2858f40ba46bebefc8dad4d0872c15e "pdflatex"
+  "Homework 5.out" 1697147636 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Homework 5.tex" 1697147636 21174 5b769348701fa4731f249cf51512c182 ""
   "WechatIMG675.jpeg" 1697121247 82969 c9a5cff4099f0105c5e87d997c61d975 ""
   "WechatIMG676.jpeg" 1697121247 65369 eb2dc7f6b7574a379f2d393c16f38582 ""
   "ice.png" 1696706120 44037 df51b8ec9d6efa6c1460d247af158644 ""
