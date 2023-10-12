@@ -299,7 +299,23 @@ Let $a_n$ denote the number of distinct ways the baker decorates pastries in exa
 \end{qparts}
 
 \begin{solution}
-    
+    \begin{qparts}
+        \item 
+        Case 1: The last pastry the baker decoratess in $n$ minutes is cookie.\\
+            Then before that, there are $a_{n-2}$ ways.\\
+        Case 2: The last pastry the baker decorates in $n$ minutes is cupcake.\\
+            Then before that, there are $a_{n-3}$ ways.\\
+        Case 3: The last pastry the baker decorates in $n$ minutes is pie.\\
+            Then before that, there are $a_{n-3}$ ways.\\
+        $\therefore$ $a_n = a_{n-2} + 2 a_{n-3}$. ($n \geq 3$)
+        \item 
+        Since $a_n$ is valid only when $n \geq 0$, and we have $a_{n-3}$ in our recurrence relation,
+         we need to know all $a_n$ where $n < 3$.\\
+         That is: \\
+        $a_0 = 1$ (since the only choice is to do nothing)\\
+        $a_1 = 1$ (since the only choice is to do nothing)\\
+        $a_2 = 1$ (since the only choice is to decorate a cookie.)
+    \end{qparts}
 
 \end{solution}
 
