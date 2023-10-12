@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  12 OCT 2023 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.18)  12 OCT 2023 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -730,25 +730,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 349--362
 
  []
 
-[9 <./461697142928_.pic.jpg> <./471697142928_.pic.jpg>] [10] [11] [12]
+[9 <./461697142928_.pic.jpg> <./471697142928_.pic.jpg>] [10]
+<holes1.png, id=103, 1182.4175pt x 178.6675pt>
+File: holes1.png Graphic file (type png)
+<use holes1.png>
+Package pdftex.def Info: holes1.png  used on input line 415.
+(pdftex.def)             Requested size: 295.60365pt x 44.66676pt.
+ [11 <./holes1.png>]
+<holes2.png, id=112, 1182.4175pt x 178.6675pt>
+File: holes2.png Graphic file (type png)
+<use holes2.png>
+Package pdftex.def Info: holes2.png  used on input line 420.
+(pdftex.def)             Requested size: 295.60365pt x 44.66676pt.
+<holes3.png, id=113, 1182.4175pt x 178.6675pt>
+File: holes3.png Graphic file (type png)
+<use holes3.png>
+Package pdftex.def Info: holes3.png  used on input line 427.
+(pdftex.def)             Requested size: 295.60365pt x 44.66676pt.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 496.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 510.
+
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 511.
+
+[12 <./holes2.png> <./holes3.png>] [13] [14]
+<Screenshot 2023-09-28 at 14.26.34.png, id=143, 270.00874pt x 237.88875pt>
+File: Screenshot 2023-09-28 at 14.26.34.png Graphic file (type png)
+<use Screenshot 2023-09-28 at 14.26.34.png>
+Package pdftex.def Info: Screenshot 2023-09-28 at 14.26.34.png  used on input line 558.
+(pdftex.def)             Requested size: 94.50447pt x 83.2623pt.
+<Screenshot 2023-09-28 at 14.26.50.png, id=144, 345.29pt x 272.01625pt>
+File: Screenshot 2023-09-28 at 14.26.50.png Graphic file (type png)
+<use Screenshot 2023-09-28 at 14.26.50.png>
+Package pdftex.def Info: Screenshot 2023-09-28 at 14.26.50.png  used on input line 562.
+(pdftex.def)             Requested size: 138.11354pt x 108.80457pt.
+<WechatIMG616.jpeg, id=145, 886.31125pt x 789.95125pt>
+File: WechatIMG616.jpeg Graphic file (type jpg)
+<use WechatIMG616.jpeg>
+Package pdftex.def Info: WechatIMG616.jpeg  used on input line 568.
+(pdftex.def)             Requested size: 177.25911pt x 157.98744pt.
+<WechatIMG614.jpeg, id=146, 572.1375pt x 333.245pt>
+File: WechatIMG614.jpeg Graphic file (type jpg)
+<use WechatIMG614.jpeg>
+Package pdftex.def Info: WechatIMG614.jpeg  used on input line 571.
+(pdftex.def)             Requested size: 171.64256pt x 99.97426pt.
+ [15 <./Screenshot 2023-09-28 at 14.26.34.png> <./Screenshot 2023-09-28 at 14.26.50.png> <./WechatIMG616.jpeg> <./WechatIMG614.jpeg>] [16] [17]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
 (./Homework 5.aux)
 Package rerunfilecheck Info: File `"Homework 5".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22447 strings out of 476025
- 414335 string characters out of 5790017
+ 22522 strings out of 476025
+ 415751 string characters out of 5790017
  1865388 words of memory out of 5000000
- 42478 multiletter control sequences out of 15000+600000
+ 42523 multiletter control sequences out of 15000+600000
  522340 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,80p,496b,546s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "Homework 5.pdf" (12 pages, 501767 bytes).
+Output written on "Homework 5.pdf" (17 pages, 822310 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 235 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

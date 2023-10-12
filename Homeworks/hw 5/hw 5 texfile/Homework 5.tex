@@ -363,7 +363,6 @@ Let $a_n$ represent the number of ways Raven can buy items across the $n$ weeks 
         $n - 4 \geq 0$. So the weeks where $n < 4$ should be set as initial conditions.\\
         Therefore $a_1, \, a_2, \, a_3, \, a_4$ would need to be defined with initial conditions.
     \end{qparts}
-
 \end{solution}
 
 
@@ -398,6 +397,191 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 \hline
 \end{tabular}}
 \end{center}
+
+\subsection*{Previous Group Homework 4(1): Diag Squirrels [20 points]}
+Sammy and Sapphire the Diag squirrels are playing a game.
+There is a row of $n$ holes, each starting with 203 acorns in it.
+They also have a large, unlimited pile of extra acorns.
+Sammy and Sapphire take turns, starting with Sammy; when all the holes are empty on
+one of the
+squirrel's turn, that squirrel loses. On each turn, a squirrel picks a hole,
+eats exactly one acorn from it, then places any number of extra acorns they wish
+into each hole to the right of that hole.
+They may place a different number of acorns into each other hole.
+For example, suppose they are playing with $n = 5$ holes and it is Sammy's turn.
+Suppose the number of acorns in each hole at the start of Sammy's turn are as
+follows.
+\begin{center}
+\includegraphics[scale=0.25]{holes1.png}
+\end{center}
+On their turn, Sammy must pick a hole and eat exactly one acorn from it. Suppose
+they pick the third hole. Then the counts become the following:
+\begin{center}
+\includegraphics[scale=0.25]{holes2.png}
+\end{center}
+Sammy may then place any number of extra acorns into each hole to the right of that
+hole. In this case, they can place into the fourth and fifth holes. Suppose they
+choose to place 3 acorns in the fourth hole and 1 in the fifth. Then the at the end
+of Sammy's turn the acorn counts are the following:
+\begin{center}
+\includegraphics[scale=0.25]{holes3.png}
+\end{center}
+A winning strategy for a player is a sequence of moves which guarantees that
+they will win regardless of what moves their opponent makes. We will construct
+a winning strategy for Sammy. We will need an important but non-obvious fact
+about this game: the game must reach a state where every hole is
+empty except for the right-most hole.
+\begin{qparts}
+\item Prove that, once we reach the state where all but the right-most hole is
+empty,
+Sammy has a winning strategy if and only if there are an odd number of acorns
+in the hole at the start of their turn.
+\item Prove that if a squirrel starts their turn with all holes having an even
+number
+of acorns (and the game is not over), then at the end of their turn,
+at least one hole will have an odd number of acorns.
+\item Prove that if a squirrel starts their turn with at least one hole having
+an odd number of acorns,
+they can end their turn with all holes having an even number of acorns
+\item Using the previous parts, prove that Sammy has a winning strategy.
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item 
+    Let n be an arbitrary integer. There exists n holes.
+
+Case 1: n is odd (there are an odd number of holes)
+So there exists an int k such that n = 2k+1.
+
+After turn k:
+Sammy will have taken k acorns.
+Saph will have taken k acorns.
+There will be 2k + 1 - k - k acorns left.
+So there will be 1 acorn left.
+
+At turn k+1:
+Sammy goes first and eats 1 acorn and ends her turn.
+1-1 = 0 acorns left.
+Since Saph starts her turn with no acorns, Saph loses and Sammy wins.
+
+Case 2: n is even (there are an even number of holes)
+So there exists an int k such that n = 2k.
+
+After turn k:
+Sammy will have taken k acorns.
+Saph will have taken k acorns.
+There will be 2k - k - k acorns left.
+So there will be 0 acorns left.
+
+At turn k+1:
+Sammy goes first, but there are no acorns left. Sammy loses and Saph wins.
+
+Therefore, Sammy wins if and only if there are an odd \# of acorns at the start of her turn.
+
+\item 
+Assume all holes have an even \# of acorns.
+
+So 2a 2b … 2c, $2a + 2b + 2c = 2(a+b+c)$
+Because $a,b, c$ are ints,$ a+b+c$ is an int. So the total number of acorns is also even.
+
+Let Sammy take 1 acorn from any hole:
+$2(a+b+c) - 1$.
+This makes the total number of acorns odd.
+
+Sammy can end her turn without placing any extra acorns, and she will end the turn with at least one hole of odd \# acorns (i.e., the hole that she ate out of). We can prove this statement with a proof by cases: 
+
+If the total number of acorns is odd, then at least one hold is odd.
+\begin{enumerate}
+    \item Case 1: One hold is odd (then statement proved)
+    \item Case 2: No holes are odd. Equivalent to all holes are even. Then total number of acorns will be even: $2(a+b+c…d)$.\\
+    This contradicts the assumption
+\end{enumerate}
+
+\item 
+Assume there is at least one hole with an odd \# of acorns.\\
+Let Sammy select the leftmost hole that contains an odd \# of acorns.\\
+2n+ 1 2o+1 2p+1 … 2r+1\\
+Sammy chooses 2n+1 hole.
+
+Sammy eats one acorn from that hole, making it even.\\ 
+then $2(n), 2o+1, 2p+1,\cdots,2r+1$
+
+Sammy can then place 1 acorn into each of the other odd holes, also making them even. \\
+then $2(n), 2o+2, 2p+2, … ,2r+2$\\
+$2(n), 2(o+1), 2(p+1), … ,2(r+1)$
+\\Because Sammy started at the leftmost hole, all odd holes will be accounted for. \\
+Thus Sammy always has a way to end the turn with all holes having an even number.
+
+\item  
+Given: n holes with 203 holes each.\\
+WLOG (regardless if n is odd or even):\\
+From c, we know that if Sammy starts w/ at least one odd hole, they can end their turn with all holes having an even \# of acorns. Because all n holes have 203 acorns, there will always be at least one odd hole.\\
+Therefore, Sammy can eat an acorn and end her turn in such a way that there will always be all holes with an even \# of acorns.\\
+So Sapphire will always start her turn with an even number of acorns.\\
+From b, we know that Sapphire has to end her turn with at least one hole having an odd number of acorns.\\
+We are given that the game must reach a state where every hole is empty except for the right-most hole.\\
+Therefore, the above logic can repeat until there is only one acorn in the right-most hole.\\
+Following the logic from part b, since there is an odd number of acorns (i.e., 1), it must be Sammy’s turn.\\
+On this turn, Sammy will eat the last acorn and end her turn. 
+On Sapphire’s turn, there are no acorns so she loses the game.
+\\So in all possible scenarios, Sammy has a winning strategy.
+\end{qparts}
+\end{solution}
+\subsection*{Previous Group Homework 4(2): The Third Dimension [30 Points]}
+In lecture, we discussed the problem of tiling a chessboard with dominoes of
+dimension $2 \times 1$. We also saw that this question can be made more interesting
+by changing the shape of the board.
+A related idea to tiling is packing. In a packing question, we no longer care that
+the board gets completely covered, instead it is enough to show that a certain
+number of dominoes can fit on the board. For example, 32 or fewer $1 \times 2$
+dominoes can be packed into a $8 \times 8$ chess board, but 33 or more cannot.
+In this problem, we will investigate packing dominoes into a three dimensional
+``chess board". In particular, we will prove that it is impossible to pack 53 $1\times 1\times 4$ dominoes into a $6\times 6\times 6$ board.
+\begin{qparts}
+\item As a warm-up, first show that you \textit{can} pack 54 dominoes into the
+board provided that you're allowed to break the dominoes in half.
+\item We can divide our board evenly into $2\times 2\times 2$ regions. Consider
+coloring these regions red and blue in an alternating fashion. We say that each
+$1 \times 1 \times 1$ cell of a domino is colored red if it lies in a red region
+and colored blue if it lies in a blue region.
+For any domino, list all possible colorings of its 4 cells. Conclude that
+exactly half of each domino must lie in a red region.
+\item Prove that it is impossible to pack 53 dominoes into a $6\times 6\times
+6$ board.
+\textbf{Hint:} Figure out how many cells of each color there are, and apply
+part (b).
+\end{qparts}
+\begin{solution}
+\begin{qparts}
+    \item 
+    \begin{center}
+        \includegraphics[scale=0.35]{Screenshot 2023-09-28 at 14.26.34.png}
+    \end{center}
+    
+    \begin{center}
+        \includegraphics[scale=0.4]{Screenshot 2023-09-28 at 14.26.50.png} 
+    \end{center}
+    By slicing the cube into 6 identical slices vertically, we have every slice like the picture above. And as we can see, we can fill a slice with $6 \times 3 = 18$ half-dominoes in a slice, and then we fill the 6 identical slices with $18 * 6 = 108$ half-dominoes.
+    
+    \item 
+    \begin{center}
+        \includegraphics[scale=0.2]{WechatIMG616.jpeg}
+    \end{center}
+    \begin{center}
+        \includegraphics[scale=0.3]{WechatIMG614.jpeg}
+    \end{center}
+    After we divide the board into $2\times 2\times 2$ regions, if we pack dominoes into the cube board, the 4 possible colorings are as above. We can represent them as BBRR, RRBB, BRRB, RBBR. \\Since every domino contains 2B and 2R, exactly half of each domino must lie in a red region.
+
+    \item 
+    After we divide our board into $2 \times 2 \times 2$ regions in alternating color, there should be 27 regions, consisting of 13 blue regions and 14 regions, or 14 blue regions and 13 red regions, dependent on the way we divide.\\
+    Since every region contains 8 cells, there would be 8 more blue cells than red cells, or 8 more red cells than blue cells.\\
+    Assume that we can pack 53 $1 \times 1 \times 1$ dominoes into the board, then we have $53 \times 2 = 106$ red cells and $53 \times 2 = 106$ blue cells as well.\\
+    Then there are $216 - 106 \times 2 = 4$ cells left on the board. Even if they are all red or all blue, that does not meet the quantity. That causes a contradiction.\\
+    Therefore we have proved it.
+    
+\end{qparts}
+\end{solution}
+
 
 
 \subsection*{\probnum Polly Gone [12 points]}

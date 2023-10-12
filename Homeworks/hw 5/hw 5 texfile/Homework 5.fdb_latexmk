@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697147636 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" "Homework 5.pdf" "Homework 5" 1697147637 0
-  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" 1697147636 21174 5b769348701fa4731f249cf51512c182 ""
+["pdflatex"] 1697148198 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" "Homework 5.pdf" "Homework 5" 1697148200 0
+  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 5/hw 5 texfile/Homework 5.tex" 1697148198 30532 c59bdf6a35bb8bbf625f304c3f52dd4f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -167,11 +167,18 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "461697142928_.pic.jpg" 1697146439 92967 cf2adc344dcf1e040e3ae5a9168c5844 ""
   "471697142928_.pic.jpg" 1697146445 56986 ff8a598cff9919a77e1f77f67440f523 ""
-  "Homework 5.aux" 1697147637 854 c2858f40ba46bebefc8dad4d0872c15e "pdflatex"
-  "Homework 5.out" 1697147636 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Homework 5.tex" 1697147636 21174 5b769348701fa4731f249cf51512c182 ""
+  "Homework 5.aux" 1697148200 854 e16e760d2ccdf862261a5aeeb7471ce2 "pdflatex"
+  "Homework 5.out" 1697148199 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Homework 5.tex" 1697148198 30532 c59bdf6a35bb8bbf625f304c3f52dd4f ""
+  "Screenshot 2023-09-28 at 14.26.34.png" 1697148079 134902 715f9678f516c2869a45ed9ffa00da4e ""
+  "Screenshot 2023-09-28 at 14.26.50.png" 1697148079 102634 e4d67d713eabf37213a40efe2aa89f49 ""
+  "WechatIMG614.jpeg" 1697148079 18275 9520505d68456e17f7515ed690679baa ""
+  "WechatIMG616.jpeg" 1697148079 72551 7436841bd5bcc32809561c08df87b93b ""
   "WechatIMG675.jpeg" 1697121247 82969 c9a5cff4099f0105c5e87d997c61d975 ""
   "WechatIMG676.jpeg" 1697121247 65369 eb2dc7f6b7574a379f2d393c16f38582 ""
+  "holes1.png" 1697148124 25616 2d4fa082f3181d63673ab5dc882f32b2 ""
+  "holes2.png" 1697148127 24835 953337174181a50e61468d964b17658d ""
+  "holes3.png" 1697148127 24636 6fec8d5ada763f053f6422737221e122 ""
   "ice.png" 1696706120 44037 df51b8ec9d6efa6c1460d247af158644 ""
   (generated)
   "Homework 5.aux"
