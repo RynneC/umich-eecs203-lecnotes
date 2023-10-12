@@ -249,9 +249,42 @@ Claire doesn't have an ice tray, so she makes ice by freezing water into a recta
 
 \begin{solution} 
     \begin{qparts}
-        \item $(m-1) \cdot (n-1) = mn -m -n + 1$\\
+        \item $(n-1) + n\cdot (m-1) = mn - 1$\\
              $m,n$ are positive integers.
         \item 
+        Let $m,n$ be an arbitrary positive integer. $k(m,n)$ is 
+        the number of cuts to make to divide her ice block into $n \times m$ cells.\\
+        Assume $P(m,n)$: $k(m,n) = mn - 1$\\
+        WLOG (due to symmetry, $k(m+1, n ) = k(m,n+1)$), 
+        we want to show: $P(m, n+ 1)$: $k(m,n + 1) = m(n+1) - 1$\\\\
+
+        \textbf{Inductive Step:}\\
+        We can first cut the (n+1) row from the block. This requires 1 cut.\\
+        Then we get $n \times m$ block and $1\times m$ block.\\
+        \begin{center}
+            \includegraphics[scale = 0.15]{WechatIMG676.jpeg}\\
+            \includegraphics[scale = 0.15]{WechatIMG675.jpeg}\\
+        \end{center}
+        From the inductive hypothesis we know, to divide the $n \times m$ block, we need $k(m,n)$ cuts.\\
+        And to divide the $1 \times m$ block, since we can not make 
+        a single cut across multiple pieces of ice, we can only use $m-1$ cuts.\\
+        $\therefore$ In total, we need:
+        \begin{align*}
+            1 + k(m,n) + (m-1) &= 1 + mn - 1 + m - 1\\
+                           &= mn + m - 1\\
+                           &= m(n + 1) - 1
+        \end{align*}
+        
+        
+        \textbf{Base Case:} 
+        To divide a 
+        $P(1,1): k(1,1) = 1 \times 1 - 1 = 0$ is true.\\
+
+        Since $P(1,1)$, $P(m,n) \rightarrow P(m, n+1)$, and due to symmetry $P(m,n) \rightarrow P(m+1, n)$,
+        $P(m,n)$ is true for any positive integer $m,n$.
+
+        Conclusion: We need $mn -1$ cuts to divide her ice block into $m\times n $ cells.
+
     \end{qparts}
 
 \end{solution}
@@ -266,6 +299,7 @@ Let $a_n$ denote the number of distinct ways the baker decorates pastries in exa
 \end{qparts}
 
 \begin{solution}
+    
 
 \end{solution}
 
