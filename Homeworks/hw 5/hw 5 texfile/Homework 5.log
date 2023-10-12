@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.22)  11 OCT 2023 22:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.6.22)  12 OCT 2023 01:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -673,10 +673,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--187
  []
 
 [4] [5]
-<ice.png, id=58, 719.68875pt x 531.9875pt>
+<ice.png, id=57, 719.68875pt x 531.9875pt>
 File: ice.png Graphic file (type png)
 <use ice.png>
-Package pdftex.def Info: ice.png  used on input line 234.
+Package pdftex.def Info: ice.png  used on input line 242.
 (pdftex.def)             Requested size: 215.9083pt x 159.59747pt.
  [6 <./ice.png>] [7] [8] [9]
 This exam contains 0 questions with 0 parts, 0 subparts, and 0 subsubparts.
@@ -685,17 +685,17 @@ Package rerunfilecheck Info: File `"Homework 5".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22794 strings out of 476411
- 422618 string characters out of 5789134
+ 22796 strings out of 476411
+ 422632 string characters out of 5789134
  1866845 words of memory out of 5000000
  42745 multiletter control sequences out of 15000+600000
  522340 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,80p,494b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,80p,494b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\19680\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/19680/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Homework 5.pdf" (9 pages, 202981 bytes).
+Output written on "Homework 5.pdf" (9 pages, 204057 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
+ 154 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
