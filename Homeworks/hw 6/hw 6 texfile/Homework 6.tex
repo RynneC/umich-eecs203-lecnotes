@@ -111,11 +111,23 @@ Total Points: $100+33$
     \begin{qparts}
         \item 
         \begin{qsubparts}
-            \item false.\\
-            $\{\{\emptyset\}, \{\emptyset , \{\emptyset\}\}\}$ has only two elements: $\{\emptyset\}$ and $\{ \emptyset, \{ \emptyset\}\}$
-            \item 2
-            \item 3
-            \item 4
+            \item False.\\
+            $\{\{\emptyset\}, \{\emptyset , \{\emptyset\}\}\}$ has only two elements: $\{\emptyset\}$ and $\{ \emptyset, \{ \emptyset\}\}$, $\emptyset$ is not an element.
+            \item True.\\
+            $\emptyset$ is a subset of every set. So it is also a subset of $\{\{\emptyset\}, \{\emptyset , \{\emptyset\}\}\}$.
+            \item True.\\
+            The Cartesian product of sets $A$ and $B$ is: $ A \times B = \{ (a,b)| a \in A \land b \in B\}$.\\
+            When $A$ is $\emptyset$, $a\in A$ is false for any a. $\therefore$ $a \in A \land b \in B$ is also false.\\
+            $\therefore$ there is no such $(a,b)$ that can be an elements of $\emptyset \times B$.\\
+            $\therefore \emptyset \times  \{0,1\} = \emptyset$\\ 
+            $\because \emptyset \subseteq \emptyset$\\
+            $\therefore \emptyset \times \{ 0,1\} \subseteq \emptyset$.   
+            \item True.
+            The only element in $\{\{1, 2\}\}$ is $\{1,2\}$.\\
+            And this element is also in $\{ \{1,2\}, \{2\} \}$.\\
+            $\therefore \{\{1, 2\}\} \subseteq \{ \{1,2\}, \{2\} \}$.\\
+            Notice the element $\{2\}$, $\{2\} \in \{ \{1,2\}, \{2\} \}$, $\{2\} \notin \{\{1, 2\}\}$\\
+            $\therefore \{\{1, 2\}\} \subsetneq \{ \{1,2\}, \{2\} \}$.
         \end{qsubparts}
 
         \item 2
