@@ -161,8 +161,18 @@ Suppose we define $A = \{m, a, r, c, h\},$ $B = \{ a, r, t, i, c, h, o, k, e\},$
 \begin{solution}
     \begin{qparts}
         \item 
+        $\because |A| = 5$, $|B| = 9$,\\
+        $\therefore |A \times B| = 5 \times 9 = 45$.
         \item 
-        \item 
+        $|A \cup B| = |A| + |B| - |A \cap B|$\\
+        $A \cap B = \{a,r,c,h\}, |A \cap B| = 4$\\
+        $\therefore |A \cup B| = 5 + 9 - 4 = 10$\\
+        $\therefore \mathcal{P}(|A \cup B|) = 2^{10} = 1024$
+        \item
+        $A \cap B = \{a,r,c,h\}$,\\
+        $B - C = \{r,t,c,h,k\}$, \\
+        $\therefore |(A \cap B) \times (B - C)| = 4 \times 5 = 20$.\\
+        $\therefore |\mathcal{P}((A \cap B) \times (B - C))| = 2^{20} = 1024 \times 1024 = 1048576$
     \end{qparts}
 \end{solution}
 
