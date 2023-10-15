@@ -1,0 +1,234 @@
+\documentclass[12pt]{exam}
+
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+
+% sometimes needed packages
+\usepackage{hyperref} % hyperlinks
+% \hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+\usepackage{tikz} % drawing graphs
+\usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+
+\printanswers
+
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+  Fall 2023\\
+  Homework 6}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+  \huge Due \textbf{Friday, October 20}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $5+2$
+\hspace{3cm}
+Total Points: $100+33$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+    \item \textbf{Match your pages!} Your submission time is when you upload the file, so the time you take to match pages doesn't count against you.
+    \item Submit this assignment (and any regrade requests later) on Gradescope. 
+    \item Justify your answers and show your work (unless a question says otherwise).
+    \item By submitting this homework, you agree that you are in compliance with the Engineering Honor Code and the Course Policies for 203, and that you are submitting your own work.
+    \item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%% 
+
+\section*{Individual Portion}
+\subsection*{\probnum Set Me Free [18 points]}
+
+\begin{qparts}
+    \item For each of the following, determine if the statement is true or false. Justify your answers.
+    \begin{qsubparts}
+        \item $\emptyset \in \{\{\emptyset\}, \{\emptyset , \{\emptyset\}\}\}$
+        \item $\emptyset \subseteq \{\{\emptyset\}, \{\emptyset , \{\emptyset\}\}\}$
+        \item $\emptyset \times  \{0,1\} \subseteq \emptyset$
+        \item $\{\{1, 2\}\} \subsetneq \{ \{1,2\}, \{2\} \}$
+    \end{qsubparts}
+
+    \item Find the cardinality of $\{\emptyset, \emptyset, \{\emptyset, \emptyset\}, \{\emptyset\}\}.$
+
+    \item
+        \begin{qsubparts}
+        \item Find the cardinality of $\mathcal{P}(\{\emptyset, \{a\}, \{b, c\}\})$.
+        \item Find $\mathcal{P}(\{\emptyset, \{a\}, \{b, c\}\})$. Make sure it has the cardinality you wrote in (i).
+
+    \end{qsubparts}
+
+\end{qparts}
+    
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Is This Your Card(inality)? [18 points]}
+Suppose we define $A = \{m, a, r, c, h\},$ $B = \{ a, r, t, i, c, h, o, k, e\},$ and $C = \{a, e, i, o, u\}.$ Determine the cardinality of each of the following sets. You may leave large exponents unsimplified.
+
+\begin{qparts}
+    \item $A \times B$
+    \item $\mathcal{P}(A \cup B) $
+    \item $\mathcal{P}((A \cap B) \times (B - C))$
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Ice Cream Truck! [20 points]} 
+There are 40 IAs for EECS 203 and they are all waiting in line for the ice cream truck! At the ice cream truck, every IA orders at least one flavor of ice cream, but they have the option to order more.
+\begin{itemize}
+    \item 22 of them ordered chocolate ice cream
+    \item 25 of them ordered strawberry ice cream
+    \item 16 of them ordered vanilla ice cream
+\end{itemize}
+These numbers add up to more than 40, so we know that some IAs must have ordered multiple flavors. We also know:
+\begin{itemize}
+    \item 12 IAs ordered chocolate ice cream and strawberry ice cream,
+    \item 8 ordered strawberry ice cream and vanilla ice cream,
+    \item 10 ordered vanilla cream and chocolate ice cream,
+    \item and of these, some IAs ordered all three.
+\end{itemize}
+How many IAs ordered all three flavors? Show all your calculations.
+
+\textbf{Note:} A Venn diagram is not acceptable justification for this question.
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum S$\cup$bset Fu$\cap$ [20 points]}
+Let $A$, $B$, and $C$ be sets. Prove that $$(B - A) \cup (C - A) = (B \cup C) - A$$
+by showing that each is a subset of the other. 
+
+\begin{solution}
+
+\end{solution}
+
+
+\subsection*{\probnum Subset Size Question [24 points]}
+Given that $A, B, C$ are sets with $|A| = 13$, $|B| = 8$, $|C| = 10$, find the maximum \textit{and} the minimum possible cardinalities of the following sets in the domain of integers.\\
+
+\begin{qparts}
+    \item $\overline{A} \cap B$   
+    \item $A \cap (B \cup C)$
+    \item $\mathcal{P}(B \times C)$
+    \item $(A - B) \cap C$
+\end{qparts}
+\begin{solution}
+
+\end{solution}
+
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+\subsection*{\probnum Grade Groupwork 5}
+Using the solutions and Grading Guidelines, grade your Groupwork 5:
+\begin{itemize}
+    \item Mark up your past groupwork and submit it with this one.
+    \item Write whether your submission achieved each rubric item. If it didn't achieve one, say why not.
+    \item Use the table below to calculate scores.
+    \item For extra credit, write positive comment(s) about your work.
+    \item You don't have to redo problems correctly, but it is recommended!
+    \item What if my group changed? \begin{itemize}
+        \item If your current group submitted the same groupwork last time, grade it together.
+        \item  If not, grade your version, which means submitting this groupwork assignment separately. You may discuss grading together.
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+ & (i) & (ii) & (iii) & (iv) & (v) & (vi) & (vii) & (viii) & (ix) & (x) & (xi) & Total:\\
+\hline
+Problem 2 & & & & \filcl & \filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/12\\
+\hline 
+Problem 3 & & & & & & \filcl & \filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/8\\
+\Xhline{1.25pt}
+Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \filcl&\hspace{1cm}/20\\
+\hline
+\end{tabular}}
+\end{center}
+
+\subsection*{\probnum (Set)ting up a (Power)ful Proof [17 points]}
+\begin{qparts}
+    \item Suppose we want to prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$. What is the Inductive Hypothesis for your proof? \emph{Hint: Consider what variable you should do induction on.}
+    \item Prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$.
+\end{qparts}
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Out of the ordinary [16 points]}
+The (von Neumann) ordinals are a special kind of number. Each one is represented just in terms of sets. We can think of every natural number as an ordinal. We won't deal with it in this question, but there are also infinite ordinals that ``keep going" after the natural numbers, which works because there are infinite sets.
+
+The smallest ordinal, $0$, is represented as $\emptyset$. Each ordinal after is represented as the set of all smaller ordinals. For example,
+\begin{align*}
+    0 &= \emptyset\\
+    1 &= \{ 0 \} = \{ \emptyset \}\\
+    2 &= \{ 0, 1 \} = \{ \emptyset, \{ \emptyset \} \}\\
+    3 &= \{ 0, 1, 2 \} = \{ \emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \} \}
+\end{align*}
+
+\begin{qparts}
+    \item What is the ordinal representation of $4$, in terms of just sets?
+
+    \item If the sets $X$ and $Y$ are ordinals representing the natural numbers $x$ and $y$ respectively, how can we tell if $x \le y$ in terms of $X$ and $Y$? Why does this work?
+
+    \item If $X$ is the ordinal representing the natural number $x$, what is the ordinal representation of $x+1$? Why does this work?
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
