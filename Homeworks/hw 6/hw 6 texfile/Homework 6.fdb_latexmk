@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1697384069 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 6/hw 6 texfile/Homework 6.tex" "Homework 6.pdf" "Homework 6" 1697384070 0
-  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 6/hw 6 texfile/Homework 6.tex" 1697334314 9109 46e5e6ce0f364bcad4444d25644d2133 ""
+["pdflatex"] 1697398998 "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 6/hw 6 texfile/Homework 6.tex" "Homework 6.pdf" "Homework 6" 1697398999 0
+  "/Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 6/hw 6 texfile/Homework 6.tex" 1697398998 9480 b68bd78026874109bc0bbb1c9f4c7c39 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -164,9 +164,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1681796794 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1681796730 7883452 ed8cd01c45ba00cf2ba1972848f51ade ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "Homework 6.aux" 1697384070 851 7438f1c1b90434d8aaff67058a929866 "pdflatex"
-  "Homework 6.out" 1697384070 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Homework 6.tex" 1697334314 9109 46e5e6ce0f364bcad4444d25644d2133 ""
+  "Homework 6.aux" 1697398999 851 7438f1c1b90434d8aaff67058a929866 "pdflatex"
+  "Homework 6.out" 1697398998 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Homework 6.tex" 1697398998 9480 b68bd78026874109bc0bbb1c9f4c7c39 ""
   (generated)
   "Homework 6.aux"
   "Homework 6.log"
