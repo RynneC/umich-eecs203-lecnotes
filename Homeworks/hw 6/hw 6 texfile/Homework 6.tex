@@ -247,17 +247,24 @@ Given that $A, B, C$ are sets with $|A| = 13$, $|B| = 8$, $|C| = 10$, find the m
 \begin{solution}
     \begin{qparts}
         \item 
-        From the property of intersection we know that $|\overline{A} \cap B| \leq |B|$, and since a set cannot have fewer than 0 element, $|\overline{A} \cap B| \geq 0$.\\
+        Due to intersection, $|\overline{A} \cap B| \leq |B| = 8$\\
+        Since a set cannot have fewer than 0 element, $|\overline{A} \cap B| \geq 0$.\\
         If $A \cap B = \emptyset$, then $\overline{A} \cap B = B$, then $|\overline{A} \cap B| = |A| \leq |B| = |B| = 8$.\\
         If $A \cap B = B$, then $\overline{A} \cap B = \emptyset$, then $|\overline{A} \cap B| = |\emptyset| = 0$.\\
-        These two situations are all possible, $\therefore$ the maximum possible cardinality kf $\overline{A} \cap B$ is 9, and the minimum cardinality of $\overline{A} \cap B$ is 0.
+        These two situations are all possible, \\
+        $\therefore$ the maximum possible cardinality kf $\overline{A} \cap B$ is 9, and the minimum cardinality of $\overline{A} \cap B$ is 0.
+        \item 
+        $|B \cup C| \geq max(|B|,|C|) = 10$ and $|B \cup C| \leq |B| + |C| = 18$.\\
+        $|A \cap (B \cup C)| \geq 0$ and $|A \cap (B \cup C)| \leq min(|A|, |B \cup C|)$.\\
+        $\because |A| = 13, 10 \leq |B \cup C| \leq 18$,\\
+        $\therefore min(|A|, |B \cup C|) = 10$.\\
+        $\therefore 0 \leq |A \cap (B \cup C)| \leq 10$. The minimum possible cardinality is 0 and maximum possible cardinality is 10.
+        \item 
+        Since $|B| = 8, |C| = 10$, $B,C$ cannot be $\emptyset$. Therefore $|\mathcal{P}(B \times C)|$ can only be $|B| \times |C| = 80$. 
+        
         \item 
         
-        
-        \item Since $|B| = 8, |C| = 10$, $B,C$ cannot be $\emptyset$. Therefore $|\mathcal{P}(B \times C)|$ can only be $|B| \times |C| = 80$. 
-        
-        \item 
-        
+
     \end{qparts}
 \end{solution}
 
