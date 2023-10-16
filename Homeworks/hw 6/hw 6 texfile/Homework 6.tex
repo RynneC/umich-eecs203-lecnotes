@@ -402,6 +402,32 @@ Let $a_n$ denote the number of ways she can go to EECS 203 lecture across $n$ da
     \item Prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$.
 \end{qparts}
 \begin{solution}
+    \begin{qparts}
+        \item 
+        for $S(k)$ be an arbitrary set s.t. $|S(k)| = k$.
+        Assume that $\mathcal{P}(S(k)) = 2^k $.
+        \item
+        Let $k$ be an arbitrary nonnegative integer.\\
+        Let $S(k)$ be an arbitrary set s.t. 
+        $|S(k)| = k$, i.e. $S(k)$ has $k$ elements.\\
+        Assume: $\mathcal{P}(S(k)) = 2^k $.\\
+        Want to show: $\mathcal{P}(S(k+1)) = 2^{k+1}.$\\
+        
+        \textbf{Base Case:}\\
+        $k = 0. S(k) = \emptyset = \{\}$\\
+        The only subset of $S(k)$ is $\emptyset$.\\
+        $\therefore \mathcal{P}(S(k)) = 1 = 2^0$ is true.\\
+        
+        \textbf{Inductive Case:}\\
+        Mark the elements in $S(k)$ as $a_1,a_2,...,a_k$, i.e., $S(k) = \{a_1, a_2, ..., a_k\}$.\\
+        And mark the new element in $S(k+1)$ as $a_{k+1}$, i.e., $S(k) = \{a_1, a_2, ..., a_{k+1}\}$.\\
+        Then all the new subsets created by $a_{k+1}$ is exactly a subset of $S(k)$ plus the element $a_{k+1}$.\\
+        And every subset plus an element of $a_{k+1}$ is a included in $\mathcal{P}(S(k+1))$.\\
+        $\therefore$ The number of elements in $\mathcal{P}(S(k+1))$ is $|\mathcal{P}(S(k))| + |\mathcal{P}(S(k))| = 2|\mathcal{P}(S(k))| = 2 \times 2^k = 2^{k+1}$\\
+        $\therefore$ $|\mathcal{P}(S(k+1))| = 2^{k+1}$\\
+        $\therefore$ we have proved that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$.
+
+    \end{qparts}
 
 \end{solution}
 
