@@ -249,25 +249,30 @@ Given that $A, B, C$ are sets with $|A| = 13$, $|B| = 8$, $|C| = 10$, find the m
         \item 
         Due to intersection, $|\overline{A} \cap B| \leq |B| = 8$\\
         Since a set cannot have fewer than 0 element, $|\overline{A} \cap B| \geq 0$.\\
-        If $A \cap B = \emptyset$, then $\overline{A} \cap B = B$, then $|\overline{A} \cap B| = |A| \leq |B| = |B| = 8$.\\
-        If $A \cap B = B$, then $\overline{A} \cap B = \emptyset$, then $|\overline{A} \cap B| = |\emptyset| = 0$.\\
+        When $A \cap B = \emptyset$, then $\overline{A} \cap B = B$, then $|\overline{A} \cap B| = |B| = 8$.\\
+        When $B \subseteq A, A \cap B = B$, then $\overline{A} \cap B = \emptyset$, then $|\overline{A} \cap B| = |\emptyset| = 0$.\\
         $\because$ These two situations are all possible, \\
-        $\therefore$ the maximum possible cardinality kf $\overline{A} \cap B$ is 9, and the minimum cardinality of $\overline{A} \cap B$ is 0.
+        $\therefore$ the maximum possible cardinality is 8, and the minimum cardinality of $\overline{A} \cap B$ is 0.
         \item 
         Due to union, $|B \cup C| \geq max(|B|,|C|) = 10$ and $|B \cup C| \leq |B| + |C| = 18$.\\
         Due to intersection, $|A \cap (B \cup C)| \geq 0$ and $|A \cap (B \cup C)| \leq min(|A|, |B \cup C|)$.\\
         $\because |A| = 13, 10 \leq |B \cup C| \leq 18$,\\
-        $\therefore min(|A|, |B \cup C|) = 10$.\\
-        $\therefore 0 \leq |A \cap (B \cup C)| \leq 10$. The minimum possible cardinality is 0 and maximum possible cardinality is 10.
+        When $10 \leq |B \cup C| < 13$, $min(|A|,|B \cup C|) = |B \cup C| < 13$;\\
+        When $13 \leq |B \cup C| \leq 18$,  $min(|A|,|B \cup C|) = |A| = 13$.\\
+        $\therefore$ the maximum value of $|A \cap (B \cup C)|$ is 13.\\
+        $\therefore$ The minimum possible cardinality is 0 and maximum possible cardinality is 13.
         \item 
-        Since $|B| = 8, |C| = 10$, $B,C$ cannot be $\emptyset$. Therefore $|\mathcal{P}(B \times C)|$ can only be $|B| \times |C| = 80$. 
-        
+        Since $|B| = 8, |C| = 10$, $B,C$ cannot be $\emptyset$. \\
+        $\therefore$ $|B \times C|$ can only be $|B| \times |C| = 80$. 
+        \\$\therefore$ $|\mathcal{P}(B \times C)|$ can only be $2^{|B \times C} = 2^80$
+        \\$\therefore$ The maximum possible cardinality and the minimum possible cardinality are both $2^{80}$.
         \item 
         Due to substraction, $|A| - |B| \leq |A- B| \leq |A|$.\\
         $\therefore 5 \leq |A-B| \leq 13$.\\
-        Due to intersection, $0 \leq |(A-B) \cap C| \leq min(|A-B|_{max}, |C|)$\\
-        $\therefore 0 \leq |(A-B) \cap C| \leq 10$.
-
+        Due to intersection, $0 \leq |(A-B) \cap C| \leq min(|A-B|, |C|)$\\
+        When $|A - B| <10$, $min(|A-B|, |C|) = |A-B| < 10$. When $|A-B| \geq 10$,  $min(|A-B|, |C|) = |C| = 10$. 
+        \\$\therefore $ the overall range is $0 \leq |(A-B) \cap C| \leq 10$.
+        \\$\therefore$ the maximum possible cardinality is 10 and the minimum possible cardinality is 0.
 
     \end{qparts}
 \end{solution}
