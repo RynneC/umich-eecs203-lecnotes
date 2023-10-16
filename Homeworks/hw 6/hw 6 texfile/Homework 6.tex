@@ -247,15 +247,16 @@ Given that $A, B, C$ are sets with $|A| = 13$, $|B| = 8$, $|C| = 10$, find the m
 \begin{solution}
     \begin{qparts}
         \item 
-        $|\overline{A} \cap B| = |A| \leq |B|$, and $|\overline{A} \cap B| \geq 0$\\
+        From the property of intersection we know that $|\overline{A} \cap B| \leq |B|$, and since a set cannot have fewer than 0 element, $|\overline{A} \cap B| \geq 0$.\\
         If $A \cap B = \emptyset$, then $\overline{A} \cap B = B$, then $|\overline{A} \cap B| = |A| \leq |B| = |B| = 8$.\\
         If $A \cap B = B$, then $\overline{A} \cap B = \emptyset$, then $|\overline{A} \cap B| = |\emptyset| = 0$.\\
-        And 
-        \item 11
+        These two situations are all possible, $\therefore$ the maximum possible cardinality kf $\overline{A} \cap B$ is 9, and the minimum cardinality of $\overline{A} \cap B$ is 0.
+        \item 
         
-        \item qq
         
-        \item 11
+        \item Since $|B| = 8, |C| = 10$, $B,C$ cannot be $\emptyset$. Therefore $|\mathcal{P}(B \times C)|$ can only be $|B| \times |C| = 80$. 
+        
+        \item 
         
     \end{qparts}
 \end{solution}
