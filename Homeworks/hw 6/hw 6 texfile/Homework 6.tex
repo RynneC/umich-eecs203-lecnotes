@@ -308,6 +308,94 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 \end{tabular}}
 \end{center}
 
+\subsection*{Previous Groupwork 5(1): Polly Gone [12 points]}
+
+A convex polygon is a 2D shape with all straight edges such that any line segment between any two non-adjacent vertices passes entirely through its interior (see example picture below). Show via induction that the sum of the interior angles of a convex polygon with $n$ sides is $(n - 2) \cdot 180^{\circ}$. Don't include unneeded base cases.
+
+\begin{center}
+    \begin{tikzpicture}[scale = 2]
+        \draw[thick, black]  (0,1) -- (0.782,0.623) -- (0.975,-0.223)--(0.434,-0.9)--(-0.434,-0.9)--(-0.975,-0.223)--(-0.782,0.623)--cycle;
+        \draw[thin,black] (0,1) -- (-0.434,-0.9);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Hint 1}: It is helpful to know that a triangle's interior angles always sum to $180^{\circ}$. You may assume this is true for the problem.
+
+\textbf{Hint 2}: In order to apply your inductive hypothesis to a convex polygon, you'll need to think of it in terms of smaller convex polygons. How can you make smaller polygons out of a big one?
+
+\begin{solution}
+    Let $k(n)$ = the sum of the interior angles of a convex polygon with $n$ sides\\
+    $P(n): k(n) = (n-2) \cdot 180^{\circ} $\\
+    Let $K$ be an arbitrary integer in the domain that $k \geq 4$.\\
+    Assume: $P(3) \land P(4) \land P(5) \land ... \land P(k-1)$\\
+    Want to prove: $P(k)$
+    \\\\
+    \textbf{Base Case:}\\
+    (Triangle) $n=3$, the sum of the interior angles is $180^\circ $\\
+    $k(3) = (3-2) \times 180^\circ  = 1 \times 180^\circ  = 180^\circ $.
+    \\\\
+    \textbf{Inductive Step:}\\
+    Use a straight line to divide the $k$-sides polygon into a triangle and a $(k-1)$-sides polygon.\\
+    Using the inductive assumption we know that the $k$-sided polygan should have $(k-2) \times 180^\circ $ degrees for its interior angles.
+
+    Tus the sum of the interior angles is 
+    \begin{align*}
+        180^\circ  + (k-1-2) \times 180^\circ &= 180^\circ  + (k-3) \times 180^\circ 
+                                              &= 180^\circ  \times (1 + k - 3) 
+                                              &= 180(k-2)^\circ 
+    \end{align*}
+
+    Therefore $P(k)$ is true for every integer $k \geq 4$.
+\end{solution}
+
+
+\smallskip
+\subsection*{Previous Groupwork 5(2): Running Recurrence [8 points]}
+An EECS 203 student goes to lecture everyday. On each day, she always chooses exactly one method of transportation, and always chooses to walk, bike, or take a bus. She also follows additional rules:
+\begin{itemize}
+    \item She never walks two days in a row.
+    \item If she takes the bus, she must have biked two days ago and walked a day ago.
+\end{itemize}
+
+Let $a_n$ denote the number of ways she can go to EECS 203 lecture across $n$ days for $n \geq 0$.
+\begin{qparts}
+    \item Find a recurrence relation for $a_n$.
+    \item What are the initial conditions? Use the fewest initial conditions necessary.
+\end{qparts}
+
+\begin{solution}
+    \begin{qparts}
+        \item The recurrence relation is:
+            $$
+            a_n = a_{n-1} + a_{n-2} + a_{n-3} + a_{n-4}
+            $$
+            \begin{center}
+                \includegraphics[scale=0.2]{4.jpg}
+            \end{center}
+
+            There are 3 cases for the week $n$.\\
+
+            Case 1: In week $n$, she goes to school by bike. This choice has no restrction, so in the weeks before,
+            the number of ways she could go to lecture is $a_{n-1}$.
+            \\Case 2: In week $n$, she goes to school by bus. This means that in week $n-1$, she walked to school and in
+            week $n-2$, she went to lecture by bike. In the weeks before, the number of ways she could go to lecture is $a_{n-3}$.\\
+            Case 3: In week $n$, she walks to school. This means that in week $n-1$, she can only went to lecture by bike or by bus. In the
+            case she went to lecture by bike, the number of ways she could go to lecture before is $a_{n-2}$. And in the case she wen to 
+            lecture by bus, we apply the same logic as in case 2 and get that before the week, the number of ways she could 
+            go to lecture is $a_{n-4}$.
+        \item
+            Since for $a_n$, $n \geq 0$, and in our recurrence relation there is $a_{n-4}$. We need $n-4 \geq 0$ for the 
+            recurrence relation. So the cases where $0 \leq n < 4$ should be initial conditions.\\
+            That is:
+            \\ $a_0 = 1$ (no way)
+            \\ $a_1 = 2$ (can only go by bike or on foot)
+            \\ $a_2 = 3$ (walk bike, bike walk, bike bike)
+            \\ $a_3 = 6$ (walk bike walk, walk bike bike, bike bike walk, bike walk bike, bike bike bike, bike walk bus)
+
+    \end{qparts}
+\end{solution}
+
+
 \subsection*{\probnum (Set)ting up a (Power)ful Proof [17 points]}
 \begin{qparts}
     \item Suppose we want to prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$. What is the Inductive Hypothesis for your proof? \emph{Hint: Consider what variable you should do induction on.}
