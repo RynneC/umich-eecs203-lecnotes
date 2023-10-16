@@ -131,11 +131,11 @@ Total Points: $100+33$
         \end{qsubparts}
         \item 
         Since the two $\emptyset$ in $\{\emptyset, \emptyset, \{\emptyset, \emptyset\}, \{\emptyset\}\}$ are identical,
-        we should remove one to make it valid.\\
+        we should remove one to simplify it.\\
         And since the two $\emptyset$ in the element $\{\emptyset, \emptyset\}$ in $\emptyset$ in $\{\emptyset, \{\emptyset, \emptyset\}, \{\emptyset\}\}$
-        are identical, we must remove one to make this element valid.\\
-        After doing that, we have two idential elements $\{ \emptyset\}$ in $\{\emptyset, \{\emptyset\}, \{\emptyset\}\}$, so we must remove one $\{ \emptyset\}$ to make it valid.\\
-        $\therefore$ the valid form of the original set is: $\{\emptyset, \{\emptyset\}\}$.\\
+        are identical, we must remove one to simplify it.\\
+        After doing that, we have two idential elements $\{ \emptyset\}$ in $\{\emptyset, \{\emptyset\}, \{\emptyset\}\}$, so we must remove one $\{ \emptyset\}$ to simplify it.\\
+        $\therefore$ the simplest form of the original set is: $\{\emptyset, \{\emptyset\}\}$.\\
         So the cardinality is $2$ since there are two elements in the set.
         \item 
         \begin{qsubparts}
@@ -195,6 +195,15 @@ How many IAs ordered all three flavors? Show all your calculations.
 \textbf{Note:} A Venn diagram is not acceptable justification for this question.
 
 \begin{solution}
+    We use $A$ to represent the set of IAs who ordered chocolate ice cream;\\
+    and $B$: the set of IAs who ordered strawberry ice cream;\\
+    and $C$: the set of IAs who ordered vanilla ice cream;\\
+    Then the given information is that: \\
+    Above all, $|A \cup B \cup C| = 40$.\\
+    And $|A| = 22 ,|B| = 25 , |C| = 16$.\\
+    And $|A \cap B| = 12, |B \cap C| = 8, |A \cap C| = 10$.\\
+    Since $|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$,\\
+    $|A \cap B \cap C| = |A \cup B \cup C| - |A| - |B| - |C| + |A \cap B| + |A \cap C| + |B \cap C| = 40 - 22 - 25 - 16 + 12 + 8 + 10 = 7$
 
 \end{solution}
 
@@ -203,6 +212,26 @@ Let $A$, $B$, and $C$ be sets. Prove that $$(B - A) \cup (C - A) = (B \cup C) - 
 by showing that each is a subset of the other. 
 
 \begin{solution}
+    \begin{qparts}
+        \item We prove that $(B - A) \cup (C - A) \subseteq ((B \cup C) - A)$, that is, any element in $(B - A) \cup (C - A)$ is also in $(B \cup C) - A$.\\
+        Let $x$ be an arbitrary element in the domain.\\
+        If $x \ in (B - A) \cup (C-A)$, $x \in (B-A) \lor x \in (C-A)$ due to definition of set union.\\
+        $\therefore (x \in B \land x \notin A) \lor (x \in C \land x \notin A)$ due to definition of set substraction.\\
+        $\therefore (x \in B \land \lnot x \in A) \lor (x \in C \land \lnot x \in A)$\\
+        $\therefore \lnot x \in A \land (x \in B \lor x \in C)$ due to distributive law.\\
+        $\therefore (x \in B \cup C) \land (x \notin A)$\\
+        $\therefore x \in ((B \cap C) - A)$ due to definition of set union.\\
+        $\therefore (B - A) \cup (C - A) \subseteq ((B \cup C) - A)$ due to definition of subset.
+        \item We prove that $((B \cup C) - A) \subseteq (B - A) \cup (C - A)$, that is, any element in $(B \cup C) - A$ is also in $(B - A) \cup (C - A)$.\\
+        Let $x$ be an arbitrary element in the domain.\\
+        If $x \in ((B \cup C) - A)$, ($x \in (B \cup C)) \land (x \notin A)$ due to definition of set substraction.\\
+        $\therefore ((x \in B) \lor (x \in C)) \land (\lnot x \in A)$ due to definition of set union.\\
+        $\therefore (x \in B \land \lnot x \in A) \lor (x \in C \land \lnot x \in A)$ due to distributive law.\\
+        $\therefore (x \in (B - A)) lor (x \in (C - A))$ due to definition of set substraction.\\
+        $\therefore ((B \cup C) - A) \subseteq (B - A) \cup (C - A)$ due to definition of subset.
+    \end{qparts}
+    Since $(B - A) \cup (C - A) \subseteq ((B \cup C) - A)$ and $((B \cup C) - A) \subseteq (B - A) \cup (C - A)$, 
+    \\ $(B - A) \cup (C - A) = (B \cup C) - A$
 \end{solution}
 
 
@@ -216,7 +245,7 @@ Given that $A, B, C$ are sets with $|A| = 13$, $|B| = 8$, $|C| = 10$, find the m
     \item $(A - B) \cap C$
 \end{qparts}
 \begin{solution}
-
+    
 \end{solution}
 
 \pagebreak
