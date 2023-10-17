@@ -418,7 +418,7 @@ Let $a_n$ denote the number of ways she can go to EECS 203 lecture across $n$ da
         The only subset of $S(k)$ is $\emptyset$.\\
         $\therefore \mathcal{P}(S(k)) = 1 = 2^0$ is true.\\
         
-        \textbf{Inductive Case:}\\
+        \textbf{Inductive Step:}\\
         Mark the elements in $S(k)$ as $a_1,a_2,...,a_k$, i.e., $S(k) = \{a_1, a_2, ..., a_k\}$.\\
         And mark the new element in $S(k+1)$ as $a_{k+1}$, i.e., $S(k) = \{a_1, a_2, ..., a_{k+1}\}$.\\
         Then all the new subsets created by $a_{k+1}$ is exactly a subset of $S(k)$ plus the element $a_{k+1}$.\\
@@ -451,7 +451,27 @@ The smallest ordinal, $0$, is represented as $\emptyset$. Each ordinal after is 
 \end{qparts}
 
 \begin{solution}
+    \begin{qparts}
+        \item 
+        $4 = \{ 0,1,2,3\} = \{\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \} \}\}$
+        \item 
+        We can tell $x \leq y$ by comparing the cardinality of $X$ and $Y$.\\
+        i.e., if $|X| \leq |Y|$, then $x \leq y$.\\
+        This works because every ordinal is represented as the set of all smaller ordinals than it, so it has more elements than ordinals smaller than it.
+        \item 
+        It is $\mathcal{P}(X)$.\\
+        Since every ordinal is represented as the set of all smaller ordinals than it,\\
+         $x+1$ is represented as $\{0,1,2,3,...,x\}$, in which $0,1,2,3,...x-1$ are all the subsets of $X$ but $X$ itself, 
+         and plus $X$ itself, they form a set of all the subsets of $X$, which is also defined as the Power Set of $X$, i.e. $\mathcal{P}(X)$.\\
+         This can be proved by induction.\\
+         Assume $x = \{0,1,...,x-1\} = \mathcal{P}(X-1)$\\
+         \textbf{Base Case:}\\
+        $0 = \emptyset, 1 = \{0\} = \{\emptyset\} = \mathcal{P}({0})$\\ 
+        \textbf{Inductive Step:}\\
+        $x+1 = \{0,1,...,x-1,x\}$, $0,1,...x-1$ is all the elements in $\mathcal{P}(X-1)$ which is all the subsets of the ordinal of $x-1$, and by plusing $x$, we have all the subsets of $x$ in the set.
+        \\$\therefore$ it is $\mathcal{P}(X)$.
 
+    \end{qparts}
 \end{solution}
 
 \end{document}
