@@ -1,0 +1,271 @@
+\documentclass[12pt]{exam}
+
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+
+% sometimes needed packages
+\usepackage{hyperref} % hyperlinks
+% \hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+% \usepackage{tikz} % drawing graphs
+% \usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+
+\printanswers
+
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+  Fall 2023\\
+  Homework 7}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+  \huge Due \textbf{Thursday, October 26}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $7+2$
+\hspace{3cm}
+Total Points: $100+30$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+    \item \textbf{Match your pages!} Your submission time is when you upload the file, so the time you take to match pages doesn't count against you.
+    \item Submit this assignment (and any regrade requests later) on Gradescope. 
+    \item Justify your answers and show your work (unless a question says otherwise).
+    \item By submitting this homework, you agree that you are in compliance with the Engineering Honor Code and the Course Policies for 203, and that you are submitting your own work.
+    \item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%% 
+
+\section*{Individual Portion}
+
+\subsection*{\probnum Growing your Growth Mindset [5 points]}
+
+\begin{qparts}
+    \item Watch the linked video about developing a growth mindset. This is a different video than the one you saw in lecture.
+    \item Rewrite the last two fixed mindset statements as growth mindset statements.
+    \item Write down one of your recurring fixed mindset thoughts, then write a thought you can replace it with that reflects a growth mindset.
+\end{qparts}
+
+\textbf{Video:} \href{https://tinyurl.com/eecs203growthMindset}{Developing a Growth Mindset (tinyurl.com/eecs203growthMindset)}
+
+\textbf{What to submit:} Your three pairs of fixed and growth mindset statements 
+(the two from the table, and one that you came up with on your own).
+
+\begin{center}
+\begin{tabular}{ |p{18em}|p{18em}| } 
+\hline
+\textbf{Fixed Mindset Statement} & \textbf{Growth Mindset Statement}\\
+\hline
+
+When I have to ask for help or get called on in lecture, I get anxious and feel like people will think I’m not smart.
+
+& The question I have is likely the same question someone else in lecture may have. It’s important for me to ask so I can better understand what I am learning.
+\\ \hline
+
+I’m jealous of other people’s success.
+
+& I am inspired and encouraged by other people’s success. They show me what is possible.
+
+\\ \hline
+
+I didn’t score as high on the exam as I expected. I’m not going to do well in this class and should drop it.
+
+& I learned from my mistakes on exam 1, and exam 2 will be a new opportunity for me to practice what I’ve learned.
+
+\\ \hline
+
+This class is hard for me, so I am not fit for this major.
+& [FILL IN YOUR OWN]
+\\ \hline
+
+Either I'm good at Discrete Math, or I'm not. 
+& [FILL IN YOUR OWN]
+\\ \hline
+
+[FILL IN YOUR OWN] & [FILL IN YOUR OWN] \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Home on the Range [15 points]}
+
+Find the integer $a$ such that
+\begin{qparts}
+    \item $a \equiv 74 \pmod{15}$ and $-5 \leq a \leq 9$
+    \item $a \equiv 144 \pmod{27}$ and $5 \leq a \leq 31$
+    \item $a \equiv -85 \pmod{31}$ and $120 \leq a \leq 150$
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum How low can you go? [15 points]}
+Suppose $a\equiv 6\pmod{7}$ and $b\equiv 5\pmod{7}$. In each part, find $c$ such that $0\leq c\leq 6$ and
+\begin{qparts}
+    \item $c \equiv 2a^2 + b^3 \pmod{7}$
+    \item $c \equiv b^{24} + 1 \pmod{7}$
+    \item $c\equiv a^{99} \pmod{7}$
+\end{qparts}
+Show your work! You should be doing the arithmetic/making substitutions \textbf{without using a calculator}. Your work must not include numbers above 50.
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Mod-tastic Mixing and Modding [15 points]}
+Let $x$ and $y$ be integers with $x\equiv2\pmod{14}$ and $y\equiv5\pmod{21}$. For each of the following expressions, either compute the value, or explain why there is not enough information to determine the value.
+\begin{qparts}
+    \item $(y-4x)$ mod 7
+    \item $(x+y)$ mod 14
+    \item $(xy^2+12)$ mod 7
+\end{qparts}
+
+\begin{solution} 
+
+\end{solution}
+
+\subsection*{\probnum Sample Functions [15 points]} 
+Determine if each of the examples below are functions or not. If a given construction is not a function, prove it by showing that a single input can have multiple outputs (not well defined) or that some input doesn't have an output (not total). If it is a function, explain why you think each input has exactly one output.
+
+\begin{qparts}
+    \item $f\colon \mathbb{R} \to \mathbb{R}$ such that $f(x) = y$ iff $3y=\frac1{x-3}$
+    \item $f\colon \mathbb{R} \to \mathbb{R}$ such that $f(x) = y$ iff $y \leq x$
+    \item $f\colon \text{Compound Propositions} \to \{T,F\}$ such that $f(x) = T$ iff $x$ is satisfiable, and $f(x) = F$ otherwise.
+    
+    \textbf{Example:} $f(p \land \neg p) = F$.
+\end{qparts}
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Functions are Fun(ctions) [20 points]}
+For each of the following functions, prove or disprove that it is onto and that it is one-to-one.  Conclude whether it is a bijection or not, and why.
+\begin{qparts}
+    \item $f \colon [2,3]\to [7,9]$, with $f(x) = 2x+3$\\
+    \textit{Reminder:} $[a,b]$ is the set of all real numbers between $a$ and $b$, including both $a$ and $b$.\\
+    \textit{Reminder:} Always make sure to reference whether things are elements of the domain and codomain when needed.  This is true for all such proofs, but this part has more unusual sets, so it is extra important.
+    \item $f \colon \mathbb{Z}\times\mathbb{Z}^+ \to \mathbb{Q}$, with $f(x,y) = \frac{x}{y}$
+    \item $f \colon \mathbb{R} \to \mathbb{R}$ with $f(x) =  \lfloor x \rfloor + x$
+    \item $f\colon \mathbb{Z} \times \mathbb {Z}^+ \to \mathbb{Z}$ where $f(x,y) = x^{2y}$
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Comp$\circ$sition$($Functions$)$ [15 points]}
+For each of the following pairs of functions $f$ and $g$, find $f \circ g$ and $g \circ f$, and name their domains and codomains. If either can't be computed, explain why.
+\begin{qparts}
+    \item $f\colon \mathbb{N} \to \mathbb{Z}^{+},\; f(x) = x^2 + 1$
+    
+    $g\colon\mathbb{Z}^{+}\to\mathbb{N},\; g(x) = x +2 $
+    \item $f\colon\mathbb{Z}\to\mathbb{R},\; f(x) = \left(4x + \frac{3}{7}\right)^{3}$
+    
+    $g\colon\mathbb{R} \rightarrow \mathbb{R}_{\geq 0},\; g(x) = |x|$
+
+    \textbf{Note:} $\mathbb{R}_{\geq 0}$ is the set of real numbers greater than or equal to 0.
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+\subsection*{\probnum Grade Groupwork 6}
+Using the solutions and Grading Guidelines, grade your Groupwork 6:
+\begin{itemize}
+    \item Mark up your past groupwork and submit it with this one.
+    \item Write whether your submission achieved each rubric item. If it didn't achieve one, say why not.
+    \item Use the table below to calculate scores.
+    \item For extra credit, write positive comment(s) about your work.
+    \item You don't have to redo problems correctly, but it is recommended!
+    \item What if my group changed? \begin{itemize}
+        \item If your current group submitted the same groupwork last time, grade it together.
+        \item  If not, grade your version, which means submitting this groupwork assignment separately. You may discuss grading together.
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+ & (i) & (ii) & (iii) & (iv) & (v) & (vi) & (vii) & (viii) & (ix) & (x) & (xi) & Total:\\
+\hline
+Problem 2 & & & & & & & & & & & \filcl& \hspace{1cm}/17\\
+\hline 
+Problem 3 & & & & & &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/16\\
+\Xhline{1.25pt}
+Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \filcl&\hspace{1cm}/33\\
+\hline
+\end{tabular}}
+\end{center}
+
+\subsection*{\probnum Raise the Roof [16 points]}
+Let $f\colon \mathbb R \rightarrow \mathbb Z$, where $f$ is defined as $f(x)= \left \lceil \frac{ x+5 }{2} \right \rceil + 12.$ Is $f$ onto? Prove your answer.
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum You Mod Bro? [14 points]}
+Find all solutions of the congruence $12x^2 + 25x \equiv 10 \pmod{11}$.
+\begin{solution}
+
+\end{solution}
+
+
+\end{document}
