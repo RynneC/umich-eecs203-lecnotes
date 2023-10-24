@@ -1,8 +1,8 @@
-PWD /Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 7
+PWD /Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 7/Project
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 7/Homework 7.tex
+INPUT /Users/fanqiulin/Documents/GitHub/23F-EECS-203/Homeworks/hw 7/Project/Homework 7.tex
 OUTPUT Homework 7.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/exam/exam.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/exam/exam.cls
