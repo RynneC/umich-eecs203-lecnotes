@@ -187,13 +187,26 @@ Find the integer $a$ such that
 \begin{solution}
     \begin{qparts}
         \item 11
-        \item 
+        For some integer $m$, $a = 74 + 15m$\\
+        Since $-5 \leq a \leq 9$\\
+        $-5 \leq 15m + 74  \leq 9$\\
+        $-5.8 \leq m \leq -4.3 $\\
+        Since $m$ is an integer, $m$ can only be $-5$.\\
+        $\therefore a = 74 -15 \times 5 = -1$
+        \item   
+        For some integer $m$, $a = 144 + 27m$\\
+        Since $5 \leq a \leq 31$\\
+        $5 \leq 144 + 27m  \leq 31$\\
+        $-5.5 \leq m \leq -4.1 $\\
+        Since $m$ is an integer, $m$ can only be $-5$.\\
+        $\therefore a = 144 - 27 \times 5 = 9$
         \item
         For some integer $m$, $a = -85 + 31m$\\
         Since $120 \leq a \leq 150$\\
         $120 \leq 31m - 85 \leq 150$\\
         $6.61 \leq m \leq 7.58$\\
-        Since $m$ is an integer, $m$ can only be $7$.
+        Since $m$ is an integer, $m$ can only be $7$.\\
+        $\therefore a = -85 + 31 \times 7 = 132$
     \end{qparts}
 \end{solution}
 
@@ -208,9 +221,40 @@ Show your work! You should be doing the arithmetic/making substitutions \textbf{
 
 \begin{solution}
     \begin{qparts}
-        \item 11
-        \item 
         \item
+        \begin{align*}
+            c &\equiv 2a^2 + b^3 \pmod{7} \\
+            &\equiv 2 \times 6 \times 6 + 5 \times 5 \times 5 \pmod{7}\\
+            &\equiv 2 \times (5 \times 7 + 1) + 5 \times (3 \times 7 + 4) \pmod{7}\\
+            &\equiv 2  + 21 \pmod{7} \\
+            &\equiv 2 + 3\times 7 \pmod{7}\\
+            &\equiv 2 \pmod{7}
+        \end{align*}
+        $\because 0 \leq c \leq 6$\\
+        $\therefore c = 2$ 
+        \item
+        \begin{align*}
+            c &\equiv b^{24} + 1 \pmod{7} \\
+            &\equiv 5^{24} + 1 \pmod{7}\\
+            &\equiv (3 \times 7 + 4)^{12} + 1 \pmod{7}\\
+            &\equiv 4^{12}  + 1 \pmod{7} \\
+            &\equiv (2 \times 7 + 2)^6 + 1 \pmod{7}\\
+            &\equiv 64 + 1 \pmod{7}\\
+            &\equiv 7 \times 9 + 1 + 1 \pmod 7\\
+            &\equiv 2 \pmod 7
+        \end{align*}
+        $\because 0 \leq c \leq 6$\\
+        $\therefore c = 2$ 
+        \item
+        \begin{align*}
+            c &\equiv a^{99}\pmod{7} \\
+            &\equiv 6^{99}\pmod{7}\\
+            &\equiv (7 - 1)^{99} \pmod{7}\\
+            &\equiv (-1)^{99}  \pmod{7} \\
+            &\equiv -1 \pmod{7}\\
+        \end{align*}
+        $\because 0 \leq c \leq 6$\\
+        $\therefore c = 7 - 1 = 6$ 
     \end{qparts}
 \end{solution}
 
@@ -223,6 +267,30 @@ Let $x$ and $y$ be integers with $x\equiv2\pmod{14}$ and $y\equiv5\pmod{21}$. Fo
 \end{qparts}
 
 \begin{solution} 
+    Since $x\equiv2\pmod{14}$ and $y\equiv5\pmod{21}$, there are some integer $p$ 
+    and $q$ such that $x = 14p + 2$, $y = 21q + 5$.
+    \begin{qparts}
+        \item 
+        $y - 4x = 21q + 5 - 56p - 8 = 7(3q - 8p) - 3$\\
+        Since $p$ and $q$ are integers, $3p - 8q$ is an integer, so $7 | 7(3q-8q)$.\\
+        $\therefore (y - 4x) \equiv -3\pmod{7} \equiv 4 \pmod{7}$\\
+        $\therefore (y-4x)$ mod 7 = 4
+        \item
+        $x + y = 14p + 2 + 21q + 5 = 7(2p + 3q + 1)$\\
+        Since $p,q$ are integers, $2p + 3q + 1$ is an integer.\\
+        $\therefore 7|7(2p + 3q + 1)$\\
+        Then if $2p + 3q + 1$ is even, i.e. $2 |7(2p + 3q + 1)$, $14|7(2p + 3q + 1)$;\\
+        And if $2p + 3q + 1$ is odd, $14 \not{|} 2p + 3q + 1$.\\
+        However, we do not know whether $2p + 3q + 1$ is even or odd.\\
+        $\therefore$ there is not enough information to determine the value.
+         \item 
+        Since $x = 2 \cdot 7p + 2$, $x \equiv 2 \pmod{7}$.
+        \\Since $y = 21q + 5$, $y^2 = 21 \cdot 21q^2 + 10 \times 21 q+ 25 = 7(21\cdot 3 q^2 + 30q + 3) +4$.
+        \\Since $p,q$ are integers, $(21\cdot 3 q^2 + 30q + 3)$ is an interger.\\
+        $\therefore 7(21\cdot 3 q^2 + 30q + 3) + 4 \equiv 4\pmod{7} = 4$, $y^2 \equiv 4\pmod{7}$\\
+        $\therefore (xy^2 + 12) \equiv (2 \times 4) \pmod{7} \equiv 1 \pmod 7$.\\
+        $\therefore (xy^2 + 12)$ mod 7 = 1.
+    \end{qparts}
 
 \end{solution}
 
