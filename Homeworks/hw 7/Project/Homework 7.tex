@@ -305,7 +305,14 @@ Determine if each of the examples below are functions or not. If a given constru
     \textbf{Example:} $f(p \land \neg p) = F$.
 \end{qparts}
 \begin{solution}
-
+    \begin{qparts}
+        \item Not a function.\\ Consider $x=3$, $3y = \frac{1}{0}$ does not exist. That means for $x = 3$, there is no output.\\
+    $\therefore$ not a function.
+    \item Not a function.\\ Consider $x = 2$, $y = 1$ and $y =0$ all satisfy $y \leq 1$, so $f(x)$ can be both $0$ and $1$.
+    \\$\therefore$ have multiple outputs, not a function.
+    \item It is a function.\\ For any Compound Proposition, it must has a truth value which can only be either $T$ or $F$.\\ $\therefore$
+    for any satisfiable input $x$, there is exactly an output which is either $T$ or $F$.\\ $\therefore$ is a function.
+    \end{qparts}
 \end{solution}
 
 \subsection*{\probnum Functions are Fun(ctions) [20 points]}
@@ -320,6 +327,105 @@ For each of the following functions, prove or disprove that it is onto and that 
 \end{qparts}
 
 \begin{solution}
+    \begin{qparts}
+        \item 
+        We prove it is onto and one-to-one.
+        \begin{subparts}
+            \item $\forall a_1, a_2 \in [2,3]$, $[f(a_1) = f(a_2)] \rightarrow (a_1 = a_2)$\\
+            Proof:
+            \\Let $a_1, a_2$ be arbitrary real numbers in $[2,3]$.\\
+            Assume $f(a_1) = f(a_2)$,\\
+            Then $2a_1 + 3 = 2a_2 + 3$, $2a_1 = 2a_2$, $a_1 = a_2$.\\
+            $\therefore$ $f$ is one-to-one.
+            \item $\forall b \in [7,9], \exists a \in [2,3]$ such that $f(a) = b$.\\
+            Proof:
+            \\Let $b$ be an arbitrary real numbers in $[7,9]$.\\
+            Consider $a = \frac{b-3}{2}$\\
+            Then $\frac{7-3}{2} \leq a \leq \frac{9-3}{2}$, $2 \leq a \leq 3$, $a$ is in the domain.\\
+            And $2a + 3 = b$.\\
+            $\therefore$ $f$ is onto.
+        \end{subparts}
+        $\therefore$ $f$ is onto and one-to-one.\\
+        $\therefore$ $f$ is a bijection.
+        \item 
+        We prove it is onto but not one-to-one.
+        \begin{subparts}
+            \item 
+            $\exists (a_1, b_1), (a_2, b_2)$ where $a_1, a_2 \in \mathbb{Z}$ 
+            and $b_1, b_2\in\mathbb{Z^+}$, $[f(a_1, b_1) = f(a_2, b_2)] \land [(a_1,b_1) \not = (a_2, b_2)]$.\\
+            Proof:\\
+            Consider $x_1 = 1$, $y_1 = 2$, $x_2 = 2$, $y_2 = 4$.\\
+            Then $f(x_1,y_1) = \frac{x_1}{y_1} = \frac{1}{2}$, $f(x_2,y_2) = \frac{x_2}{y_2} = \frac{2}{4} = \frac{1}{2}$\\
+            $\therefore$ $f$ is not one-to-one.
+            \item 
+            $\forall c \in \mathbb{Q}$, $\exists (a, b)$ where $a\in \mathbb{Z}$ 
+            and $b\in\mathbb{Z^+}$, such that $c = \frac{a}{b}$.\\
+            Proof:\\
+            Let $c$ be an arbitrary rational numbers.\\
+            Then for some integers $p,q$, $c = \frac{p}{q}$.
+            If $q$ is positive, consider $a = p$ and $b = q$.\\
+            Then $a \in \mathbb{Z}$ and $b \in \mathbb{Z^+}$, and $c = \frac{a}{b}$.\\
+            If $q$ is negative, consider $a = -p$ and $b = -q$.\\
+            Then $a \in \mathbb{Z}$ and $b \in \mathbb{Z^+}$, and $c = \frac{a}{b}$.\\
+            $\therefore$ $f$ is onto.
+        \end{subparts}
+        $\therefore$ $f$ is onto but not one-to-one.\\
+        $\therefore$ $f$ is not a bijection.
+        \item
+        We prove it is one-to-one but not onto.
+        \begin{subparts}
+            \item
+            $\forall a_1, a_2 \in \mathbb{R}$, $[f(a_1) = f(a_2)] \rightarrow (a_1 = a_2)$.\\
+            Proof:\\
+            Let $a_1$ and $a_2$ be arbitrary real numbers.\\
+            Assume $f(a_1) \not = f(a_2)$, seeking contradiction.\\
+            Case 1: $a_2 > a_1$\\
+            Then $\lfloor a_2 \rfloor \geq \lfloor a_1 \rfloor$,
+            $\lfloor a_2 \rfloor + a_2 < \lfloor a_1 \rfloor + a_1$, $f(a_2) > f(a_1)$.\\
+            Case 2: $a_2 < a_1$\\
+            Then $\lfloor a_2 \rfloor \leq \lfloor a_1 \rfloor$,
+            $\lfloor a_2 \rfloor + a_2 < \lfloor a_1 \rfloor + a_1$, $f(a_2) < f(a_1)$.\\
+            $\therefore$ contradiction.\\
+            $\therefore$ $a_1$ can only equal to $a_2$.\\
+            $\therefore$ $f$ is one-to-one.
+            \item
+            $\exists$ $b \in \mathbb{R}$ such that $\forall$ $a \in \mathbb{R}$, $f(a) \not = b$.\\
+            Proof:\\
+            Consider $b = 1$.\\
+            When $a < 0$, $f(a) = \lfloor a \rfloor + a < 0$.\\
+            When $0 < a < 1$, $\lfloor a \rfloor$ is always $0$, and $f(a) = \lfloor a \rfloor + a = 0 + a <1$.\\
+            And at the point where $a$ reaches 1, $\lfloor a \rfloor$ immediately becomes 1, and $f(a) = \lfloor a \rfloor + a = 1 + 1 = 2$.\\
+            After that when $a > 1$, $\lfloor a \rfloor \geq 1$ and $f(a) = \lfloor a \rfloor + a >1$.\\
+            $\therefore$ for $b = 1$, there is no such $a$ that $f(a) = b$.
+            $\therefore$ $f$ is not onto.
+        \end{subparts}
+        $\therefore$ $f$ is one-to-one but not onto.\\
+        $\therefore$ $f$ is not a bijection.
+        \item
+        We prove it is not onto and not one-to-one.
+        \begin{subparts}
+            \item
+            $\exists (a_1, b_1), (a_2, b_2)$ where $a_1, a_2 \in \mathbb{Z}$ 
+            and $b_1, b_2\in\mathbb{Z^+}$, $[f(a_1, b_1) = f(a_2, b_2)] \land [(a_1,b_1) \not = (a_2, b_2)]$.\\
+            Proof:\\
+            Consider $a_1 = 4, b_1 =1$, $a_2 = 2, b_2 = 2$,\\
+            Then $f(a_1,b_1) = f(a_2, b_2) = 16$.\\
+            $\therefore$ $f$ is not one-to-one.
+            \item
+            $\exists c\in Z$, $\forall a \in \mathbb{Z}$ and $b \in \mathbb{Z^+}$, $f(a,b) \not = c$.\\
+            Proof:\\
+            Consider c = 2.\\
+            Since $b \in \mathbb{Z+}$, $2b \geq 2$.\\
+            We know that $2^2 = 4$
+            and for a power $a^n$ where $|a| > 1$, when $n > 1$, the lager $n$ is, the larger $|a^n|$ is,\\
+            $\therefore$ for all a $\in \mathcal{Z}$ where $|a| \geq 2$ and $b \in \mathbb{Z+}$, $f(a,b) > = c$.\\
+            And when $a = 0, 1, -1$, no matter what $b$ is, $f(a,b)$ is respectively $0,1,-1 \not = 2$.\\
+            $\therefore$ for $c =2$, there is no correspoding $a,b$ such that $f(a,b) = c$.\\
+            $\therefore f$ is not onto.
+        \end{subparts}
+        $\therefore$ $f$ is not onto and not one-to-one.\\
+        $\therefore$ $f$ is not a bijection.
+    \end{qparts}
 
 \end{solution}
 
@@ -337,6 +443,24 @@ For each of the following pairs of functions $f$ and $g$, find $f \circ g$ and $
 \end{qparts}
 
 \begin{solution}
+    \begin{qparts}
+        \item
+        Since $codom(g) \subseteq dom(f)$, $f \circ g$ exists.\\
+        $f \circ g (x) = f(g(x)) = (x+2)^2 + 1 = x^2 + 4x + 5$.\\
+        The domain of $f \circ g (x)$ is $\mathbb{Z^+}$.\\
+        The codomain of $f \circ g (x)$ is $\mathbb{Z}_{\geq 10}$.\\
+        Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
+        $g \circ f (x) = g(f(x)) = (x^2 + 1) + 2 = x^2 + 3.$\\
+        The domain of $g \circ f (x)$ is $\mathbb{N}$.\\
+        The codomain of $g \circ f (x)$ is $\mathbb{Z}_{\geq 3}$.\\
+        \item
+        Since $codom(g) \not\subseteq dom(f)$, $f \circ g$ does not exist.\\
+        Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
+        $g \circ f (x) = g(f(x)) = |(4|x| + \frac{3}{7})^{3}| $.\\
+        The domain of $g \circ f (x)$ is $\mathbb{Z}$.\\
+        The codomain of $g \circ f (x)$ is $\mathbb{R}_{\geq \frac{27}{343}}$.\\
+
+    \end{qparts}
 
 \end{solution}
 
