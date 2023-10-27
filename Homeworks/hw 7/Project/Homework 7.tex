@@ -186,7 +186,7 @@ Find the integer $a$ such that
 
 \begin{solution}
     \begin{qparts}
-        \item 11
+        \item
         For some integer $m$, $a = 74 + 15m$\\
         Since $-5 \leq a \leq 9$\\
         $-5 \leq 15m + 74  \leq 9$\\
@@ -418,8 +418,8 @@ For each of the following functions, prove or disprove that it is onto and that 
             Since $b \in \mathbb{Z+}$, $2b \geq 2$.\\
             We know that $2^2 = 4$
             and for a power $a^n$ where $|a| > 1$, when $n > 1$, the lager $n$ is, the larger $|a^n|$ is,\\
-            $\therefore$ for all a $\in \mathcal{Z}$ where $|a| \geq 2$ and $b \in \mathbb{Z+}$, $f(a,b) > = c$.\\
-            And when $a = 0, 1, -1$, no matter what $b$ is, $f(a,b)$ is respectively $0,1,-1 \not = 2$.\\
+            $\therefore$ for all a $\in \mathbb{Z}$ where $|a| \geq 2$ and $b \in \mathbb{Z^+}$, $f(a,b) \geq 4 > c$.\\
+            And when $|a|$ = 0 or 1, no matter what $b$ is, $f(a,b)$ is $0$ or $\pm1 \not = 2$.\\
             $\therefore$ for $c =2$, there is no correspoding $a,b$ such that $f(a,b) = c$.\\
             $\therefore f$ is not onto.
         \end{subparts}
@@ -447,17 +447,20 @@ For each of the following pairs of functions $f$ and $g$, find $f \circ g$ and $
         \item
         Since $codom(g) \subseteq dom(f)$, $f \circ g$ exists.\\
         $f \circ g (x) = f(g(x)) = (x+2)^2 + 1 = x^2 + 4x + 5$.\\
-        The domain of $f \circ g (x)$ is $\mathbb{Z^+}$.\\
-        The codomain of $f \circ g (x)$ is $\mathbb{Z}_{\geq 10}$.\\
+        The domain of $f \circ g (x)$ which equals to the domain of $g(x)$ is $\mathbb{Z^+}$.\\
+        So $f \circ g (x) \geq f \circ g (1) = 10$.\\
+        $\therefore$The codomain of $f \circ g (x)$ is $\mathbb{Z}_{\geq 10}$.\\\\
         Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
         $g \circ f (x) = g(f(x)) = (x^2 + 1) + 2 = x^2 + 3.$\\
-        The domain of $g \circ f (x)$ is $\mathbb{N}$.\\
+        The domain of $g \circ f (x)$ whith equals to the domain of $f(x)$ is $\mathbb{N}$.\\
+        Since $x^2 + 3 \pm 3$, and at $x=0$, $x^2 + 3 = 3$,\\
         The codomain of $g \circ f (x)$ is $\mathbb{Z}_{\geq 3}$.\\
         \item
-        Since $codom(g) \not\subseteq dom(f)$, $f \circ g$ does not exist.\\
+        Since $codom(g) \not\subseteq dom(f)$, $f \circ g$ does not exist.\\\\
         Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
         $g \circ f (x) = g(f(x)) = |(4|x| + \frac{3}{7})^{3}| $.\\
-        The domain of $g \circ f (x)$ is $\mathbb{Z}$.\\
+        The domain of $g \circ f (x)$ which equals to the domain of $f(x)$ is $\mathbb{Z}$.\\
+        Since $4|x| \geq 0$, $g \circ f (x) \geq (\frac{3}{7})^3$. At x = 0 its value is $\frac{27}{343}$.\\
         The codomain of $g \circ f (x)$ is $\mathbb{R}_{\geq \frac{27}{343}}$.\\
 
     \end{qparts}
@@ -499,13 +502,33 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 Let $f\colon \mathbb R \rightarrow \mathbb Z$, where $f$ is defined as $f(x)= \left \lceil \frac{ x+5 }{2} \right \rceil + 12.$ Is $f$ onto? Prove your answer.
 
 \begin{solution}
-
+    $f$ is onto.\\
+    i.e. $\forall b \in \mathbb{Z}$, $\exists a \in \mathbb{R}$ such that $b = f(a)$.
+    Proof:\\
+    Let $b$ be an arbitrary integer.\\
+    Consider $a = 2b -29$.\\
+    Then $a$ is also an integer, $a \in \mathbb{Z} \subseteq \mathbb{R}$, is in the domain.\\
+    Then
+    \begin{align*}
+        f(a)  &= \lceil \frac{ 2b - 29+5 }{2}\rceil + 12\\
+              &= \lceil \frac{ 2b - 24 }{2} \rceil + 12\\
+              &= \lceil b - 12 \rceil + 12
+    \end{align*} 
+    Since $b$ is an integer, $\lceil b - 12 \rceil = b -12$.\\
+    $\therefore f(a) = b - 12 + 12 = b$.\\
+    $\therefore \forall b \in \mathbb{Z}$, $\exists a \in \mathbb{R}$ such that $b = f(a)$.\\
+    $\therefore f$ is onto.
 \end{solution}
 
 \subsection*{\probnum You Mod Bro? [14 points]}
 Find all solutions of the congruence $12x^2 + 25x \equiv 10 \pmod{11}$.
 \begin{solution}
-
+    $12x^2 + 25x \equiv 10 \pmod{11}$\\
+    $(11+1)x^2 + (2 \cdot 11 +3)x \equiv 10 \pmod{11}$\\
+    $x^2 + 3x - 10 \equiv 0 \pmod{11}$\\
+    $(x+5)(x-2) \equiv 0 \pmod{11}$ \\
+    $\therefore x \equiv 2 \pmod{11}$ or $x \equiv -5 \pmod{11}\equiv 6 \pmod{11}$.\\
+    $\therefore$ The solutions are: all integer $x$ satisfying $x \equiv 2 \pmod{11}$ or $x\equiv 6 \pmod{11}$.
 \end{solution}
 
 
