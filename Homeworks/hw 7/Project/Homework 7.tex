@@ -498,6 +498,84 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 \end{tabular}}
 \end{center}
 
+\subsection*{Previous Groupwork 6(1): (Set)ting up a (Power)ful Proof [17 points]}
+\begin{qparts}
+    \item Suppose we want to prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$. What is the Inductive Hypothesis for your proof? \emph{Hint: Consider what variable you should do induction on.}
+    \item Prove by Induction that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$.
+\end{qparts}
+\begin{solution}
+    \begin{qparts}
+        \item 
+        for $S(k)$ be an arbitrary set s.t. $|S(k)| = k$.
+        Assume that $\mathcal{P}(S(k)) = 2^k $.
+        \item
+        Let $k$ be an arbitrary nonnegative integer.\\
+        Let $S(k)$ be an arbitrary set s.t. 
+        $|S(k)| = k$, i.e. $S(k)$ has $k$ elements.\\
+        Assume: $\mathcal{P}(S(k)) = 2^k $.\\
+        Want to show: $\mathcal{P}(S(k+1)) = 2^{k+1}.$\\
+        
+        \textbf{Base Case:}\\
+        $k = 0. S(k) = \emptyset = \{\}$\\
+        The only subset of $S(k)$ is $\emptyset$.\\
+        $\therefore \mathcal{P}(S(k)) = 1 = 2^0$ is true.\\
+        
+        \textbf{Inductive Step:}\\
+        Mark the elements in $S(k)$ as $a_1,a_2,...,a_k$, i.e., $S(k) = \{a_1, a_2, ..., a_k\}$.\\
+        And mark the new element in $S(k+1)$ as $a_{k+1}$, i.e., $S(k) = \{a_1, a_2, ..., a_{k+1}\}$.\\
+        Then all the new subsets created by $a_{k+1}$ is exactly a subset of $S(k)$ plus the element $a_{k+1}$.\\
+        And every subset plus an element of $a_{k+1}$ is a included in $\mathcal{P}(S(k+1))$.\\
+        $\therefore$ The number of elements in $\mathcal{P}(S(k+1))$ is $|\mathcal{P}(S(k))| + |\mathcal{P}(S(k))| = 2|\mathcal{P}(S(k))| = 2 \times 2^k = 2^{k+1}$\\
+        $\therefore$ $|\mathcal{P}(S(k+1))| = 2^{k+1}$\\
+        $\therefore$ we have proved that for any finite set $S$, it is true that $|\mathcal{P}(S)| = 2^{|S|}$.
+
+    \end{qparts}
+
+\end{solution}
+
+\subsection*{Previous Groupwork 6(2): Out of the ordinary [16 points]}
+The (von Neumann) ordinals are a special kind of number. Each one is represented just in terms of sets. We can think of every natural number as an ordinal. We won't deal with it in this question, but there are also infinite ordinals that ``keep going" after the natural numbers, which works because there are infinite sets.
+
+The smallest ordinal, $0$, is represented as $\emptyset$. Each ordinal after is represented as the set of all smaller ordinals. For example,
+\begin{align*}
+    0 &= \emptyset\\
+    1 &= \{ 0 \} = \{ \emptyset \}\\
+    2 &= \{ 0, 1 \} = \{ \emptyset, \{ \emptyset \} \}\\
+    3 &= \{ 0, 1, 2 \} = \{ \emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \} \}
+\end{align*}
+
+\begin{qparts}
+    \item What is the ordinal representation of $4$, in terms of just sets?
+
+    \item If the sets $X$ and $Y$ are ordinals representing the natural numbers $x$ and $y$ respectively, how can we tell if $x \le y$ in terms of $X$ and $Y$? Why does this work?
+
+    \item If $X$ is the ordinal representing the natural number $x$, what is the ordinal representation of $x+1$? Why does this work?
+\end{qparts}
+
+\begin{solution}
+    \begin{qparts}
+        \item 
+        $4 = \{ 0,1,2,3\} = \{\emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}, \{ \emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \} \}\}$
+        \item 
+        We can tell $x \leq y$ by comparing the cardinality of $X$ and $Y$.\\
+        i.e., if $|X| \leq |Y|$, then $x \leq y$.\\
+        This works because every ordinal is represented as the set of all smaller ordinals than it, so it has more elements than ordinals smaller than it.
+        \item 
+        It is $\mathcal{P}(X)$.\\
+        Since every ordinal is represented as the set of all smaller ordinals than it,\\
+         $x+1$ is represented as $\{0,1,2,3,...,x\}$, in which $0,1,2,3,...x-1$ are all the subsets of $X$ but $X$ itself, 
+         and plus $X$ itself, they form a set of all the subsets of $X$, which is also defined as the Power Set of $X$, i.e. $\mathcal{P}(X)$.\\
+         This can be proved by induction.\\
+         Assume $x = \{0,1,...,x-1\} = \mathcal{P}(X-1)$\\
+         \textbf{Base Case:}\\
+        $0 = \emptyset, 1 = \{0\} = \{\emptyset\} = \mathcal{P}({0})$\\ 
+        \textbf{Inductive Step:}\\
+        $x+1 = \{0,1,...,x-1,x\}$, $0,1,...x-1$ is all the elements in $\mathcal{P}(X-1)$ which is all the subsets of the ordinal of $x-1$, and by plusing $x$, we have all the subsets of $x$ in the set.
+        \\$\therefore$ it is $\mathcal{P}(X)$.
+
+    \end{qparts}
+\end{solution}
+
 \subsection*{\probnum Raise the Roof [16 points]}
 Let $f\colon \mathbb R \rightarrow \mathbb Z$, where $f$ is defined as $f(x)= \left \lceil \frac{ x+5 }{2} \right \rceil + 12.$ Is $f$ onto? Prove your answer.
 
