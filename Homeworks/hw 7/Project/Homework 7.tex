@@ -226,12 +226,12 @@ Show your work! You should be doing the arithmetic/making substitutions \textbf{
             c &\equiv 2a^2 + b^3 \pmod{7} \\
             &\equiv 2 \times 6 \times 6 + 5 \times 5 \times 5 \pmod{7}\\
             &\equiv 2 \times (5 \times 7 + 1) + 5 \times (3 \times 7 + 4) \pmod{7}\\
-            &\equiv 2  + 21 \pmod{7} \\
-            &\equiv 2 + 3\times 7 \pmod{7}\\
-            &\equiv 2 \pmod{7}
+            &\equiv 2  + 20 \pmod{7} \\
+            &\equiv 1 + 3\times 7 \pmod{7}\\
+            &\equiv 1 \pmod{7}
         \end{align*}
         $\because 0 \leq c \leq 6$\\
-        $\therefore c = 2$ 
+        $\therefore c = 1$ 
         \item
         \begin{align*}
             c &\equiv b^{24} + 1 \pmod{7} \\
@@ -288,8 +288,8 @@ Let $x$ and $y$ be integers with $x\equiv2\pmod{14}$ and $y\equiv5\pmod{21}$. Fo
         \\Since $y = 21q + 5$, $y^2 = 21 \cdot 21q^2 + 10 \times 21 q+ 25 = 7(21\cdot 3 q^2 + 30q + 3) +4$.
         \\Since $p,q$ are integers, $(21\cdot 3 q^2 + 30q + 3)$ is an interger.\\
         $\therefore 7(21\cdot 3 q^2 + 30q + 3) + 4 \equiv 4\pmod{7} = 4$, $y^2 \equiv 4\pmod{7}$\\
-        $\therefore (xy^2 + 12) \equiv (2 \times 4) \pmod{7} \equiv 1 \pmod 7$.\\
-        $\therefore (xy^2 + 12)$ mod 7 = 1.
+        $\therefore (xy^2 + 12) \equiv (2 \times 4 + 12) \pmod{7} \equiv 6 \pmod 7$.\\
+        $\therefore (xy^2 + 12)$ mod 7 = 6.
     \end{qparts}
 
 \end{solution}
@@ -448,20 +448,17 @@ For each of the following pairs of functions $f$ and $g$, find $f \circ g$ and $
         Since $codom(g) \subseteq dom(f)$, $f \circ g$ exists.\\
         $f \circ g (x) = f(g(x)) = (x+2)^2 + 1 = x^2 + 4x + 5$.\\
         The domain of $f \circ g (x)$ which equals to the domain of $g(x)$ is $\mathbb{Z^+}$.\\
-        So $f \circ g (x) \geq f \circ g (1) = 10$.\\
-        $\therefore$The codomain of $f \circ g (x)$ is $\mathbb{Z}_{\geq 10}$.\\\\
+        The codomain of $f \circ g (x)$ which equals to the domain of $f(x)$ is $\mathbb{Z^+}$.\\
         Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
         $g \circ f (x) = g(f(x)) = (x^2 + 1) + 2 = x^2 + 3.$\\
-        The domain of $g \circ f (x)$ whith equals to the domain of $f(x)$ is $\mathbb{N}$.\\
-        Since $x^2 + 3 \pm 3$, and at $x=0$, $x^2 + 3 = 3$,\\
-        The codomain of $g \circ f (x)$ is $\mathbb{Z}_{\geq 3}$.\\
+        The domain of $g \circ f (x)$ which equals to the domain of $f(x)$ is $\mathbb{N}$.\\
+        The codomain of $g \circ f (x)$ which equals to the codomain of $g(x)$ is $\mathbb{N}$.\\
         \item
         Since $codom(g) \not\subseteq dom(f)$, $f \circ g$ does not exist.\\\\
         Since $codom(f) \subseteq dom(g)$, $g \circ f$ exists.\\
         $g \circ f (x) = g(f(x)) = |(4|x| + \frac{3}{7})^{3}| $.\\
         The domain of $g \circ f (x)$ which equals to the domain of $f(x)$ is $\mathbb{Z}$.\\
-        Since $4|x| \geq 0$, $g \circ f (x) \geq (\frac{3}{7})^3$. At x = 0 its value is $\frac{27}{343}$.\\
-        The codomain of $g \circ f (x)$ is $\mathbb{R}_{\geq \frac{27}{343}}$.\\
+        The codomain of $g \circ f (x)$ which equals to the codomain of $g(x)$ is $\mathbb{R}_{\geq 0}$.\\
 
     \end{qparts}
 
