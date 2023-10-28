@@ -1,0 +1,252 @@
+\documentclass[12pt]{exam}
+
+% essential packages
+\usepackage{fullpage} % margin formatting
+\usepackage{enumitem} % configure enumerate and itemize
+\usepackage{amsmath, amsfonts, amssymb, mathtools} % math symbols
+\usepackage{xcolor, colortbl} % colors, including in tables
+\usepackage{makecell} % thicker \Xhline in table
+\usepackage{graphicx} % images, resizing
+
+% sometimes needed packages
+\usepackage{hyperref} % hyperlinks
+% \hypersetup{colorlinks=true, urlcolor=blue}
+% \usepackage{logicproof} % natural deduction
+% \usepackage{tikz} % drawing graphs
+% \usetikzlibrary{positioning}
+% \usepackage{multicol}
+% \usepackage{algpseudocode} % pseudocode
+
+% paragraph formatting
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0cm}
+
+% newline after Solution:
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+
+% less space before itemize/enumerate
+\setlist{topsep=0pt}
+
+% creates \filcl to grey out cells for groupwork grading
+\newcommand{\filcl}{\cellcolor{gray!25}}
+
+% creates \probnum to get the problem number
+\newcounter{probnumcount}
+\setcounter{probnumcount}{1}
+\newcommand{\probnum}{\arabic{probnumcount}. \addtocounter{probnumcount}{1}}
+
+% use roman numerals by default
+\setlist[enumerate]{label={(\roman*)}}
+
+% creates custom list environments for grading guidelines, question parts
+\newlist{guidelines}{itemize}{1}
+\setlist[guidelines]{label={}, left=0pt .. \parindent, nosep}
+\newlist{gwguidelines}{enumerate}{1}
+\setlist[gwguidelines]{label={(\roman*)}, nosep}
+\newlist{qparts}{enumerate}{2}
+\setlist[qparts]{label={(\alph*)}}
+\newlist{qsubparts}{enumerate}{2}
+\setlist[qsubparts]{label={(\roman*)}}
+\newlist{stmts}{enumerate}{1}
+\setlist[stmts]{label={(\roman*)}, nosep}
+\newlist{pflist}{itemize}{4}
+\setlist[pflist]{label={$\bullet$}, nosep}
+\newlist{enumpflist}{enumerate}{4}
+\setlist[enumpflist]{label={(\arabic*)}, nosep}
+
+\printanswers
+
+\begin{document}
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%
+\title{EECS 203: Discrete Mathematics\\
+  Fall 2023\\
+  Homework 8}
+\date{}
+\author{}
+\maketitle
+\vspace{-50pt}
+\begin{center}
+  \huge Due \textbf{Thursday, November 2}, 10:00 pm\\
+\Large No late homework accepted past midnight.\\
+\vspace{10pt}
+\large Number of Problems: $7+2$
+\hspace{3cm}
+Total points: $100+42$
+\end{center}
+\vspace{25pt}
+\begin{itemize}
+    \item \textbf{Match your pages!} Your submission time is when you upload the file, so the time you take to match pages doesn't count against you.
+    \item Submit this assignment (and any regrade requests later) on Gradescope. 
+    \item Justify your answers and show your work (unless a question says otherwise).
+    \item By submitting this homework, you agree that you are in compliance with the Engineering Honor Code and the Course Policies for 203, and that you are submitting your own work.
+    \item Check the syllabus for full details.
+\end{itemize}
+\newpage
+%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%% 
+
+\section*{Individual Portion}
+
+\subsection*{\probnum Why You Got a 12-Car Garage? [8 points]}
+Ashu recently acquired three 12-car garages, but he has no cars (yet). 
+\begin{qparts}
+    \item What is the minimum number of cars Ashu has to acquire in order to guarantee that at least one of the garages will have \textbf{more} than 6 cars in it? Justify your answer, including an explanation of why it is the minimum number.
+    \item If the garages are all adjacent to one another, what is the minimum number of cars Ashu has to acquire in order to guarantee that the middle garage has more than 6 cars in it? 
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Sum More Counting [14 points]}
+Consider the set of integers between 1 and 18, inclusive. What is the smallest integer $n$ such that, for any subset $S\subseteq \{1, 2, \dots, 18\}$ of size $|S|=n$, there are \textbf{distinct} integers $x, y \in S$ with $x+y=18$? Prove that your answer is sufficient to guarantee this, and the minimum necessary number.
+
+\textbf{Note:} To prove that your choice of $n$ is smallest, you must also give an example of a set of size $|S|=n-1$ that does not contain $x, y \in S$ with $x+y=18$.
+\begin{solution}
+
+\end{solution}
+
+
+\subsection*{\probnum Set Sizes [12 points]}
+
+Determine which of these sets are finite, countably infinite, or uncountably infinite. Give a short (about 1 line) explanation for each part.
+
+\begin{qparts}
+    \item $\{2, 3\}\times \mathbb{N}$
+    \item $(0, 2) - \mathbb{Q}$
+    \item $\{x \in \mathbb{R} \mid x^2 - 1 \leq 0\}$
+    \item $\{x \in \mathbb{N} \mid x \leq 1000 \}$
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Ready, set, count! [15 points]}
+
+\textbf{Definition:} $A\oplus B$ is the symmetric difference of the sets $A$ and $B,$ i.e. the set containing all elements which are in $A$ or in $B$ but not in both.
+
+Provide two \textbf{uncountable} sets $A$ and $B$ such that $A\oplus B$ is
+\begin{qparts}
+    \item finite.
+    \item countably infinite.
+    \item uncountably infinite.
+\end{qparts}
+Include in your justification a desciption of the set $A \oplus B$ without reference to the symmetric difference.
+
+\begin{solution}
+
+\end{solution}
+
+\subsection*{\probnum Corresponding Counts [18 points]}
+Prove that $|[0, 2]| = |(3, 6)|$.
+
+For any functions that you name:
+\begin{itemize}
+\item Prove that the function is well-defined, i.e.\ that for any $x$ in the domain of your function $f$, $f(x)$ lies in the codomain.
+\item Prove any function properties that you use (e.g.\ one-to-one, onto, etc).
+\end{itemize}
+
+\begin{solution}
+
+\end{solution}
+
+
+\subsection*{\probnum Composition Pr$\circ\circ$f [15 points]}
+
+Consider functions $g\colon A \to B$ and $f\colon B \to C.$ \textbf{Prove or disprove} that if $ f $ and $ f \circ g $ are one-to-one, then $ g $ is one-to-one.
+
+\begin{solution}
+    
+\end{solution}
+
+\subsection*{\probnum One Hit Wonder [18 points]}
+For this problem, we will define two new properties. Let $S$ be a set and $f\colon S \to S$ be some function.
+
+We say $f$ is a \emph{one hit wonder} if:
+$$ \forall x \in S\, [ (f \circ f)(x) = f(x) ].$$
+
+Some examples of one-hit wonders from $\mathbb{R} \to \mathbb{R}$ are the absolute value function, 
+the ceiling function, and the function which sends every number to 0.
+
+We say $f$ \emph{does nothing} if:
+$$ \forall x \in S\, [ f(x) = x ].$$
+
+\begin{qparts}
+    \item Prove that if $f$ does nothing, then it is a one-hit wonder.
+    \item Prove that if $f$ is a one hit wonder and is one-to-one, then $f$ does nothing.
+    \item Prove that if $f$ is a one hit wonder and is onto, then $f$ does nothing.
+\end{qparts}
+
+
+\begin{solution}
+
+\end{solution}
+
+
+\pagebreak
+\setcounter{probnumcount}{1}
+\section*{Groupwork}
+\subsection*{\probnum Grade Groupwork 7}
+Using the solutions and Grading Guidelines, grade your Groupwork 7:
+\begin{itemize}
+    \item Mark up your past groupwork and submit it with this one.
+    \item Write whether your submission achieved each rubric item. If it didn't achieve one, say why not.
+    \item Use the table below to calculate scores.
+    \item For extra credit, write positive comment(s) about your work.
+    \item You don't have to redo problems correctly, but it is recommended!
+    \item What if my group changed? \begin{itemize}
+        \item If your current group submitted the same groupwork last time, grade it together.
+        \item  If not, grade your version, which means submitting this groupwork assignment separately. You may discuss grading together.
+    \end{itemize}
+\end{itemize}
+
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+ & (i) & (ii) & (iii) & (iv) & (v) & (vi) & (vii) & (viii) & (ix) & (x) & (xi) & Total:\\
+\hline
+Problem 2 & & & & &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/16\\
+\hline 
+Problem 3 & & &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \hspace{1cm}/14\\
+\Xhline{1.25pt}
+Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl& \filcl& \filcl&\hspace{1cm}/30\\
+\hline
+\end{tabular}}
+\end{center}
+ 
+\subsection*{\probnum Divisibility by Seven [12 points]}
+
+In this question we will show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7. You are allowed to cross off zero digits.
+
+For example, if we take the number 1234589, then we can cross out 1 at the beginning and 89 at the end to get the number $2345 = 7 \cdot 335$.
+
+We will label the digits of an arbitrary 7-digit number as $$x_6 x_5 x_4 x_3 x_2 x_1 x_0.$$
+\begin{qparts}
+    \item Prove that there exists some $i < 7$ such that either $x_i x_{i-1} \dots x_0$ is divisible by 7,
+    or, if it isn't, then there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it
+    modulo 7.
+    \item Use part (a) to prove that if there does not exist some $i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7, then there exists $7 > i > j \geq 0$ so that $$\underbrace{x_ix_{i-1}\dots x_{j+1} 0 \dots 0}_{i + 1 \text{ digits total}}$$ is divisible by 7.
+    \item Prove the full claim. That is, show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7.
+\end{qparts}
+\begin{solution} 
+
+\end{solution}
+
+\subsection*{\probnum A Powerful Proof [30 points]}
+
+In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($\mathcal{P}(X)$ is the power set of $X$). Note that while this is simple in the case where $X$ is finite, things get more complicated when we allow $X$ to be infinite. This proof covers all cases.
+
+\begin{qparts}
+    \item Show that for all (possibly infinite) sets $X$, $|\mathcal{P}(X)| \ge |X|.$
+    \item Let $g\colon X \to P(X)$ be an arbitrary function.
+    Show that the set $D := \{a\in X \mid a\notin g(a)\}$ is not in the range of $g$.
+    \item Explain why this shows that $|P(X)| \leq |X|$ is false and conclude the proof.    
+    \item Based on your conclusions above, are there uncountable sets ``larger" than $\mathbb{R}$? Explain.
+\end{qparts}
+
+\begin{solution}
+
+\end{solution}
+
+
+\end{document}
