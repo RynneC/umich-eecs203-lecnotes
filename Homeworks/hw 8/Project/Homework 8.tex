@@ -191,11 +191,41 @@ For any functions that you name:
 \end{itemize}
 
 \begin{solution}
-    Proof:\\
     Consider function: $$f(x) = 3 + \frac{3x}{2}, x \in [0,2]$$.
     For this function:
     \begin{itemize}
-        \item It is well defined. We can notice that: for each 
+        \item Proof: It is well defined.
+        \\It is to prove that: (1) $\forall y_1, y_2 \in [3,6]$ that $y_1 \not = y_2$, if $y_1 = f(x_1)$ and $y_2 = f(x_2)$, then $x_1 \not = x_2$ (One $x$ cannot map to multiple y). (2) $\forall x \in [0,2], f(x) \in [3,6]$.\\
+        (1) Let $y_1$, $y_2$ be arbitrary real numbers in $[3,6]$.(Every $x$ in the domain must map to some $y$ in the codomain.)\\
+        If $y_1 = f(x_1)$, $y_1 = 3 + \frac{3x_1}{2}$.\\
+        If $y_2 = f(x_2)$, $y_2 = 3 + \frac{3x_2}{2}$.\\
+        Since $y_1 \not = y_2$, $3 + \frac{3x_1}{2} \not = 3 + \frac{3x_2}{2}$, then $3x_1 \not = 3x_2$, $x_1 \not = x_2$.
+        \\\\
+        (2) Let $x$ be an arbitrary real numbers in $[0,2]$.\\
+        Since $0 \leq x < 2$.\\
+        $0 \leq \frac{3x}{2} \leq 3$, $3 \leq \frac{3x}{2} +3 \leq 6$\\
+        $\therefore f(x) \in [3,6]$.\\
+        $\therefore$ we know that there exist exactly one $y = 3 + \frac{3x}{2} \in [3,6]$ such that $y = f(x)$.\\
+        $\therefore f$ is well-defined.
+
+        \item Proof: It is onto.\\
+        It is to prove that: $\forall b \in [3,6]$, $\exists a \in [0,2]$ such that $f(a) = b$.\\
+        Let $b$ be an arbitrary real number in $[3,6]$.\\
+        Consider: $$a = \frac{2}{3} (b-3) $$
+        So $\frac{3}{2}a = b - 3$, $b = 3 + \frac{3a}{2}$, $f(a) = b$.\\
+        And since $3 \leq b \leq 6$, $\frac{2}{3} (3 - 3) \leq a \leq \frac{2}{3} (6-3)$, $0 \leq a \leq 2$.\\
+        $\therefore \forall b \in [3,6]$, $\exists a \in [0,2]$ such that $f(a) = b$.\\
+        $\therefore f$ is onto.
+
+        \item Proof: It is one-to-one.\\
+        It is to prove that $\forall a_1, a_2 \in \mathbb{R}$, $[f(a_1) = f(a_2)]\rightarrow (a_1 = a_2)$.\\
+        Let $a_1, a_2$ be arbitrary real numbers in $[0,2]$.\\
+        Assume $f(a_1) = f(a_2)$.\\
+        Then $3 + \frac{3a_1}{2} = 3 + \frac{3a_2}{2}$, $3a_1 = 3a_2$, $a_1 = a_2$.\\
+        $\therefore f$ is one-to-one.
+
+        \item Since $f$ is onto and one-to-one, it is a bijection.\\
+            $\therefore |[0,2]| = |(3,6)|$.
     \end{itemize}
 
 \end{solution}
