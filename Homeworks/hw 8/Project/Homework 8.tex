@@ -94,7 +94,23 @@ Ashu recently acquired three 12-car garages, but he has no cars (yet).
 \end{qparts}
 
 \begin{solution}
-
+    \begin{qparts}
+        \item
+            Pigeons: Cars, quantity = $n$\\
+            Holes: Garages, quantity = $3$\\
+            According to Pigeonhole Principle, we want at least 6 cars in every hole, which means that $\lceil {n\over{3}} \rceil > 6$.\\
+            $\therefore n > 18$.\\
+            $\therefore$ the minimum number of cars is 19.
+        \item
+            Consider the worst condition: the left and right garages are all full, while the middle 
+            garage only has 6 cars. They add up to $12 \times 2 + 6 = 30$ cars.\\
+            Now if we add another car, then it can only go to the middle, so there must be 7 cars after that.\\
+            If any one of the left and right garage is not full, then that new car can go to the left or right garage. 
+            That makes it possible to keep the middle garage with 6 cars.\\
+            $\therefore$ if and only if there are more than 30 cars, it is guaranteed that the middle garage has more 
+            than 6 cars in it.\\
+            $\therefore$ the minimum number of cars is 31.
+    \end{qparts}
 \end{solution}
 
 \subsection*{\probnum Sum More Counting [14 points]}
@@ -102,6 +118,16 @@ Consider the set of integers between 1 and 18, inclusive. What is the smallest i
 
 \textbf{Note:} To prove that your choice of $n$ is smallest, you must also give an example of a set of size $|S|=n-1$ that does not contain $x, y \in S$ with $x+y=18$.
 \begin{solution}
+    The minimum necessary number $n$ is 10.\\
+    Consider the partition of the set, shown as elements of a new set:\\
+    $\{(1,17),(2,16),(3,15),(4,14),(5,13),(6,12),(7,11),(8,10),9\}$\\
+    Every element either can form a sum of 18 in its pair or cannot form a sum of 18 with any element (which is 9).\\
+    $\therefore$ There is 9 Holes: partitions of the set, or elements of the new set.\\
+    Assume the minimum necessary number is $n$.\\
+    Then according to Pigeonhole Principle, $\lceil {n\over9} \rceil > 1$. (We need at least one full combinition,)\\
+    $\therefore n > 9$, the minimum necessary number is 10.\\
+    \\Now we show the choice of $10$ is smallest: Consider the subset ${1,2,3,4,5,6,7,8,9}$ which has 9 elements, and do 
+    not have 2 elements that can sum up to 18
 
 \end{solution}
 
@@ -213,7 +239,40 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 \hline
 \end{tabular}}
 \end{center}
- 
+
+\subsection*{Previous Groupwork 7(1): Raise the Roof [16 points]}
+Let $f\colon \mathbb R \rightarrow \mathbb Z$, where $f$ is defined as $f(x)= \left \lceil \frac{ x+5 }{2} \right \rceil + 12.$ Is $f$ onto? Prove your answer.
+
+\begin{solution}
+    $f$ is onto.\\
+    i.e. $\forall b \in \mathbb{Z}$, $\exists a \in \mathbb{R}$ such that $b = f(a)$.
+    Proof:\\
+    Let $b$ be an arbitrary integer.\\
+    Consider $a = 2b -29$.\\
+    Then $a$ is also an integer, $a \in \mathbb{Z} \subseteq \mathbb{R}$, is in the domain.\\
+    Then
+    \begin{align*}
+        f(a)  &= \lceil \frac{ 2b - 29+5 }{2}\rceil + 12\\
+              &= \lceil \frac{ 2b - 24 }{2} \rceil + 12\\
+              &= \lceil b - 12 \rceil + 12
+    \end{align*} 
+    Since $b$ is an integer, $\lceil b - 12 \rceil = b -12$.\\
+    $\therefore f(a) = b - 12 + 12 = b$.\\
+    $\therefore \forall b \in \mathbb{Z}$, $\exists a \in \mathbb{R}$ such that $b = f(a)$.\\
+    $\therefore f$ is onto.
+\end{solution}
+
+\subsection*{Previous Groupwork 7(2):  You Mod Bro? [14 points]}
+Find all solutions of the congruence $12x^2 + 25x \equiv 10 \pmod{11}$.
+\begin{solution}
+    $12x^2 + 25x \equiv 10 \pmod{11}$\\
+    $(11+1)x^2 + (2 \cdot 11 +3)x \equiv 10 \pmod{11}$\\
+    $x^2 + 3x - 10 \equiv 0 \pmod{11}$\\
+    $(x+5)(x-2) \equiv 0 \pmod{11}$ \\
+    $\therefore x \equiv 2 \pmod{11}$ or $x \equiv -5 \pmod{11}\equiv 6 \pmod{11}$.\\
+    $\therefore$ The solutions are: all integer $x$ satisfying $x \equiv 2 \pmod{11}$ or $x\equiv 6 \pmod{11}$.
+\end{solution}
+
 \subsection*{\probnum Divisibility by Seven [12 points]}
 
 In this question we will show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7. You are allowed to cross off zero digits.
