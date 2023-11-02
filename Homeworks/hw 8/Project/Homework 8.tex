@@ -118,15 +118,16 @@ Consider the set of integers between 1 and 18, inclusive. What is the smallest i
 
 \textbf{Note:} To prove that your choice of $n$ is smallest, you must also give an example of a set of size $|S|=n-1$ that does not contain $x, y \in S$ with $x+y=18$.
 \begin{solution}
-    The minimum necessary number $n$ is 10.\\
+    The minimum necessary number $n$ is 11.\\
     Consider the partition of the set, shown as elements of a new set:\\
-    $\{(1,17),(2,16),(3,15),(4,14),(5,13),(6,12),(7,11),(8,10),9\}$\\
-    Every element either can form a sum of 18 in its pair or cannot form a sum of 18 with any element (which is 9).\\
-    $\therefore$ There is 9 Holes: partitions of the set, or elements of the new set.\\
+    $\{(1,17),(2,16),(3,15),(4,14),(5,13),(6,12),(7,11),(8,10),9,18\}$\\
+    Every element either can form a sum of 18 in its pair or cannot form a sum of 18 with any element (which is 9 and 18).\\
+    $\therefore$ There is 10 Holes: partitions of the set, or elements of the new set.\\
     Assume the minimum necessary number is $n$.\\
-    Then according to Pigeonhole Principle, $\lceil {n\over9} \rceil > 1$. (We need at least one full combinition,)\\
-    $\therefore n > 9$, the minimum necessary number is 10.\\
-    \\Now we show the choice of $10$ is smallest: Consider the subset ${1,2,3,4,5,6,7,8,9}$ which has 9 elements, and do 
+    Then according to Pigeonhole Principle, $\lceil {n\over 10} \rceil > 1$. (We need at least one full combinition,)\\
+    $\therefore n > 10$, the minimum necessary number is 11.\\
+    \\Now we show the choice of $11$ is smallest: \\
+    Consider the subset $\{9,10,11,12,13,14,15,16,17,18\}$ which has 10 elements, and do 
     not have 2 elements that can sum up to 18
 
 \end{solution}
