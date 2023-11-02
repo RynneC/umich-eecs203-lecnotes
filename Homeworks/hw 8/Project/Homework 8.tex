@@ -191,43 +191,71 @@ For any functions that you name:
 \end{itemize}
 
 \begin{solution}
-    Consider function: $$f(x) = 3 + \frac{3x}{2}, x \in [0,2]$$.
-    For this function:
-    \begin{itemize}
-        \item Proof: It is well defined.
-        \\It is to prove that: (1) $\forall y_1, y_2 \in [3,6]$ that $y_1 \not = y_2$, if $y_1 = f(x_1)$ and $y_2 = f(x_2)$, then $x_1 \not = x_2$ (One $x$ cannot map to multiple y). (2) $\forall x \in [0,2], f(x) \in [3,6]$.\\
-        (1) Let $y_1$, $y_2$ be arbitrary real numbers in $[3,6]$.(Every $x$ in the domain must map to some $y$ in the codomain.)\\
-        If $y_1 = f(x_1)$, $y_1 = 3 + \frac{3x_1}{2}$.\\
-        If $y_2 = f(x_2)$, $y_2 = 3 + \frac{3x_2}{2}$.\\
-        Since $y_1 \not = y_2$, $3 + \frac{3x_1}{2} \not = 3 + \frac{3x_2}{2}$, then $3x_1 \not = 3x_2$, $x_1 \not = x_2$.
-        \\\\
-        (2) Let $x$ be an arbitrary real numbers in $[0,2]$.\\
-        Since $0 \leq x < 2$.\\
-        $0 \leq \frac{3x}{2} \leq 3$, $3 \leq \frac{3x}{2} +3 \leq 6$\\
-        $\therefore f(x) \in [3,6]$.\\
-        $\therefore$ we know that there exist exactly one $y = 3 + \frac{3x}{2} \in [3,6]$ such that $y = f(x)$.\\
-        $\therefore f$ is well-defined.
-
-        \item Proof: It is onto.\\
-        It is to prove that: $\forall b \in [3,6]$, $\exists a \in [0,2]$ such that $f(a) = b$.\\
-        Let $b$ be an arbitrary real number in $[3,6]$.\\
-        Consider: $$a = \frac{2}{3} (b-3) $$
-        So $\frac{3}{2}a = b - 3$, $b = 3 + \frac{3a}{2}$, $f(a) = b$.\\
-        And since $3 \leq b \leq 6$, $\frac{2}{3} (3 - 3) \leq a \leq \frac{2}{3} (6-3)$, $0 \leq a \leq 2$.\\
-        $\therefore \forall b \in [3,6]$, $\exists a \in [0,2]$ such that $f(a) = b$.\\
-        $\therefore f$ is onto.
-
-        \item Proof: It is one-to-one.\\
-        It is to prove that $\forall a_1, a_2 \in \mathbb{R}$, $[f(a_1) = f(a_2)]\rightarrow (a_1 = a_2)$.\\
-        Let $a_1, a_2$ be arbitrary real numbers in $[0,2]$.\\
-        Assume $f(a_1) = f(a_2)$.\\
-        Then $3 + \frac{3a_1}{2} = 3 + \frac{3a_2}{2}$, $3a_1 = 3a_2$, $a_1 = a_2$.\\
-        $\therefore f$ is one-to-one.
-
-        \item Since $f$ is onto and one-to-one, it is a bijection.\\
-            $\therefore |[0,2]| = |(3,6)|$.
-    \end{itemize}
-
+    \begin{qparts}
+        \item Proof of $|[0,2]| \leq |(3,6)|$:\\
+        We prove it by proving that $\exists$ a one-to-one function $f: [0,2] \rightarrow (3,6)$.
+        \\ Consider $f(x) = \frac{x}{2} + 4$, $x \in [0,2]$.\\
+        For this function:
+        \begin{itemize}
+            \item Proof: It is well defined.
+            \\It is to prove that: (1) $\forall x \in [0,2], \exists y = f(x), $where $ 3 \leq y \leq 6$.\\
+            (2) $\forall y_1, y_2 \in (3,6)$, if 
+            $[y_1 \not = y_2] \land [y_1 = f(x_1)] \land [y_2 = f(x_2)]$, then $x_1 \not = x_2$ (One $x$ cannot map to multiple y).
+            \\\\
+            Proof of (1):\\
+            Let $a$ be an arbitrary real numbers in $[0,2]$.\\
+            Since $a \geq 0$, $f(a) = \frac{a}{2} + 4 \geq 4 \geq 3$.\\
+            Since $a \leq 2$, $f(a) = \frac{a}{2} + 4 \leq 5 \leq 6$.\\
+            $\therefore$ $\forall x \in [0,2], \exists y = f(x), $ where $3 \leq y \leq 6$.\\\\
+            Proof of (2): \\
+            Let $b_1, b_2$ be arbitrary real numbers in $(3,6)$.\\
+            Assume $[b_1 \not = b_2] \land [b_1 = f(a_1)] \land [b_2 = f(a_2)]$.
+            \\Then $f(a_1) \not = f(a_2)$, $\frac{a_1}{2} + 4 \not = \frac{a_2}{2} +4$, $\frac{a_1}{2} \not = \frac{a_2}{2}$, $a_1 \not = a_2$.\\
+            $\therefore \forall y_1, y_2 \in (3,6)$, if 
+            $[y_1 \not = y_2] \land [y_1 = f(x_1)] \land [y_2 = f(x_2)]$, then $x_1 \not = x_2$.
+            $\therefore$ $f(x)$ is well-defined. 
+            \item Proof: It is one-to-one.\\
+            It is to prove that $\forall a_1, a_2 \in [0,2]$, $[f(a_1) = f(a_2)]\rightarrow (a_1 = a_2)$.\\
+            Let $a_1, a_2$ be arbitrary real numbers in $[0,2]$.\\
+            Assume $f(a_1) = f(a_2)$.\\
+            Then $\frac{a_1}{2} + 4 = \frac{a_2}{2} + 4$, 
+            $\frac{a_1}{2} = \frac{a_2}{2}$, $a_1 = a_2$.\\
+            $\therefore f$ is one-to-one.\\
+            $\therefore |[0,2]| \leq |(3,6)|$.
+        \end{itemize}
+        \item Proof of $|(3,6)| \leq |[0,2]|$:\\
+        We prove it by proving that $\exists$ a one-to-one function $f: (3,6) \rightarrow [0,2]$.
+        \\ Consider $g(x) = \frac{x-3}{3}$, $x \in (3,6)$.\\
+        For this function:
+        \begin{itemize}
+            \item Proof: It is well defined.
+            \\It is to prove that: (1) $\forall x \in (3,6), \exists y = g(x), $where $ 0 \leq y \leq 2$.\\
+            (2) $\forall y_1, y_2 \in [0,2]$, if 
+            $[y_1 \not = y_2] \land [y_1 = g(x_1)] \land [y_2 = g(x_2)]$, then $x_1 \not = x_2$ (One $x$ cannot map to multiple y).
+            \\\\
+            Proof of (1):\\
+            Let $a$ be an arbitrary real numbers in $(3,6)$.\\
+            Since $a > 3$, $g(a) = \frac{a - 3}{3} > 0, $ then$ \geq 0$ $(> \rightarrow [> \lor =])$.\\
+            Since $a < 6$, $f(a) = \frac{a - 3}{3} < 1 \leq 2$.\\
+            $\forall x \in (3,6), \exists y = g(x), $where $ 0 \leq y \leq 2$.\\\\
+            Proof of (2): \\
+            Let $b_1, b_2$ be arbitrary real numbers in $[0,2]$.\\
+            Assume $[b_1 \not = b_2] \land [b_1 = g(a_1)] \land [b_2 = g(a_2)]$.
+            \\Then $g(a_1) \not = g(a_2)$, $\frac{a_1 - 3}{3} \not = \frac{a_2 - 3}{3}$, $a_1 -3 \not = a_2 - 3$, $a_1 \not = a_2$.\\
+            $\therefore \forall y_1, y_2 \in (3,6)$, if 
+            $[y_1 \not = y_2] \land [y_1 = g(x_1)] \land [y_2 = g(x_2)]$, then $x_1 \not = x_2$.
+            $\therefore$ $g(x)$ is well-defined. 
+            \item Proof: It is one-to-one.\\
+            It is to prove that $\forall a_1, a_2 \in (3,6)$, $[gf(a_1) = g(a_2)]\rightarrow (a_1 = a_2)$.\\
+            Let $a_1, a_2$ be arbitrary real numbers in $(3,6)$.\\
+            Assume $g(a_1) = g(a_2)$.\\
+            Then $\frac{a_1 -3}{3}  = \frac{a_2 - 3}{3}$, 
+            $a_1 - 3 = a_2 - 3$, $a_1 = a_2$.\\
+            $\therefore g$ is one-to-one.\\
+            $\therefore |(3,6)| \leq |[0,2]|$.
+        \end{itemize}
+        \item Due to Schroeder-Bernstein Theorem, since $|[0,2]| \leq |(3,6)|$ and $|(3,6)| \leq |[0,2]|$, $|(3,6)| = |[0,2]|$.
+    \end{qparts}
 \end{solution}
 
 
@@ -236,6 +264,19 @@ For any functions that you name:
 Consider functions $g\colon A \to B$ and $f\colon B \to C.$ \textbf{Prove or disprove} that if $ f $ and $ f \circ g $ are one-to-one, then $ g $ is one-to-one.
 
 \begin{solution}
+    Proof of if $ f $ and $ f \circ g $ are one-to-one, then $ g $ is one-to-one:
+    \\\\
+    Assume $f$ and $f \circ g$ are one-to-one.\\
+    According to Definition we know: \\
+    (1): $\forall y_1, y_2 \in B$, $[f(y_1) = f(y_2)] \leftrightarrow [y_1 = y_2$].\\
+    (2): $\forall x_1, x_2 \in A$, $[f(g(x_1)) = f(g(x_2))] \leftrightarrow [x_1 = x_2$].\\
+    We want to show that: $\forall x_1, x_2 \in A, [g(x_1) = g(x_2)] \rightarrow [x_1 = x_2]$.\\\\
+    Let $a_1, a_2$ be arbitrary real numbers in A. $b_1 = g(a_1)$, $b_2 = g(a_2)$.\\
+    Assume $b_1 = b_2$, that is, $g(a_1) = g(a_2) \in B$.\\
+    Then $f(b_1) = f(b_2)$.\\
+    Then $f(g(a_1)) = f(g(a_2))$.\\
+    Then from (2) we know: $a_1 = a_2$.
+    \\$\therefore$ We have proved that if $ f $ and $ f \circ g $ are one-to-one, then $g$ is one-to-one.
     
 \end{solution}
 
@@ -259,7 +300,31 @@ $$ \forall x \in S\, [ f(x) = x ].$$
 
 
 \begin{solution}
-
+    \begin{qparts}
+        \item
+        Let $a$ be an arbitrary element of $S$.\\
+        Assume $f$ does nothing, then $f(a) = a \in S$.
+        \\Since $f(a) \in S$, then $\exists f(f(a))$, and $f(f(a)) = f(a) = a$.\\
+        Then $f \circ f (a) = f(a)$.\\
+        $\therefore$ We have proved that if $f$ does nothing, then it is a one-hit wonder.
+    
+        \item
+        Let $a$ be an arbitrary element of $S$.\\
+        Assume $f$ is a one hit wonder and is one-to-one.\\
+        Since $f$ is a one hit wonder, $ [(f \circ f)(a) = f(a) ]$, $f(f(a)) = f(a)$.\\
+        Since $f$ is one-to-one,$[f(f(a)) = f(a)] \rightarrow f(a) = a$.\\
+        $\therefore$ for any $x \in S$, $f(x) = x$, i.e. $f$ does nothing.\\
+        $\therefore$ If $f$ is a one hit wonder and is one-to-one, then $f$ does nothing.
+    
+        \item
+        Let $b$ be an arbitrary element of $S$.\\
+        Assume $f$ is a one hit wonder and is onto.\\
+        Since $f$ is onto, $\exists a \in S,  f(a) = b$.\\
+        Since $f$ is a one hit wonder, $f(f(a)) = f(a) = b$.\\
+        Since $f(a) = b$ and $f(f(a)) = b$, $f(b)= b$.\\
+        $\therefore$ for any $x \in S$, $f(x) = x$, i.e. $f$ does nothing.\\
+        $\therefore$ If $f$ is a one hit wonder and is one-to-one, then $f$ does nothing.
+    \end{qparts}
 \end{solution}
 
 
@@ -342,7 +407,42 @@ We will label the digits of an arbitrary 7-digit number as $$x_6 x_5 x_4 x_3 x_2
     \item Prove the full claim. That is, show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7.
 \end{qparts}
 \begin{solution} 
-
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
 \end{solution}
 
 \subsection*{\probnum A Powerful Proof [30 points]}
@@ -358,7 +458,42 @@ In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($
 \end{qparts}
 
 \begin{solution}
-
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
 \end{solution}
 
 
