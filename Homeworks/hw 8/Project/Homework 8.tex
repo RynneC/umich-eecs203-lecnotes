@@ -471,7 +471,8 @@ while this is simple in the case where $X$ is finite, things get more complicate
         \item
         The range of $g$ is $\{ g(a) | a \in X\}$. \\
         $D$ is a subset of $X$ which contains all the elements that are not an element of its image.\\
-        So it is similar to diagonalization that there does not exist an $a \in X$ such that $g(a) = D$.\\
+        Assume $D \in range(X)$, then $\exists a \in X$ such that $g(a) = D$, which is an element of $\mathcal{P}$.\\
+        Due to the definition of $D$, $D = \{ a \in X | a \not \in g(a)\}$, then $X \in D$. This causes contradiction.
         $\therefore D$ is not in the range of $g$.
         \item
         Since every element in $D$ is also in $X$, it is a subset of $X$, so $D$ is an element of $\mathcal{P}(X)$, which is 
