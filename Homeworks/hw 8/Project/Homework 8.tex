@@ -408,47 +408,47 @@ We will label the digits of an arbitrary 7-digit number as $$x_6 x_5 x_4 x_3 x_2
     \item Prove the full claim. That is, show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7.
 \end{qparts}
 \begin{solution} 
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
+    \begin{qparts}
+        \item
+        There are 7 numbers: $x_6 x_5 x_4 x_3 x_2 x_1 x_0$, $x_5 x_4 x_3 x_2 x_1 x_0$, $\cdots$, $x_0$.\\
+        Use them as Pigeons.\\
+        The remainer of any number mod 7, if the number cannot be divided by 7, has 6 circumstances: 1,2,3,4,5,6.\\
+        Use them as Holes.\\
+        Assume that all these 7 numbers is not divisible by 7, then there are 7 Pigeons in 6 holes, which means that there are at least 2 Pigeons in one whole.\\
+        This means that $i < 7$ and $j < i$ such that $ = x_i x_{i-1} \dots x_0$ and $x_j x_{j-1} \dots x_0$ have the same remainer when divided by 7.\\
+        Mark the two numbers as $a $ and $b$.\\
+        Then $b \equiv a \pmod{7}$.\\
+        $(b-a) \equiv 0 \pmod{7}$.\\
+        Then we have proved the statement: There exists some $i < 7$ such that either $x_i x_{i-1} \dots x_0$ is divisible by 7,
+        or, if it isn't, then there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it
+        modulo 7.
+        \item
+        If there does not exist some $i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7, then from (a) who know: there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it.\\
+        i.e. $(x_i x_{i-1} \dots x_0 - x_j x_{j-1} \dots x_0) \equiv 0 \pmod{7}$.\\
+        that is, $x_i x_{i-1} \cdots x_{j+1} 0 \cdots 0 \equiv 0 \pmod{7}$.\\
+        $\therefore$ We have proved the statement. 
+        \item 
+        Given a 7-digit number $x_6 x_5 x_4 x_3 x_2 x_1 x_0$,\\
+        Case 1: $\exists i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7.\\
+        Then if $i = 6$, the whole digit is divisible by 7, else we can just cross out all digits from $x_6$ to $x_{i+1}$. The remaining 
+        digit $x_i x_{i-1} \dots x_0$ is divisible by 7.\\\\
+        Case 2:
+        $\not\exists i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible 
+        by 7.\\
+        Then through (b) we know: there exists some $j < i$ such that 
+        $x_ix_{i-1}\dots x_{j+1} 0 \dots 0$ is divisible by 7.\\
+        We know that $x_ix_{i-1}\dots x_{j+1} 0 \dots 0 = x_ix_{i-1}\dots x_{j+1} \times 100\cdots$\\
+        Then $x_ix_{i-1}\dots x_{j+1} \times 100\cdots \equiv 0 \pmod{7}$.\\
+        Since $100\cdots \not\equiv 0 \pmod{7}$\\
+        There must be $x_ix_{i-1}\dots x_{j+1} \equiv 0 \pmod{7}$.\\
+        So we can rule out all digits before $x_i$ and after $x_j$ to get a number divisible by 7.
+    \end{qparts}
 \end{solution}
 
 \subsection*{\probnum A Powerful Proof [30 points]}
 
-In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($\mathcal{P}(X)$ is the power set of $X$). Note that while this is simple in the case where $X$ is finite, things get more complicated when we allow $X$ to be infinite. This proof covers all cases.
+In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($\mathcal{P}(X)$ is the power set of $X$). Note that 
+while this is simple in the case where $X$ is finite, things get more complicated when we allow $X$ to be infinite. This proof covers all cases.
 
 \begin{qparts}
     \item Show that for all (possibly infinite) sets $X$, $|\mathcal{P}(X)| \ge |X|.$
@@ -459,42 +459,7 @@ In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($
 \end{qparts}
 
 \begin{solution}
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
-    \\
+    
 \end{solution}
 
 
