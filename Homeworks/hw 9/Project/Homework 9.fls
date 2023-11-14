@@ -913,6 +913,18 @@ INPUT ./tree.JPG
 INPUT tree.JPG
 INPUT ./tree.JPG
 INPUT ./tree.JPG
+INPUT ./pointy_m.JPG
+INPUT ./pointy_m.JPG
+INPUT pointy_m.JPG
+INPUT ./pointy_m.JPG
+INPUT ./weighted_graph.JPG
+INPUT ./weighted_graph.JPG
+INPUT weighted_graph.JPG
+INPUT ./weighted_graph.JPG
+INPUT ./tree.JPG
+INPUT ./tree.JPG
+INPUT tree.JPG
+INPUT ./tree.JPG
 INPUT ./isomorphism 1.png
 INPUT ./isomorphism 1.png
 INPUT isomorphism 1.png
@@ -927,6 +939,18 @@ INPUT ./isomorphism 5.png
 INPUT ./isomorphism 5.png
 INPUT isomorphism 5.png
 INPUT ./isomorphism 5.png
+INPUT ./isomorphism 5.png
+INPUT ./isomorphism 1.png
+INPUT ./isomorphism 1.png
+INPUT isomorphism 1.png
+INPUT ./isomorphism 1.png
+INPUT ./isomorphism 4.png
+INPUT ./isomorphism 4.png
+INPUT isomorphism 4.png
+INPUT ./isomorphism 4.png
+INPUT ./isomorphism 5.png
+INPUT ./isomorphism 5.png
+INPUT isomorphism 5.png
 INPUT ./isomorphism 5.png
 INPUT Homework 9.aux
 INPUT ./Homework 9.out
