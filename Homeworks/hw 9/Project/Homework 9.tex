@@ -312,6 +312,100 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 \end{tabular}}
 \end{center}
 
+\subsection*{Previous Groupwork 8(1): Divisibility by Seven [12 points]}
+
+In this question we will show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7. You are allowed to cross off zero digits.
+
+For example, if we take the number 1234589, then we can cross out 1 at the beginning and 89 at the end to get the number $2345 = 7 \cdot 335$.
+
+We will label the digits of an arbitrary 7-digit number as $$x_6 x_5 x_4 x_3 x_2 x_1 x_0.$$
+\begin{qparts}
+    \item Prove that there exists some $i < 7$ such that either $x_i x_{i-1} \dots x_0$ is divisible by 7,
+    or, if it isn't, then there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it
+    modulo 7.
+    \item Use part (a) to prove that if there does not exist some $i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7, then there exists $7 > i > j \geq 0$ so that $$\underbrace{x_ix_{i-1}\dots x_{j+1} 0 \dots 0}_{i + 1 \text{ digits total}}$$ is divisible by 7.
+    \item Prove the full claim. That is, show that, given a 7-digit number, where all digits except perhaps the last are non-zero, you can cross out some digits at the beginning and at the end such that the remaining number consists of at least one digit and is divisible by 7.
+\end{qparts}
+\begin{solution} 
+    \begin{qparts}
+        \item
+        There are 7 numbers: $x_6 x_5 x_4 x_3 x_2 x_1 x_0$, $x_5 x_4 x_3 x_2 x_1 x_0$, $\cdots$, $x_0$.\\
+        Use them as Pigeons.\\
+        The remainer of any number mod 7, if the number cannot be divided by 7, has 6 circumstances: 1,2,3,4,5,6.\\
+        Use them as Holes.\\
+        Assume that all these 7 numbers is not divisible by 7, then there are 7 Pigeons in 6 holes, which means that there are at least 2 Pigeons in one whole.\\
+        This means that $i < 7$ and $j < i$ such that $ = x_i x_{i-1} \dots x_0$ and $x_j x_{j-1} \dots x_0$ have the same remainer when divided by 7.\\
+        Mark the two numbers as $a $ and $b$.\\
+        Then $b \equiv a \pmod{7}$.\\
+        $(b-a) \equiv 0 \pmod{7}$.\\
+        Then we have proved the statement: There exists some $i < 7$ such that either $x_i x_{i-1} \dots x_0$ is divisible by 7,
+        or, if it isn't, then there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it
+        modulo 7.
+        \item
+        If there does not exist some $i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7, then from (a) who know: there exists some $j < i$ such that $x_j x_{j-1} \dots x_0$ is congruent to it.\\
+        i.e. $(x_i x_{i-1} \dots x_0 - x_j x_{j-1} \dots x_0) \equiv 0 \pmod{7}$.\\
+        that is, $x_i x_{i-1} \cdots x_{j+1} 0 \cdots 0 \equiv 0 \pmod{7}$.\\
+        $\therefore$ We have proved the statement. 
+        \item 
+        Given a 7-digit number $x_6 x_5 x_4 x_3 x_2 x_1 x_0$,\\
+        Case 1: $\exists i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible by 7.\\
+        Then if $i = 6$, the whole digit is divisible by 7, else we can just cross out all digits from $x_6$ to $x_{i+1}$. The remaining 
+        digit $x_i x_{i-1} \dots x_0$ is divisible by 7.\\\\
+        Case 2:
+        $\not\exists i < 7$ such that $x_i x_{i-1} \dots x_0$ is divisible 
+        by 7.\\
+        Then through (b) we know: there exists some $j < i$ such that 
+        $x_ix_{i-1}\dots x_{j+1} 0 \dots 0$ is divisible by 7.\\
+        We know that $x_ix_{i-1}\dots x_{j+1} 0 \dots 0 = x_ix_{i-1}\dots x_{j+1} \times 100\cdots$\\
+        Then $x_ix_{i-1}\dots x_{j+1} \times 100\cdots \equiv 0 \pmod{7}$.\\
+        Since $100\cdots \not\equiv 0 \pmod{7}$\\
+        There must be $x_ix_{i-1}\dots x_{j+1} \equiv 0 \pmod{7}$.\\
+        So we can rule out all digits before $x_i$ and after $x_j$ to get a number divisible by 7.
+    \end{qparts}
+\end{solution}
+
+\subsection*{Previous Groupwork 8(2): A Powerful Proof [30 points]}
+
+In this question we will prove that for any set $X,$ $|\mathcal{P}(X)| > |X|$ ($\mathcal{P}(X)$ is the power set of $X$). Note that 
+while this is simple in the case where $X$ is finite, things get more complicated when we allow $X$ to be infinite. This proof covers all cases.
+
+\begin{qparts}
+    \item Show that for all (possibly infinite) sets $X$, $|\mathcal{P}(X)| \ge |X|.$
+    \item Let $g\colon X \to P(X)$ be an arbitrary function.
+    Show that the set $D := \{a\in X \mid a\notin g(a)\}$ is not in the range of $g$.
+    \item Explain why this shows that $|P(X)| \leq |X|$ is false and conclude the proof.    
+    \item Based on your conclusions above, are there uncountable sets ``larger" than $\mathbb{R}$? Explain.
+\end{qparts}
+
+\begin{solution}
+    \begin{qparts}
+        \item
+        We define $f: X \rightarrow \mathcal{P}(X)$: \\
+        The map of every element in $X$ to a set in $\mathcal{P}(X)$ that 
+        only contains that element.\\
+        That is: for $X = \{a,b,c,\cdots\}$, $f(a) = \{a\}$, $f(b) = \{b\}$, $\cdots$.\\
+        Since for every element in $X$, we can find a subset of $X$ that only contains that element, 
+        and every subset is unique, we know this is a one-to-one function.\\
+        $\therefore |X| \leq |\mathcal{P}(X)|$.
+        \item
+        The range of $g$ is $\{ g(a) | a \in X\}$. \\
+        $D$ is a subset of $X$ which contains all the elements that are not an element of its image. We know $D \in \mathcal{P}(X).$\\
+        Assume $D \in range(X)$, then $\exists x \in X$ such that $g(x) = D$, which is an element of $\mathcal{P}$.\\
+        If $x \in D$, then due to the definition of $D$, $x \not \in g(x) = D$.\\
+         This causes contradiction.\\
+        $\therefore D$ is not in the range of $g$.
+        \item
+        Since every element in $D$ is also in $X$, it is a subset of $X$, so $D$ is an element of $\mathcal{P}(X)$, which is 
+        in the codomain of $g$.\\
+        However, $D$ is not in the range of $g$.\\
+        $\therefore$ the $range(g) < codom(g)$, there does not exist an onto function $g$ from $X$ to $\mathcal{P}(X)$.\\
+        $\therefore$ $|\mathcal{P}(X)| \leq |X|$ is false, $|\mathcal{P}(X)| > |X|$.
+        \item
+        From c, we can know that $| \mathcal{P}(\mathbb{R}) | > |\mathbb{R}|$. This is a ``larger" set than $\mathbb{R}$.
+
+    \end{qparts}
+\end{solution}
+
 \subsection*{\probnum Square the Cycle [15 points]}
 Prove that every $n$-node graph ($n \ge 3$) in which all nodes have degree at least $\lceil \sqrt{n} \rceil$ has a $3$-cycle subgraph or a $4$-cycle subgraph.
 
@@ -321,14 +415,14 @@ We recommend using a proof by contradiction, although this can also be done with
 \newpage
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \subsection*{\probnum The Office Allocation [15 points]}
 Consider a new office building with $n$ floors and $k$ offices per floor in which you must assign $2nk$ people to work, each sharing an office with exactly one other person. Find a closed form solution for the number of ways there are to assign offices if from floor to floor the offices are distinguishable, but any two offices on a given floor are not.
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \end{document}
