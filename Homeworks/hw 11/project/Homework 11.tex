@@ -94,7 +94,7 @@ Suppose that one person in 10,000 people has a rare genetic disease. There is an
 \end{qparts}
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \subsection*{\probnum Spaced Out [12 points]}
@@ -111,7 +111,8 @@ A space probe heading to Mars sends messages back to Earth using bit strings. Su
 \end{qparts}
     
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \subsection*{\probnum Aye Aye Esti-matey [8 points]} 
@@ -123,7 +124,8 @@ Give the tightest big-$O$ estimate of the following functions:
 \textbf{Note:} $\sum\limits_{i=1}^{10} n^i = n^1+n^2+n^3+\dots+n^{10}$
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \subsection*{\probnum Al Gore, It Him [12 points]}
@@ -162,7 +164,8 @@ Give a big-$O$ estimate for the number of operations, where an operation is an a
 \end{qparts}
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 
@@ -174,6 +177,8 @@ In a class with 34 students there are 6 breakout rooms, with 3, 3, 4, 7, 8, and 
     \item Now suppose we pick one of the students at random. Let $Y$ be the random variable defined by the number of people in that student's room. What is the expected value of $Y$?
 \end{qparts}
 \begin{solution}
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 
@@ -186,7 +191,7 @@ You roll a fair six-sided die 12 times. Find the probability that:
 \end{qparts}
 
 \begin{solution}
-\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 
@@ -198,7 +203,8 @@ $$(1,2),(4,6),\underline{(4,4)},\underline{(5,3)},(2,5),(2,3),\underline{(6,2)}$
 $$\underline{(4,4)},(2,1),(4,5),(6,6),\underline{(5,3)}, (4,3),(5,5),\underline{(4,4)}$$
 
 \begin{solution}
-
+    ~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \subsection*{\probnum Mystery Boba [10 points]}
@@ -211,7 +217,8 @@ Isabel loves to get bubble tea on campus. On any given day, there is $15\%$ chan
 \end{qparts}
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 
@@ -220,6 +227,10 @@ Consider a binary sequence of length $14$ selected at random.  What is the expec
 $$\overline{10\underline{1}}\underline{01}0000\overline{10\underline{1}}\underline{01}.$$
 
 \begin{solution}
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 
 \end{solution}
 
@@ -258,12 +269,82 @@ Total: &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl &\filcl & \filcl&
 
 \clearpage
 
+\subsection*{Previous Groupwork 10(1): Lily's Lily Pads [15 points]}
+Lily the Frog is on a lily pad and wants to get to her home! She can jump from lily pad to lily pad to help reach this goal. The lily pads are arranged in a grid. Lily starts on the \textbf{bottom-left} lily pad, and her home is at the \textbf{top-right} lily pad. Lily can only move one lily pad \textbf{upward} or one lily pad \textbf{rightward} at a time.\\
+
+Each lily pad has coordinates of the form $(x, y) \in \mathbb{N} \times \mathbb{N}$, where $x$ represents how far rightward a point is from the left of the grid, and $y$ represents how far upward a point is from the bottom of the grid. Lily starts at location $(0, 0)$, and her home is at location $(x_H, y_H)  \in \mathbb{N} \times \mathbb{N}$.\\
+
+\begin{center}
+\begin{tikzpicture}[main/.style = {draw, circle}]
+    \node[main] (1) {$L$};
+    \node[main] (2) [above of=1] {};
+    \node[main] (3) [above of=2] {};
+    \node[main] (4) [right of=1] {};
+    \node[main] (5) [above of=4] {};
+    \node[main] (6) [above of=5] {};
+    \node[main] (7) [right of=4] {};
+    \node[main] (8) [above of=7] {};
+    \node[main] (9) [above of=8] {};
+    \node[main] (10) [right of=7] {};
+    \node[main] (11) [above of=10] {};
+    \node[main] (12) [above of=11] {$H$};
+    \draw[->] (1) -- (2);
+    \draw[->] (1) -- (4);
+    \draw[->] (2) -- (3);
+    \draw[->] (2) -- (5);
+    \draw[->] (3) -- (6);
+    \draw[->] (4) -- (5);
+    \draw[->] (4) -- (7);
+    \draw[->] (5) -- (6);
+    \draw[->] (5) -- (8);
+    \draw[->] (6) -- (9);
+    \draw[->] (7) -- (8);
+    \draw[->] (7) -- (10);
+    \draw[->] (8) -- (9);
+    \draw[->] (8) -- (11);
+    \draw[->] (9) -- (12);
+    \draw[->] (10) -- (11);
+    \draw[->] (11) -- (12);
+\end{tikzpicture}
+\end{center}
+
+In the above example, $(x_H, y_H) = (3, 2)$. In the general case, though, $(x_H, y_H)$ could be any ordered pair of natural numbers.
+
+\begin{qparts}
+    \item How many different paths can Lily take to get home?
+    \item Lily's frog friend, Francine, is also on the grid at coordinates $(x_F, y_F) \in \mathbb{N} \times \mathbb{N}$ such that $0 \leq x_F \leq x_H$ and $0 \leq y_F \leq y_H$. What is the probability that Lily meets Francine on her path home? You may assume that any two paths home are equally likely for Lily to take.
+\end{qparts}
+\begin{solution}
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+\end{solution}
+
+\subsection*{Previous Groupwork 10(2) Random Connections [15 points]}
+We say that a \textit{random graph} is an undirected graph where, for each pair of vertices, there is an independent $\frac{1}{3}$ chance that they are adjacent. It's a bit like Lily's pond, except that the vertices aren't in a grid, and you can move in any direction.
+
+We want to learn about the connectedness of random graphs.
+
+Let $G$ be a finite random graph. Let's split the vertices into two nonempty sets, $A, B \subseteq V$.
+
+\begin{qparts}
+    \item Let $a \in A$. What is the probability that no element of $B$ is adjacent to $a$?
+    \item What is the probability that there is some $a \in A$ and $b \in B$ such that $a$ is adjacent to $b$?
+    \item Let's imagine doing this with larger and larger graphs. Define $f(a, b)$ be your answer to the previous problem when $|A| = a$ and $|B| = b$. What is
+    \[ \lim_{a+b \to \infty} f(a,b)? \]
+    \item This isn't quite a proof, but your answer to (c) might lead you to some ideas. What might you conjecture about the connectedness of infinite random graphs?
+\end{qparts}
+\begin{solution}
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\
+\end{solution}
+
 \subsection*{\probnum I Am Speed [10 points]}
 Suppose we have two algorithms, $\mathcal A$ and $\mathcal B$.  Suppose that on inputs of size $n$, algorithm $\mathcal A$ runs in time $\Theta(n^2)$, while algorithm $\mathcal B$ runs in time $\Theta(n^3)$. Show that there exists some $n_0$ such that for any $n > n_0$, algorithm $\mathcal A$ will take less time to run than algorithm $\mathcal B$ on inputs of size $n$.\\
 \textbf{Note:} you may find it useful for your notation to let the runtime of $\mathcal A$ on inputs of size n be denoted as $f_{\mathcal A}(n)$, and similarly for algorithm $\mathcal B$ as $f_{\mathcal B}(n)$.
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 
@@ -276,7 +357,8 @@ In a game of repeated die rolls, a player is allowed to roll a standard die up t
 \end{qparts}
 
 \begin{solution}
-
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
+    ~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\~\\
 \end{solution}
 
 \end{document}
